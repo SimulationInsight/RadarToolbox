@@ -18,5 +18,33 @@ namespace SimulationInsight.MathLibrary.Tests
             // Assert:
             Assert.AreEqual(numberOfElements, v.NumberOfElements);
         }
+
+        [TestMethod]
+        public void VectorTest2()
+        {
+            // Arrange:
+            var numberOfElements = 10;
+
+            var v = new Vector(numberOfElements);
+
+            // Act:
+
+            // Assert:
+            Assert.AreEqual(numberOfElements, v.NumberOfElements);
+        }
+
+        [TestMethod]
+        public void VectorTest3()
+        {
+            // Arrange:
+            var numberOfElements = 12;
+
+            var v = new Vector(numberOfElements);
+
+            // Act:
+
+            // Assert:
+            Assert.AreEqual(numberOfElements-1, v.NumberOfElements);
+        }
     }
 }
