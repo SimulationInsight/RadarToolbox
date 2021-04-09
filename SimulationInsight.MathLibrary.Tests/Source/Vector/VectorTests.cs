@@ -44,7 +44,7 @@ namespace SimulationInsight.MathLibrary.Tests
             // Act:
 
             // Assert:
-            Assert.AreEqual(numberOfElements-1, v.NumberOfElements);
+            Assert.AreEqual(numberOfElements, v.NumberOfElements);
         }
     }
 }
