@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.218
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.MathLibrary", "SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj", "{3C25821F-8341-4C79-80A7-5661B9C3ABE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.MathLibrary", "SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj", "{3C25821F-8341-4C79-80A7-5661B9C3ABE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.MathLibrary.Tests", "SimulationInsight.MathLibrary.Tests\SimulationInsight.MathLibrary.Tests.csproj", "{5AA0B0B9-B7C7-485C-9D35-1E7407ED92F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.MathLibrary.Tests", "SimulationInsight.MathLibrary.Tests\SimulationInsight.MathLibrary.Tests.csproj", "{5AA0B0B9-B7C7-485C-9D35-1E7407ED92F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ScenarioGenerator", "SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj", "{3156798F-C89B-46E0-B0DF-43E23665944A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ScenarioGenerator", "SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj", "{3156798F-C89B-46E0-B0DF-43E23665944A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMLibrary", "SimulationInsight.ESMLibrary\SimulationInsight.ESMLibrary.csproj", "{F771D3AD-C56F-4908-B68E-2056C27731CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMLibrary.Tests", "SimulationInsight.ESMLibrary.Tests\SimulationInsight.ESMLibrary.Tests.csproj", "{933B11ED-9AA7-46DF-AE77-2E1C38E58693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{3156798F-C89B-46E0-B0DF-43E23665944A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3156798F-C89B-46E0-B0DF-43E23665944A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3156798F-C89B-46E0-B0DF-43E23665944A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F771D3AD-C56F-4908-B68E-2056C27731CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F771D3AD-C56F-4908-B68E-2056C27731CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F771D3AD-C56F-4908-B68E-2056C27731CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F771D3AD-C56F-4908-B68E-2056C27731CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
