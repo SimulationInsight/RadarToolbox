@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimulationInsight.MathLibrary
+﻿namespace SimulationInsight.MathLibrary
 {
     public record Vector
     {

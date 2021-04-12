@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimulationInsight.ScenarioGenerator
+﻿namespace SimulationInsight.ScenarioGenerator
 {
     public record RelativeFlightpathData
     {
