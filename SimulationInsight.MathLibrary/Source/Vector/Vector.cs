@@ -10,5 +10,25 @@
         {
             Data = new double[numberOfElements];
         }
+
+        public Vector(params double[] data)
+        {
+            Data = data;
+        }
+
+        public double this[int index]
+        {
+            get => Data[index];
+            set => Data[index] = value;
+        }
+
+        public double GetCircularValue(int index)
+        {
+            var i = index % Data.Length;
+
+            var x = Data[i];
+
+            return x;
+        }
     }
 }

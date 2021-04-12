@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.MathLibra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ScenarioGenerator", "SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj", "{3156798F-C89B-46E0-B0DF-43E23665944A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMLibrary", "SimulationInsight.ESMLibrary\SimulationInsight.ESMLibrary.csproj", "{F771D3AD-C56F-4908-B68E-2056C27731CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMLibrary", "SimulationInsight.ESMLibrary\SimulationInsight.ESMLibrary.csproj", "{F771D3AD-C56F-4908-B68E-2056C27731CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMLibrary.Tests", "SimulationInsight.ESMLibrary.Tests\SimulationInsight.ESMLibrary.Tests.csproj", "{933B11ED-9AA7-46DF-AE77-2E1C38E58693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMLibrary.Tests", "SimulationInsight.ESMLibrary.Tests\SimulationInsight.ESMLibrary.Tests.csproj", "{933B11ED-9AA7-46DF-AE77-2E1C38E58693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMPulseDescriptorGenerator", "SimulationInsight.ESMPulseDescriptorGenerator\SimulationInsight.ESMPulseDescriptorGenerator.csproj", "{00CD83F2-A530-4816-A6C5-200EDEC5BF32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMPulseDescriptorGenerator.Tests", "SimulationInsight.ESMPulseDescriptorGenerator.Tests\SimulationInsight.ESMPulseDescriptorGenerator.Tests.csproj", "{349A3DA2-F62E-4842-B957-FDA2F60277C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{933B11ED-9AA7-46DF-AE77-2E1C38E58693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CD83F2-A530-4816-A6C5-200EDEC5BF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CD83F2-A530-4816-A6C5-200EDEC5BF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CD83F2-A530-4816-A6C5-200EDEC5BF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CD83F2-A530-4816-A6C5-200EDEC5BF32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349A3DA2-F62E-4842-B957-FDA2F60277C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349A3DA2-F62E-4842-B957-FDA2F60277C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349A3DA2-F62E-4842-B957-FDA2F60277C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349A3DA2-F62E-4842-B957-FDA2F60277C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

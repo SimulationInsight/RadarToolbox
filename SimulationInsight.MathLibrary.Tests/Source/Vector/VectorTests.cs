@@ -46,5 +46,20 @@ namespace SimulationInsight.MathLibrary.Tests
             // Assert:
             Assert.AreEqual(numberOfElements, v.NumberOfElements);
         }
+
+        [TestMethod]
+        public void VectorTest4()
+        {
+            // Arrange:
+            var v = new Vector(1.0, 2.0, 11.0, 21.0);
+
+            var expectedResult = 2.0;
+
+            // Act:
+            var x = v.GetCircularValue(5);
+
+            // Assert:
+            Assert.AreEqual(expectedResult, x);
+        }
     }
 }
