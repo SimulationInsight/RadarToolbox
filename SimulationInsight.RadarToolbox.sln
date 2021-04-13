@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMPulseD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMPulseDescriptorGenerator.Tests", "SimulationInsight.ESMPulseDescriptorGenerator.Tests\SimulationInsight.ESMPulseDescriptorGenerator.Tests.csproj", "{349A3DA2-F62E-4842-B957-FDA2F60277C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Core", "SimulationInsight.Core\SimulationInsight.Core.csproj", "{760F14CF-24A0-467C-85AF-2FD50D9E8F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.Core", "SimulationInsight.Core\SimulationInsight.Core.csproj", "{760F14CF-24A0-467C-85AF-2FD50D9E8F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMPulseDescriptorGenerator.Console", "SimulationInsight.ESMPulseDescriptorGenerator.Console\SimulationInsight.ESMPulseDescriptorGenerator.Console.csproj", "{772865CF-5E7D-4C06-A31F-E70F0E15D745}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{760F14CF-24A0-467C-85AF-2FD50D9E8F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{760F14CF-24A0-467C-85AF-2FD50D9E8F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{760F14CF-24A0-467C-85AF-2FD50D9E8F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772865CF-5E7D-4C06-A31F-E70F0E15D745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772865CF-5E7D-4C06-A31F-E70F0E15D745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772865CF-5E7D-4C06-A31F-E70F0E15D745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772865CF-5E7D-4C06-A31F-E70F0E15D745}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
