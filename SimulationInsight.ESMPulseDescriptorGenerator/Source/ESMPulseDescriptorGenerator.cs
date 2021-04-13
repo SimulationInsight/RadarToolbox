@@ -1,4 +1,5 @@
-﻿using SimulationInsight.ESMLibrary;
+﻿using SimulationInsight.Core;
+using SimulationInsight.ESMLibrary;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
@@ -48,6 +49,11 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 
                 PulseDescriptorData.PulseDescriptors.Add(p);
             }
+        }
+
+        public void WritePulseDescriptorData(string fileName)
+        {
+            PulseDescriptorData.PulseDescriptors.WriteToCsvFile(fileName);
         }
     }
 }

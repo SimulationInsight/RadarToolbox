@@ -9,5 +9,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
         PulseDescriptorData PulseDescriptorData { get; set; }
 
         void GeneratePulseDescriptorData();
+
+        void WritePulseDescriptorData(string fileName);
     }
 }
