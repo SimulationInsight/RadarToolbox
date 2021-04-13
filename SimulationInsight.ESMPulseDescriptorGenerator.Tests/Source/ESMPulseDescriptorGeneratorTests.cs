@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimulationInsight.MathLibrary;
+using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace SimulationInsight.ESMPulseDescriptorGenerator.Tests
 {
@@ -54,7 +56,9 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator.Tests
                 ESMPulseDescriptorGeneratorInputs = inputs
             };
 
-            var fileName = @"C:\temp\ESMPulseDescriptorGenerator\ESMPulseDescriptors.csv";
+            var folder = Environment.CurrentDirectory;
+
+            var fileName = Path.Combine(folder, "ESMPulseDescriptors.csv");
 
             // Act:
             var sw1 = Stopwatch.StartNew();
