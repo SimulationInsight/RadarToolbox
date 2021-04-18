@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SimulationInsight.Core;
 using SimulationInsight.MathLibrary;
 using System;
 using System.Diagnostics;
@@ -71,6 +72,31 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator.Tests
 
             // Assert
             Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void WriteAndReadInputs()
+        {
+            // Arrange:
+            var inputs = new ESMPulseDescriptorGeneratorInputs()
+            {
+                StartTime = 0.01,
+                EndTime = 50.0,
+                PulseWidth = new Vector(1.0e-6, 2.0e-6, 11.0e-6),
+                FrequencyCentre = new Vector(9.1e9, 9.2e9, 9.16e9, 9.18e9),
+                PulseRepetitionFrequency = new Vector(1000.0, 990.0, 1100.0)
+            };
+
+            // Act:
+            var folder = Environment.CurrentDirectory;
+            var fileName = Path.Combine(folder, "ESMPulseDescriptorGeneratorInputs.csv");
+
+            inputs.WriteToJsonFile(fileName);
+
+            var inputs2 = JsonExtensionMethods.ReadFromJsonFile<ESMPulseDescriptorGeneratorInputs>(fileName);
+
+            // Assert
+            Assert.AreEqual(inputs, inputs2);
         }
     }
 }

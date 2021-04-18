@@ -1,5 +1,4 @@
 ﻿using SimulationInsight.Core;
-using System;
 using System.Diagnostics;
 
 namespace SimulationInsight.ESMPulseDescriptorGenerator.Console

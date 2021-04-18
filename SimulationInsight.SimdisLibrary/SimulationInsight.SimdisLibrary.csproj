@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
+    <ProjectReference Include="..\SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj" />
   </ItemGroup>
 
 </Project>

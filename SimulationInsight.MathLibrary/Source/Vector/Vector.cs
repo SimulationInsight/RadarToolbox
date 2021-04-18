@@ -6,6 +6,10 @@
 
         public double[] Data { get; init; }
 
+        public Vector()
+        {
+        }
+
         public Vector(int numberOfElements)
         {
             Data = new double[numberOfElements];
