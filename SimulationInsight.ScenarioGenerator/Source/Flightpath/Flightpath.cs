@@ -32,12 +32,21 @@ namespace SimulationInsight.ScenarioGenerator
         {
             var fp = FlightpathSettings;
 
+            var position = new XYZ()
+            {
+                X = fp.InitialPositionNorth,
+                Y = fp.InitialPositionEast,
+                Z = fp.InitialPositionDown
+            };
+
+            var lla = LLAConversions.ConvertXYZToLLA(position, LLAOrigin);
+
             var flightpathData = new FlightpathData()
             {
                 Time = time,
-                LatitudeDeg = LLAOrigin.LatitudeDeg,
-                LongitudeDeg = LLAOrigin.LongitudeDeg,
-                Altitude = -fp.InitialPositionDown,
+                LatitudeDeg = lla.LatitudeDeg,
+                LongitudeDeg = lla.LongitudeDeg,
+                Altitude = lla.Altitude,
                 PositionNorth = fp.InitialPositionNorth,
                 PositionEast = fp.InitialPositionEast,
                 PositionDown = fp.InitialPositionDown,

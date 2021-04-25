@@ -1,4 +1,6 @@
-﻿namespace SimulationInsight.MathLibrary
+﻿using static System.Math;
+
+namespace SimulationInsight.MathLibrary
 {
     public record NED
     {
@@ -17,6 +19,15 @@
             N = n;
             E = e;
             D = d;
+        }
+
+        public double Magnitude()
+        {
+            var magnitudeSquared = N * N + E * E + D * D;
+
+            var magnitude = Sqrt(magnitudeSquared);
+
+            return magnitude;
         }
 
         public static NED operator +(NED x, NED y)
