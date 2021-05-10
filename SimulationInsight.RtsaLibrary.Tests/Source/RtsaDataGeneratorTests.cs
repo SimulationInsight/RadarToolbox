@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimulationInsight.MathLibrary;
-using System.Linq;
 
 namespace SimulationInsight.RtsaLibrary.Tests
 {

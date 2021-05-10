@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Linq;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -36,7 +35,7 @@ namespace SimulationInsight.RtsaLibrary
 
         public void WriteData()
         {
-            foreach (var packetData in RtsaData.PacketData) 
+            foreach (var packetData in RtsaData.PacketData)
             {
                 WritePacketData(packetData);
 
@@ -75,7 +74,6 @@ namespace SimulationInsight.RtsaLibrary
                 case "DSFT":
                     RtsaWriterUtilities.WritePacketDataDSFT(Writer, (DSPStreamFileChunkTail)packetData);
                     break;
-
 
                 default:
                     throw new("Unknown Packet Type");

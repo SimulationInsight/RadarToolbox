@@ -22,7 +22,7 @@ namespace SimulationInsight.RtsaLibrary.Tests
             reader.Run();
 
             // Assert:
-          Assert.Inconclusive();
+            Assert.Inconclusive();
         }
     }
 }
