@@ -69,11 +69,11 @@ namespace SimulationInsight.RtsaLibrary
                     break;
 
                 case "STRT":
-                    RtsaWriterUtilities.WritePacketDataSTRT(Writer, packetData);
+                    RtsaWriterUtilities.WritePacketDataSTRT(Writer, (DSPStreamFileChunkStreamTail)packetData);
                     break;
 
                 case "DSFT":
-                    RtsaWriterUtilities.WritePacketDataDSFT(Writer, packetData);
+                    RtsaWriterUtilities.WritePacketDataDSFT(Writer, (DSPStreamFileChunkTail)packetData);
                     break;
 
 

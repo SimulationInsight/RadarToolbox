@@ -78,14 +78,30 @@ namespace SimulationInsight.RtsaLibrary
             WritePacketHeader(writer, packetData.PacketHeader);
         }
 
-        public static void WritePacketDataSTRT(BinaryWriter writer, IPacketData packetData)
+        public static void WritePacketDataSTRT(BinaryWriter writer, DSPStreamFileChunkStreamTail packetData)
         {
             WritePacketHeader(writer, packetData.PacketHeader);
+
+            writer.Write(packetData.StreamOffset);
+            writer.Write(packetData.SubStreamOffset);
+            writer.Write(packetData.PreviewOffset);
+            writer.Write(packetData.NumSamples);
+            writer.Write(packetData.PayloadSize);
+            writer.Write(packetData.PreviewLevels);
+            writer.Write(packetData.NumPreviews);
+            writer.Write(packetData.NumPreviewSegments);
+            writer.Write(packetData.EndTime);
+            writer.Write(packetData.AntennaOffset);
+            writer.Write(packetData.MetaDataOffset);
         }
 
-        public static void WritePacketDataDSFT(BinaryWriter writer, IPacketData packetData)
+        public static void WritePacketDataDSFT(BinaryWriter writer, DSPStreamFileChunkTail packetData)
         {
             WritePacketHeader(writer, packetData.PacketHeader);
+
+            writer.Write(packetData.CompletionTime);
+            writer.Write(packetData.StreamOffset);
+            writer.Write(packetData.NumStreams);
         }
     }
 }

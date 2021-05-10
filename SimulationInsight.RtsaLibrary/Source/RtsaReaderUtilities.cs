@@ -114,6 +114,17 @@ namespace SimulationInsight.RtsaLibrary
             var packetData = new DSPStreamFileChunkStreamTail
             {
                 PacketHeader = packetHeader,
+                StreamOffset = reader.ReadInt64(),
+                SubStreamOffset = reader.ReadInt64(),
+                PreviewOffset = reader.ReadInt64(),
+                NumSamples = reader.ReadUInt64(),
+                PayloadSize = reader.ReadUInt64(),
+                PreviewLevels = reader.ReadUInt32(),
+                NumPreviews = reader.ReadUInt32(),
+                NumPreviewSegments = reader.ReadUInt32(),
+                EndTime = reader.ReadDouble(),
+                AntennaOffset = reader.ReadInt64(),
+                MetaDataOffset = reader.ReadInt64()
             };
 
             return packetData;
