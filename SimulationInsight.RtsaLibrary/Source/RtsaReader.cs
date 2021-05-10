@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -55,10 +52,9 @@ namespace SimulationInsight.RtsaLibrary
 
             while (Reader.PeekChar() >= 0)
             {
-                packetHeader = ReadPackerHeader();
+                packetHeader = ReadPacketHeader();
                 packetData = ReadPacketData(packetHeader);
-
-                SkipToNextPacket(packetHeader);
+                packetData = SkipToNextPacket(packetData);
 
                 RtsaData.PacketHeaders.Add(packetHeader);
                 RtsaData.PacketData.Add(packetData);
@@ -67,9 +63,9 @@ namespace SimulationInsight.RtsaLibrary
             RtsaData.PacketTypes = RtsaData.PacketHeaders.Select(s => s.PacketString).ToList();
         }
 
-        public DSPStreamFileChunk ReadPackerHeader()
+        public DSPStreamFileChunk ReadPacketHeader()
         {
-            var packetHeader = RtsaReaderUtilities.ReadPackerHeader(Reader);
+            var packetHeader = RtsaReaderUtilities.ReadPacketHeader(Reader);
 
             return packetHeader;
         }
@@ -91,15 +87,17 @@ namespace SimulationInsight.RtsaLibrary
             return packetData;
         }
 
-        public void SkipToNextPacket(DSPStreamFileChunk packetHeader)
+        public IPacketData SkipToNextPacket(IPacketData packetData)
         {
-            var numberOfBytesRead = Reader.BaseStream.Position - packetHeader.PacketStartPosition;
+            var numberOfBytesRead = Reader.BaseStream.Position - packetData.PacketHeader.PacketStartPosition;
 
-            var numberOfBytesRequired = packetHeader.ChunkSize;
+            var numberOfBytesRequired = packetData.PacketHeader.ChunkSize;
 
             var numberOfBytesToSkip = numberOfBytesRequired - numberOfBytesRead;
 
-            Reader.ReadBytes((int)numberOfBytesToSkip);
+            packetData.ExtraData = Reader.ReadBytes((int)numberOfBytesToSkip);
+
+            return packetData;
         }
     }
 }

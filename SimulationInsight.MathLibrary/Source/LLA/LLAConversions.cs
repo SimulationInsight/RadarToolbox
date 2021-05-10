@@ -32,7 +32,7 @@ namespace SimulationInsight.MathLibrary
             var d = altitude - positionOrigin.Altitude;
 
             var uDeg = u.ToDegrees();
-            var lDeg = l.ToDegrees(); 
+            var lDeg = l.ToDegrees();
 
             var lla = new LLA()
             {

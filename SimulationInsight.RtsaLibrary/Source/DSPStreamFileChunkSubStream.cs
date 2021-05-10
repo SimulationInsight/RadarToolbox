@@ -1,10 +1,4 @@
-﻿using SimulationInsight.MathLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -15,6 +9,8 @@ namespace SimulationInsight.RtsaLibrary
         public UInt32 SubStreamID { get; set; }
 
         public Int64 SubStreamOffset { get; set; }
+
+        public byte[] XXX1 { get; set; }
 
         public double FrequencyStart { get; set; }
 
@@ -37,7 +33,5 @@ namespace SimulationInsight.RtsaLibrary
         public UInt64 AntennaID { get; set; }
 
         public UInt64 MetaDataID { get; set; }
-
-        public byte[] ExtraData { get; set; }
     }
 }

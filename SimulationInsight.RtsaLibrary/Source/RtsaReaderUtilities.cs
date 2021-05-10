@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace SimulationInsight.RtsaLibrary
 {
     public static class RtsaReaderUtilities
     {
-        public static DSPStreamFileChunk ReadPackerHeader(BinaryReader reader)
+        public static DSPStreamFileChunk ReadPacketHeader(BinaryReader reader)
         {
             var packetHeader = new DSPStreamFileChunk
             {
@@ -28,8 +23,8 @@ namespace SimulationInsight.RtsaLibrary
         {
             var packetData = new DSPStreamFileChunkHead
             {
-                 PacketHeader = packetHeader,
-                 CreationTime = reader.ReadDouble(),
+                PacketHeader = packetHeader,
+                CreationTime = reader.ReadDouble(),
             };
 
             return packetData;
@@ -56,7 +51,7 @@ namespace SimulationInsight.RtsaLibrary
                 StreamID = reader.ReadUInt64(),
                 SubStreamID = reader.ReadUInt32(),
                 SubStreamOffset = reader.ReadInt64(),
-                ExtraData = reader.ReadBytes(4),
+                XXX1 = reader.ReadBytes(4),
                 FrequencyStart = reader.ReadDouble(),
                 FrequencyStep = reader.ReadDouble(),
                 FrequencySpan = reader.ReadDouble(),
@@ -78,7 +73,28 @@ namespace SimulationInsight.RtsaLibrary
             var packetData = new DSPStreamFileChunkSamples
             {
                 PacketHeader = packetHeader,
+                StreamID = reader.ReadUInt64(),
+                SubStreamID = reader.ReadUInt32(),
+                SampleType = reader.ReadByte(),
+                SampleUnit = reader.ReadByte(),
+                PayloadType = reader.ReadByte(),
+                Compression = reader.ReadByte(),
+                PacketStartTime = reader.ReadDouble(),
+                PacketEndTime = reader.ReadDouble(),
+                PacketFlags = reader.ReadUInt32(),
+                SampleSize = reader.ReadUInt32(),
+                SampleDepth = reader.ReadUInt32(),
+                NumSamples = reader.ReadUInt32()
             };
+
+            var samples = new float[packetData.NumSamples];
+
+            for (int i = 0; i < packetData.NumSamples; i++)
+            {
+                samples[i] = reader.ReadSingle();
+            }
+
+            packetData.Samples = samples;
 
             return packetData;
         }
