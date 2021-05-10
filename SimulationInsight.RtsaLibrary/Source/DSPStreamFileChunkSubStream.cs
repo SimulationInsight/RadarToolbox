@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,5 +37,7 @@ namespace SimulationInsight.RtsaLibrary
         public UInt64 AntennaID { get; set; }
 
         public UInt64 MetaDataID { get; set; }
+
+        public byte[] ExtraData { get; set; }
     }
 }

@@ -56,6 +56,7 @@ namespace SimulationInsight.RtsaLibrary
                 StreamID = reader.ReadUInt64(),
                 SubStreamID = reader.ReadUInt32(),
                 SubStreamOffset = reader.ReadInt64(),
+                ExtraData = reader.ReadBytes(4),
                 FrequencyStart = reader.ReadDouble(),
                 FrequencyStep = reader.ReadDouble(),
                 FrequencySpan = reader.ReadDouble(),

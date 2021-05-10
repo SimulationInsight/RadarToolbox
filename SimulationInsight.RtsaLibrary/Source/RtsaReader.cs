@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
@@ -13,11 +14,7 @@ namespace SimulationInsight.RtsaLibrary
 
         public BinaryReader Reader { get; set; }
 
-        public List<DSPStreamFileChunk> PacketHeaders { get; set; }
-
-        public List<IPacketData> PacketData { get; set; }
-
-        public List<string> PacketTypes { get; set; }
+        public RtsaData RtsaData { get; set; }
 
         public RtsaReader()
         {
@@ -51,8 +48,7 @@ namespace SimulationInsight.RtsaLibrary
 
         public void ReadData()
         {
-            PacketHeaders = new List<DSPStreamFileChunk>();
-            PacketData = new List<IPacketData>();
+            RtsaData = new RtsaData();
 
             DSPStreamFileChunk packetHeader;
             IPacketData packetData;
@@ -64,9 +60,11 @@ namespace SimulationInsight.RtsaLibrary
 
                 SkipToNextPacket(packetHeader);
 
-                PacketHeaders.Add(packetHeader);
-                PacketData.Add(packetData);
+                RtsaData.PacketHeaders.Add(packetHeader);
+                RtsaData.PacketData.Add(packetData);
             }
+
+            RtsaData.PacketTypes = RtsaData.PacketHeaders.Select(s => s.PacketString).ToList();
         }
 
         public DSPStreamFileChunk ReadPackerHeader()
