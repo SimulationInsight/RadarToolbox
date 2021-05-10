@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -14,7 +15,7 @@ namespace SimulationInsight.RtsaLibrary
 
         public UInt16 HeaderSize { get; set; }
 
-        public string PacketString => System.Text.Encoding.Default.GetString(BitConverter.GetBytes(ChunkID));
+        public string PacketString { get => Encoding.Default.GetString(BitConverter.GetBytes(ChunkID)); set => ChunkID = BitConverter.ToUInt32(Encoding.ASCII.GetBytes(value)); }
 
         public long PacketStartPosition { get; set; }
     }
