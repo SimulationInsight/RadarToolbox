@@ -27,8 +27,8 @@ namespace SimulationInsight.RtsaLibrary
 
         public Int64 MetaDataOffset { get; set; }
 
-        public double EndTimeSeconds => EndTime / 1.0e6;
+        public double EndTimeSeconds { get => EndTime / 1.0e6; set => EndTime = value * 1.0e6; }
 
-        public DateTime EndTimeDateTime => DateTimeUtilities.ConvertUnixTimeToDataTime(EndTimeSeconds);
+        public DateTime EndTimeDateTime { get => EndTimeSeconds.FromUnixTime(); set => EndTimeSeconds = value.ToUnixTime(); }
     }
 }

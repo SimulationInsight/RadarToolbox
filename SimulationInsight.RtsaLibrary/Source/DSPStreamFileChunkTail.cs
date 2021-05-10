@@ -11,6 +11,8 @@ namespace SimulationInsight.RtsaLibrary
 
         public UInt32 NumStreams { get; set; }
 
-        public DateTime CompletionTimeDateTime => DateTimeUtilities.ConvertUnixTimeToDataTime(CompletionTime);
+        public double CompletionTimeSeconds { get => CompletionTime / 1.0e6; set => CompletionTime = value * 1.0e6; }
+
+        public DateTime CompletionTimeDateTime { get => CompletionTimeSeconds.FromUnixTime(); set => CompletionTimeSeconds = value.ToUnixTime(); }
     }
 }

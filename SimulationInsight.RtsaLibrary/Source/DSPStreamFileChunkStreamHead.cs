@@ -11,6 +11,6 @@ namespace SimulationInsight.RtsaLibrary
 
         public Int64 StreamOffset { get; set; }
 
-        public DateTime StartTimeDateTime => DateTimeUtilities.ConvertUnixTimeToDataTime(StartTime);
+        public DateTime StartTimeDateTime { get => StartTime.FromUnixTime(); set => StartTime = value.ToUnixTime(); }
     }
 }

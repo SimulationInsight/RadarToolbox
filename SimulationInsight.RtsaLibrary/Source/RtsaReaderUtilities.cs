@@ -87,9 +87,11 @@ namespace SimulationInsight.RtsaLibrary
                 NumSamples = reader.ReadUInt32()
             };
 
-            var samples = new float[packetData.NumSamples];
+            var nSamples = packetData.NumSamples * 2;
 
-            for (int i = 0; i < packetData.NumSamples; i++)
+            var samples = new float[nSamples];
+
+            for (int i = 0; i < nSamples; i++)
             {
                 samples[i] = reader.ReadSingle();
             }
