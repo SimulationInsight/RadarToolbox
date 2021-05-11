@@ -12,8 +12,8 @@ namespace SimulationInsight.RtsaLibrary.Tests
             // Arrange:
             var rfFrequencyCentre = 2.5e9;
             var sampleRate = 1.0e6;
-            var pulseWidth = 3.0;
-            var endTime = 10.0;
+            var pulseWidth = 10e-3;
+            var endTime = 20.0e-3;
 
             var signal = SignalGenerator.RectangularPulsedSignal(rfFrequencyCentre, sampleRate, pulseWidth, endTime);
 
@@ -35,8 +35,8 @@ namespace SimulationInsight.RtsaLibrary.Tests
             // Arrange:
             var rfFrequencyCentre = 2.5e9;
             var sampleRate = 1.0e6;
-            var pulseWidth = 3.0e-3;
-            var endTime = 10.0e-3;
+            var pulseWidth = 10e-3;
+            var endTime = 20.0e-3;
 
             var signal = SignalGenerator.RectangularPulsedSignal(rfFrequencyCentre, sampleRate, pulseWidth, endTime);
 
@@ -47,7 +47,7 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             dataGenerator.Run();
 
-            var outputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_2_Generated.rtsa";
 
             var writer = new RtsaWriter()
             {

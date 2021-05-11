@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -15,6 +16,13 @@ namespace SimulationInsight.RtsaLibrary
             PacketHeaders = new List<DSPStreamFileChunk>();
 
             PacketData = new List<IPacketData>();
+        }
+
+        public void UpdateData()
+        {
+            PacketHeaders = PacketData.Select(s => s.PacketHeader).ToList();
+
+            PacketTypes = PacketHeaders.Select(s => s.PacketString).ToList();
         }
     }
 }

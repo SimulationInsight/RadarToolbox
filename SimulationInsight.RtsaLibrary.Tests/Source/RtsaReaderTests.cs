@@ -6,11 +6,9 @@ namespace SimulationInsight.RtsaLibrary.Tests
     public class RtsaReaderTests
     {
         [TestMethod]
-        public void Run()
+        public void ReadFile()
         {
             // Arrange:
-            //var filePath = Path.Combine(Environment.CurrentDirectory, "IQ-Sample-Data-CW-Uncompressed.rtsa");
-
             var filePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed.rtsa";
 
             var reader = new RtsaReader()

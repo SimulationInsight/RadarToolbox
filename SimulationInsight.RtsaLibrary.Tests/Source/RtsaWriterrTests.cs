@@ -10,8 +10,8 @@ namespace SimulationInsight.RtsaLibrary.Tests
         public void WriteExactCopy()
         {
             // Arrange:
-            var inputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed.rtsa";
-            var outputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed_Output.rtsa";
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_Copy.rtsa";
 
             var reader = new RtsaReader()
             {
@@ -34,11 +34,11 @@ namespace SimulationInsight.RtsaLibrary.Tests
         }
 
         [TestMethod]
-        public void WriteReducedFile()
+        public void WriteFileWithoutPreview()
         {
             // Arrange:
-            var inputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed.rtsa";
-            var outputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed_Output2.rtsa";
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_NoPreview.rtsa";
 
             var reader = new RtsaReader()
             {
@@ -49,23 +49,12 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             var rtsaData = reader.RtsaData;
 
-            rtsaData.PacketData.RemoveAll(s => s.PacketHeader.PacketString == "SPRV");
-
-            var index = 403;
-            var count = rtsaData.PacketData.Count - index - 2;
-
-            rtsaData.PacketData.RemoveRange(index, count);
-
-            var p = (DSPStreamFileChunkSubStream)rtsaData.PacketData[2];
-
-            p.FrequencyStart = 4.5e9;
-            p.FrequencySpan = 20000000.0;
-            p.FrequencyStep = 20000000.0;
+            rtsaData = RtsaDataUtilities.RemoveSPRVData(rtsaData);
 
             var writer = new RtsaWriter()
             {
                 FilePath = outputFilePath,
-                RtsaData = reader.RtsaData,
+                RtsaData = rtsaData,
             };
 
             // Act:
@@ -76,11 +65,113 @@ namespace SimulationInsight.RtsaLibrary.Tests
         }
 
         [TestMethod]
-        public void WriteMinimumFile()
+        public void WriteReducedFileSAMP1()
         {
             // Arrange:
-            var inputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed.rtsa";
-            var outputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed_Blank.rtsa";
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP1.rtsa";
+            var numberOfSAMPPacketsToKeep = 1;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteReducedFileSAMP2()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP2.rtsa";
+            var numberOfSAMPPacketsToKeep = 2;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteReducedFileSAMP5()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP5.rtsa";
+            var numberOfSAMPPacketsToKeep = 5;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteReducedFileSAMP20()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP20.rtsa";
+            var numberOfSAMPPacketsToKeep = 20;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteReducedFileSAMP100()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP100.rtsa";
+            var numberOfSAMPPacketsToKeep = 100;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteReducedFileSAMP600()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_SAMP600.rtsa";
+            var numberOfSAMPPacketsToKeep = 600;
+
+            var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
+
+            // Act:
+            writer.Run();
+
+            // Assert:
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void WriteBlankFileSmall()
+        {
+            // Arrange:
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_Blank_Small.rtsa";
 
             var reader = new RtsaReader()
             {
@@ -89,28 +180,14 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             reader.Run();
 
-            var rtsaData = reader.RtsaData;
+            var numberOfSAMPPacketsToKeep = 1;
 
-            rtsaData.PacketData.RemoveAll(s => s.PacketHeader.PacketString == "SPRV");
-
-            var index = 103;
-            var count = rtsaData.PacketData.Count - index - 2;
-
-            rtsaData.PacketData.RemoveRange(index, count);
-
-            var p = (DSPStreamFileChunkSubStream)rtsaData.PacketData[2];
-
-            p.FrequencyStart = 4.5e9;
-
-            var p2 = (DSPStreamFileChunkStreamTail)rtsaData.PacketData[^2];
-
-            p2.NumSamples = 20000 * 100;
-            p2.PayloadSize = p2.NumSamples * 8;
+            var rtsaData = RtsaDataUtilities.PrepareFile(reader.RtsaData, numberOfSAMPPacketsToKeep);
 
             var writer = new RtsaWriter()
             {
                 FilePath = outputFilePath,
-                RtsaData = reader.RtsaData,
+                RtsaData = rtsaData,
             };
 
             // Act:
@@ -121,11 +198,11 @@ namespace SimulationInsight.RtsaLibrary.Tests
         }
 
         [TestMethod]
-        public void WriteMinimumFile2()
+        public void WriteBlankFileBig()
         {
             // Arrange:
-            var inputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed.rtsa";
-            var outputFilePath = @"C:\Aaronia\IQ-Sample-Data-CW-Uncompressed_Blank2.rtsa";
+            var inputFilePath = @"C:\Aaronia\Example_1_Raw.rtsa";
+            var outputFilePath = @"C:\Aaronia\Example_1_Blank_Big.rtsa";
 
             var reader = new RtsaReader()
             {
@@ -134,39 +211,14 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             reader.Run();
 
-            var rtsaData = reader.RtsaData;
+            var numberOfSAMPPacketsToKeep = 1;
 
-            rtsaData.PacketData.RemoveAll(s => s.PacketHeader.PacketString == "SPRV");
-
-            var index = 4;
-            var count = rtsaData.PacketData.Count - index - 2;
-
-            rtsaData.PacketData.RemoveRange(index, count);
-
-            var p = (DSPStreamFileChunkSubStream)rtsaData.PacketData[2];
-
-            p.FrequencyStart = 6.5e9;
-            p.FrequencySpan = 200000.0;
-            p.FrequencyStep = 200000.0;
-
-            var p3 = (DSPStreamFileChunkSamples)rtsaData.PacketData[3];
-
-            p3.NumSamples = 4000000;
-            p3.Samples = new float[p3.NumSamples * 2];
-
-            var sampleLength = p3.NumSamples / p.FrequencyStep;
-
-            p3.PacketEndTime = p3.PacketStartTime + sampleLength;
-
-            var p2 = (DSPStreamFileChunkStreamTail)rtsaData.PacketData[^2];
-
-            p2.NumSamples = p3.NumSamples;
-            p2.PayloadSize = p2.NumSamples * 8;
+            var rtsaData = RtsaDataUtilities.PrepareFile(reader.RtsaData, numberOfSAMPPacketsToKeep);
 
             var writer = new RtsaWriter()
             {
                 FilePath = outputFilePath,
-                RtsaData = reader.RtsaData,
+                RtsaData = rtsaData,
             };
 
             // Act:
@@ -174,6 +226,26 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             // Assert:
             Assert.Inconclusive();
+        }
+
+        public static RtsaWriter GenerateWriter(string inputFilePath, string outputFilePath, int numberOfSAMPPacketsToKeep)
+        {
+            var reader = new RtsaReader()
+            {
+                FilePath = inputFilePath
+            };
+
+            reader.Run();
+
+            var rtsaData = RtsaDataUtilities.PrepareFile(reader.RtsaData, numberOfSAMPPacketsToKeep);
+
+            var writer = new RtsaWriter()
+            {
+                FilePath = outputFilePath,
+                RtsaData = rtsaData,
+            };
+
+            return writer;
         }
     }
 }
