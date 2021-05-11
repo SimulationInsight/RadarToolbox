@@ -21,14 +21,12 @@ namespace SimulationInsight.RtsaLibrary
 
         public UInt32 NumPreviewSegments { get; set; }
 
+        public UInt32 XXX1 { get; set; }
+
         public double EndTime { get; set; }
 
         public Int64 AntennaOffset { get; set; }
 
         public Int64 MetaDataOffset { get; set; }
-
-        public double EndTimeSeconds { get => EndTime / 1.0e6; set => EndTime = value * 1.0e6; }
-
-        public DateTime EndTimeDateTime { get => EndTimeSeconds.FromUnixTime(); set => EndTimeSeconds = value.ToUnixTime(); }
     }
 }

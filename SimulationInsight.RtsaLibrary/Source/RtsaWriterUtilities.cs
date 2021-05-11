@@ -6,6 +6,8 @@ namespace SimulationInsight.RtsaLibrary
     {
         public static void WritePacketHeader(BinaryWriter writer, DSPStreamFileChunk packetHeader)
         {
+            packetHeader.PacketStartPosition = writer.BaseStream.Position;
+
             writer.Write(packetHeader.ChunkID);
             writer.Write(packetHeader.ChunkSize);
             writer.Write(packetHeader.ChunkFlags);
@@ -67,7 +69,7 @@ namespace SimulationInsight.RtsaLibrary
             writer.Write(packetData.SampleDepth);
             writer.Write(packetData.NumSamples);
 
-            for (int i = 0; i < packetData.NumSamples; i++)
+            for (int i = 0; i < packetData.NumSamples*2; i++)
             {
                 writer.Write(packetData.Samples[i]);
             }
@@ -82,6 +84,8 @@ namespace SimulationInsight.RtsaLibrary
         {
             WritePacketHeader(writer, packetData.PacketHeader);
 
+            packetData.PreviewOffset = packetData.PacketHeader.PacketStartPosition - 4048;
+
             writer.Write(packetData.StreamOffset);
             writer.Write(packetData.SubStreamOffset);
             writer.Write(packetData.PreviewOffset);
@@ -90,6 +94,7 @@ namespace SimulationInsight.RtsaLibrary
             writer.Write(packetData.PreviewLevels);
             writer.Write(packetData.NumPreviews);
             writer.Write(packetData.NumPreviewSegments);
+            writer.Write(packetData.XXX1);
             writer.Write(packetData.EndTime);
             writer.Write(packetData.AntennaOffset);
             writer.Write(packetData.MetaDataOffset);
@@ -98,6 +103,8 @@ namespace SimulationInsight.RtsaLibrary
         public static void WritePacketDataDSFT(BinaryWriter writer, DSPStreamFileChunkTail packetData)
         {
             WritePacketHeader(writer, packetData.PacketHeader);
+
+            packetData.StreamOffset = packetData.PacketHeader.PacketStartPosition - 104;
 
             writer.Write(packetData.CompletionTime);
             writer.Write(packetData.StreamOffset);

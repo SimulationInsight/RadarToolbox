@@ -172,18 +172,19 @@ namespace SimulationInsight.RtsaLibrary
             var packetData = new DSPStreamFileChunkStreamTail()
             {
                 PacketHeader = packetHeader,
-                StreamOffset = 0,
-                SubStreamOffset = 0,
+                StreamOffset = 24,
+                SubStreamOffset = 72,
                 PreviewOffset = 0,
                 NumSamples = (UInt64)Signal.NumberOfSamples,
-                PayloadSize = 0,
-                PreviewLevels = 0,
-                NumPreviews = 0,
-                NumPreviewSegments = 0,
-                EndTimeDateTime = DateTime.Now,
+                PayloadSize = (UInt64)Signal.NumberOfSamples * 8,
+                PreviewLevels = 2,
+                NumPreviews = 32,
+                NumPreviewSegments = 502,
+                XXX1 = 437,
+                EndTime = Signal.EndTime,
                 AntennaOffset = 0,
                 MetaDataOffset = 0,
-                ExtraData = new byte[12]
+                ExtraData = new byte[8] {2, 0, 0, 0, 2, 0, 0, 0}
             };
 
             RtsaData.PacketData.Add(packetData);
@@ -206,7 +207,7 @@ namespace SimulationInsight.RtsaLibrary
                 CompletionTimeDateTime = DateTime.Now,
                 StreamOffset = 0,
                 NumStreams = 1,
-                ExtraData = new byte[4]
+                ExtraData = new byte[4] { 181, 1, 0, 0 }
             };
 
             RtsaData.PacketData.Add(packetData);

@@ -124,6 +124,7 @@ namespace SimulationInsight.RtsaLibrary
                 PreviewLevels = reader.ReadUInt32(),
                 NumPreviews = reader.ReadUInt32(),
                 NumPreviewSegments = reader.ReadUInt32(),
+                XXX1 = reader.ReadUInt32(),
                 EndTime = reader.ReadDouble(),
                 AntennaOffset = reader.ReadInt64(),
                 MetaDataOffset = reader.ReadInt64()
