@@ -68,6 +68,7 @@ namespace SimulationInsight.RtsaLibrary
             writer.Write(packetData.SampleSize);
             writer.Write(packetData.SampleDepth);
             writer.Write(packetData.NumSamples);
+            writer.Write(packetData.XXX1);
 
             for (int i = 0; i < packetData.NumSamples*2; i++)
             {

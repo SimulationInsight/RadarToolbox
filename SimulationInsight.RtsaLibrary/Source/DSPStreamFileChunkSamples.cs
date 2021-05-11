@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -27,6 +28,8 @@ namespace SimulationInsight.RtsaLibrary
         public UInt32 SampleDepth { get; set; }
 
         public UInt32 NumSamples { get; set; }
+
+        public byte[] XXX1 { get; set; }
 
         public float[] Samples { get; set; }
     }

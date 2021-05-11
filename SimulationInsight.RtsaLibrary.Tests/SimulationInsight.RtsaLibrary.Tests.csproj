@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
     <ProjectReference Include="..\SimulationInsight.RtsaLibrary\SimulationInsight.RtsaLibrary.csproj" />
   </ItemGroup>
 

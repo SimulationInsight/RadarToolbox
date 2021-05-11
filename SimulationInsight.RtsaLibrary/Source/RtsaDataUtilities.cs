@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimulationInsight.MathLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,35 +10,32 @@ namespace SimulationInsight.RtsaLibrary
 {
     public static class RtsaDataUtilities
     {
-        public static RtsaData PrepareFile(RtsaData rtsaData, int numberOfSAMPPacketsToKeep)
+        public static void PrepareFile(RtsaData rtsaData, int numberOfSAMPPacketsToKeep)
         {
-            rtsaData = RemoveSPRVData(rtsaData);
-            rtsaData = RemoveSAMPData(rtsaData, numberOfSAMPPacketsToKeep);
-            rtsaData = RepairFile(rtsaData);
-
-            return rtsaData;
+            RemoveSPRVData(rtsaData);
+            RemoveSAMPData(rtsaData, numberOfSAMPPacketsToKeep);
+            RepairFile(rtsaData);
+            rtsaData.UpdateData();
         }
 
-        public static RtsaData RemoveSPRVData(RtsaData rtsaData)
+        public static void RemoveSPRVData(RtsaData rtsaData)
         {
             rtsaData.PacketData.RemoveAll(s => s.PacketHeader.PacketString == "SPRV");
 
             rtsaData.UpdateData();
-
-            return rtsaData;
         }
 
-        public static RtsaData RemoveSAMPData(RtsaData rtsaData, int numberOfSAMPPacketsToKeep)
+        public static void RemoveSAMPData(RtsaData rtsaData, int numberOfSAMPPacketsToKeep)
         {
             var index = 3 + numberOfSAMPPacketsToKeep;
             var count = rtsaData.PacketData.Count - index - 2;
 
             rtsaData.PacketData.RemoveRange(index, count);
 
-            return rtsaData;
+            rtsaData.UpdateData();
         }
 
-        public static RtsaData RepairFile(RtsaData rtsaData)
+        public static void RepairFile(RtsaData rtsaData)
         {
             var sampleData = rtsaData.PacketData.Where(s => s.PacketHeader.PacketString == "SAMP").Cast<DSPStreamFileChunkSamples>();
 
@@ -50,7 +48,46 @@ namespace SimulationInsight.RtsaLibrary
             p.NumSamples = totalSamples;
             p.PayloadSize = totalSamples * 8;
 
-            return rtsaData;
+            rtsaData.UpdateData();
+        }
+
+        public static void UpdateWithSignalData(RtsaData rtsaData, Signal signal)
+        {
+            var samplePackets = rtsaData.PacketData.Where(s => s.PacketHeader.PacketString == "SAMP").Cast<DSPStreamFileChunkSamples>();
+
+            foreach (var p in samplePackets)
+            {
+                p.NumSamples = (UInt32)signal.NumberOfSamples;
+                p.Samples = signal.GetSampleDataFloat();
+                p.PacketEndTime = p.PacketStartTime + signal.EndTime;
+            }
+
+            RepairFile(rtsaData);
+        }
+
+        public static void UpdateWithSignalData(RtsaData rtsaData, List<Signal> signals)
+        {
+            var samplePackets = rtsaData.PacketData.Where(s => s.PacketHeader.PacketString == "SAMP").Cast<DSPStreamFileChunkSamples>();
+
+            var numSignals = signals.Count;
+
+            var index = 0;
+
+            Signal signal;
+
+            foreach (var p in samplePackets)
+            {
+                signal = signals[index];
+
+                index++;
+                _ = Math.DivRem(index, numSignals, out index);
+
+                p.NumSamples = (UInt32)signal.NumberOfSamples;
+                p.Samples = signal.GetSampleDataFloat();
+                p.PacketEndTime = p.PacketStartTime + signal.EndTime;
+            }
+
+            RepairFile(rtsaData);
         }
     }
 }

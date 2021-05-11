@@ -84,7 +84,8 @@ namespace SimulationInsight.RtsaLibrary
                 PacketFlags = reader.ReadUInt32(),
                 SampleSize = reader.ReadUInt32(),
                 SampleDepth = reader.ReadUInt32(),
-                NumSamples = reader.ReadUInt32()
+                NumSamples = reader.ReadUInt32(),
+                XXX1 = reader.ReadBytes(8),
             };
 
             var nSamples = packetData.NumSamples * 2;

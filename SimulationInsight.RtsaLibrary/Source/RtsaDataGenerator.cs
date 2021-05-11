@@ -1,5 +1,6 @@
 ﻿using SimulationInsight.MathLibrary;
 using System;
+using System.Security.Cryptography;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -151,8 +152,9 @@ namespace SimulationInsight.RtsaLibrary
                 SampleUnit = 2,
                 PacketStartTime = Signal.StartTime,
                 PacketEndTime = Signal.EndTime,
+                XXX1 = new byte[8],
                 Samples = Samples,
-                ExtraData = new byte[8]
+                ExtraData = Array.Empty<byte>()
             };
 
             RtsaData.PacketData.Add(packetData);
