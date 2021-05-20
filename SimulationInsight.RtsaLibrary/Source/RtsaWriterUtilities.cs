@@ -70,7 +70,7 @@ namespace SimulationInsight.RtsaLibrary
             writer.Write(packetData.NumSamples);
             writer.Write(packetData.XXX1);
 
-            for (int i = 0; i < packetData.NumSamples*2; i++)
+            for (int i = 0; i < packetData.NumSamples * 2; i++)
             {
                 writer.Write(packetData.Samples[i]);
             }

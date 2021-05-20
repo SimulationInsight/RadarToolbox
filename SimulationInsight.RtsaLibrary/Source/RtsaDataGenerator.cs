@@ -1,6 +1,5 @@
 ﻿using SimulationInsight.MathLibrary;
 using System;
-using System.Security.Cryptography;
 
 namespace SimulationInsight.RtsaLibrary
 {
@@ -186,7 +185,7 @@ namespace SimulationInsight.RtsaLibrary
                 EndTime = Signal.EndTime,
                 AntennaOffset = 0,
                 MetaDataOffset = 0,
-                ExtraData = new byte[8] {2, 0, 0, 0, 2, 0, 0, 0}
+                ExtraData = new byte[8] { 2, 0, 0, 0, 2, 0, 0, 0 }
             };
 
             RtsaData.PacketData.Add(packetData);

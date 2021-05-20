@@ -1,7 +1,5 @@
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Host;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimulationInsight.MathLibrary;
-using System;
 using System.Collections.Generic;
 
 namespace SimulationInsight.RtsaLibrary.Tests
@@ -197,7 +195,7 @@ namespace SimulationInsight.RtsaLibrary.Tests
             var writer = GenerateWriter(inputFilePath, outputFilePath, numberOfSAMPPacketsToKeep);
 
             var rtsaData = writer.RtsaData;
-            
+
             var signal = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6, 10.0e-3, 20.0e-3);
 
             RtsaDataUtilities.UpdateWithSignalData(rtsaData, signal);
@@ -221,10 +219,10 @@ namespace SimulationInsight.RtsaLibrary.Tests
 
             var rtsaData = writer.RtsaData;
 
-            var signal1 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6,  1.0e-3, 20.0e-3);
-            var signal2 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6,  0.0e-3, 20.0e-3);
-            var signal3 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6,  0.0e-3, 20.0e-3);
-            var signal4 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6,  0.0e-3, 20.0e-3);
+            var signal1 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6, 1.0e-3, 20.0e-3);
+            var signal2 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6, 0.0e-3, 20.0e-3);
+            var signal3 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6, 0.0e-3, 20.0e-3);
+            var signal4 = SignalGenerator.RectangularPulsedSignal(5.5e9, 1.0e6, 0.0e-3, 20.0e-3);
 
             var signals = new List<Signal>() { signal1, signal2, signal3, signal4 };
 
@@ -247,7 +245,7 @@ namespace SimulationInsight.RtsaLibrary.Tests
             reader.Run();
 
             var rtsaData = reader.RtsaData;
-            
+
             RtsaDataUtilities.PrepareFile(rtsaData, numberOfSAMPPacketsToKeep);
 
             var writer = new RtsaWriter()

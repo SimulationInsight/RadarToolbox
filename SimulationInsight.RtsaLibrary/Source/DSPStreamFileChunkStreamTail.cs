@@ -1,5 +1,4 @@
-﻿using SimulationInsight.MathLibrary;
-using System;
+﻿using System;
 
 namespace SimulationInsight.RtsaLibrary
 {
