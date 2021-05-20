@@ -10,7 +10,7 @@ namespace SimulationInsight.MathLibrary.Tests
         public void ConvertFromUnixTimeAndBack()
         {
             // Arrange:
-            var dateTime1 = new DateTime(2021, 01, 01, 10, 40, 00, DateTimeKind.Utc);
+            var dateTime1 = new DateTime(2021, 05, 01, 10, 40, 00, DateTimeKind.Utc);
 
             dateTime1 = dateTime1.AddMilliseconds(123);
 

@@ -8,7 +8,7 @@ namespace SimulationInsight.MathLibrary
         {
             var unixEpochTimeSeconds = (int)unixTime;
             var unixEpochTimeRemainder = Math.IEEERemainder(unixTime, 1.0);
-            var unixEpochTimeMilliseconds = (int)(unixEpochTimeRemainder * 1e6);
+            var unixEpochTimeMilliseconds = Math.Round(unixEpochTimeRemainder * 1e3);
 
             var dateTime = new DateTime(1970, 1, 1).AddSeconds(unixEpochTimeSeconds);
 
