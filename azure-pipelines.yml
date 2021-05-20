@@ -28,5 +28,5 @@ steps:
     command: test
     projects: |
      **/*Tests/*.csproj 
-     !**/*Tests/*Database*.csproj
+     !**/*Tests/*Rtsa*.csproj
     arguments: '--configuration $(buildConfiguration)'
