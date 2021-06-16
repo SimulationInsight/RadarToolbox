@@ -25,7 +25,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator.Tests
 
             var e = new ESMPulseDescriptorGenerator()
             {
-                ESMPulseDescriptorGeneratorInputs = inputs
+                Inputs = inputs
             };
 
             var expectedNumberOfPulses = 51374;
@@ -54,7 +54,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator.Tests
 
             var e = new ESMPulseDescriptorGenerator()
             {
-                ESMPulseDescriptorGeneratorInputs = inputs
+                Inputs = inputs
             };
 
             var folder = Environment.CurrentDirectory;

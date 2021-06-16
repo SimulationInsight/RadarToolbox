@@ -49,7 +49,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator.Console
 
             var e = new ESMPulseDescriptorGenerator()
             {
-                ESMPulseDescriptorGeneratorInputs = i
+                Inputs = i
             };
 
             Logger.Information("Running ESMPulseDescriptorGenerator");

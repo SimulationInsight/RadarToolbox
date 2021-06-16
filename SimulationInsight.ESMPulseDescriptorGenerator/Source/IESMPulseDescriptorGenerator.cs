@@ -4,7 +4,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 {
     public interface IESMPulseDescriptorGenerator
     {
-        ESMPulseDescriptorGeneratorInputs ESMPulseDescriptorGeneratorInputs { get; set; }
+        ESMPulseDescriptorGeneratorInputs Inputs { get; set; }
 
         PulseDescriptorData PulseDescriptorData { get; set; }
 

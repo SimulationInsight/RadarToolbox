@@ -6,13 +6,13 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 {
     public class ESMPulseDescriptorGenerator : IESMPulseDescriptorGenerator
     {
-        public ESMPulseDescriptorGeneratorInputs ESMPulseDescriptorGeneratorInputs { get; set; }
+        public ESMPulseDescriptorGeneratorInputs Inputs { get; set; }
 
         public PulseDescriptorData PulseDescriptorData { get; set; }
 
         public void GeneratePulseDescriptorData()
         {
-            var currentTime = ESMPulseDescriptorGeneratorInputs.StartTime;
+            var currentTime = Inputs.StartTime;
 
             var pulseId = 0;
 
@@ -21,13 +21,14 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
                 PulseDescriptors = new List<PulseDescriptor>()
             };
 
-            while (currentTime <= ESMPulseDescriptorGeneratorInputs.EndTime)
+            while (currentTime <= Inputs.EndTime)
             {
                 pulseId++;
 
-                var pw = ESMPulseDescriptorGeneratorInputs.PulseWidth.GetCircularValue(pulseId);
-                var prf = ESMPulseDescriptorGeneratorInputs.PulseRepetitionFrequency.GetCircularValue(pulseId);
-                var rfCentre = ESMPulseDescriptorGeneratorInputs.FrequencyCentre.GetCircularValue(pulseId);
+                var pw = Inputs.PulseWidth.GetCircularValue(pulseId);
+                var prf = Inputs.PulseRepetitionFrequency.GetCircularValue(pulseId);
+                var rfCentre = Inputs.FrequencyCentre.GetCircularValue(pulseId);
+                var rfBandwidth = Inputs.FrequencyBandwidth.GetCircularValue(pulseId);
 
                 var pri = 1.0 / prf;
 
@@ -36,11 +37,18 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 
                 var p = new PulseDescriptor()
                 {
+                    RadarId = 1,
                     PulseId = pulseId,
                     PulseTimeStart = pulseTimeStart,
                     PulseTimeEnd = pulseTimeEnd,
                     PulseWidth = pw,
-                    FrequencyStart = rfCentre
+                    FrequencyStart = rfCentre - rfBandwidth / 2.0,
+                    FrequencyEnd = rfCentre + rfBandwidth / 2.0,
+                    PulseModulationType = 1.0,
+                    SignalPower = 20.0,
+                    SignalToNoiseRatio = 10.0,
+                    AzimuthAngleDeg = 10.0,
+                    ElevationAngleDeg = 20.0
                 };
 
                 currentTime += pri;
