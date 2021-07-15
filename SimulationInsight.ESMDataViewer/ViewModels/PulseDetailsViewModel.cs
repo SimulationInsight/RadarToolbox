@@ -7,25 +7,33 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using SimulationInsight.ESMDataViewer.Contracts.ViewModels;
 using SimulationInsight.ESMDataViewer.Core.Contracts.Services;
 using SimulationInsight.ESMDataViewer.Core.Models;
+using SimulationInsight.ESMDataViewer.Models;
+using SimulationInsight.ESMLibrary;
 
 namespace SimulationInsight.ESMDataViewer.ViewModels
 {
     public class PulseDetailsViewModel : ObservableRecipient, INavigationAware
     {
         private readonly ISampleDataService _sampleDataService;
-        private SampleOrder _selected;
 
-        public SampleOrder Selected
+        private readonly IESMDataService _esmDataService;
+
+        public ObservableCollection<ESMPulseDescriptor> Source { get; } = new ObservableCollection<ESMPulseDescriptor>();
+
+        private ESMPulseDescriptor _selected;
+
+        public ESMPulseDescriptor Selected
         {
             get { return _selected; }
             set { SetProperty(ref _selected, value); }
         }
 
-        public ObservableCollection<SampleOrder> SampleItems { get; private set; } = new ObservableCollection<SampleOrder>();
+        public ObservableCollection<ESMPulseDescriptor> SampleItems { get; private set; } = new ObservableCollection<ESMPulseDescriptor>();
 
-        public PulseDetailsViewModel(ISampleDataService sampleDataService)
+        public PulseDetailsViewModel(ISampleDataService sampleDataService, IESMDataService esmDataService)
         {
             _sampleDataService = sampleDataService;
+            _esmDataService = esmDataService;
         }
 
         public async void OnNavigatedTo(object parameter)
@@ -33,7 +41,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
             SampleItems.Clear();
 
             // Replace this with your actual data
-            var data = await _sampleDataService.GetListDetailsDataAsync();
+            var data = _esmDataService.TrackData.Tracks[0].PulseDescriptors;
 
             foreach (var item in data)
             {
