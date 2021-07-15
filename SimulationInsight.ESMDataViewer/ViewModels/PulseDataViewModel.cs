@@ -6,6 +6,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using SimulationInsight.ESMDataViewer.Contracts.ViewModels;
 using SimulationInsight.ESMDataViewer.Core.Contracts.Services;
 using SimulationInsight.ESMDataViewer.Core.Models;
+using SimulationInsight.ESMDataViewer.Models;
+using SimulationInsight.ESMLibrary;
 
 namespace SimulationInsight.ESMDataViewer.ViewModels
 {
@@ -13,19 +15,21 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
     {
         private readonly ISampleDataService _sampleDataService;
 
-        public ObservableCollection<SampleOrder> Source { get; } = new ObservableCollection<SampleOrder>();
+        private readonly IESMDataService _esmDataService;
 
-        public PulseDataViewModel(ISampleDataService sampleDataService)
+        public ObservableCollection<ESMPulseDescriptor> Source { get; } = new ObservableCollection<ESMPulseDescriptor>();
+
+        public PulseDataViewModel(ISampleDataService sampleDataService, IESMDataService esmDataService)
         {
             _sampleDataService = sampleDataService;
+            _esmDataService = esmDataService;
         }
 
         public async void OnNavigatedTo(object parameter)
         {
             Source.Clear();
-
-            // Replace this with your actual data
-            var data = await _sampleDataService.GetGridDataAsync();
+            
+            var data = _esmDataService.TrackData.Tracks[0].PulseDescriptors;
 
             foreach (var item in data)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimulationInsight.ESMDataViewer.Models
 {
-    public class IESMDataService
+    public interface IESMDataService
     {
         ESMTrackData TrackData { get; set; }
     }

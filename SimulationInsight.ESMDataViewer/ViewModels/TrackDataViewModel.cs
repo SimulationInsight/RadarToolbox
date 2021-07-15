@@ -5,8 +5,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 using SimulationInsight.ESMDataViewer.Contracts.ViewModels;
 using SimulationInsight.ESMDataViewer.Core.Contracts.Services;
-using SimulationInsight.ESMDataViewer.Core.Models;
 using SimulationInsight.ESMDataViewer.Models;
+using SimulationInsight.ESMLibrary;
 
 namespace SimulationInsight.ESMDataViewer.ViewModels
 {
@@ -16,7 +16,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
 
         private readonly IESMDataService _esmDataService;
 
-        public ObservableCollection<SampleOrder> Source { get; } = new ObservableCollection<SampleOrder>();
+        public ObservableCollection<ESMTrack> Source { get; } = new ObservableCollection<ESMTrack>();
 
         public TrackDataViewModel(ISampleDataService sampleDataService, IESMDataService esmDataService)
         {
@@ -28,8 +28,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
         {
             Source.Clear();
 
-            // Replace this with your actual data
-            var data = await _sampleDataService.GetGridDataAsync();
+            var data = _esmDataService.TrackData.Tracks;
 
             foreach (var item in data)
             {

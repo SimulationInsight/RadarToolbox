@@ -10,7 +10,7 @@ namespace SimulationInsight.ESMDataViewer.Models
 {
     public class ESMDataService : IESMDataService
     {
-        public ESMTrackData ESMTrackData { get; set; }
+        public ESMTrackData TrackData { get; set; }
 
         public ESMDataService()
         {
@@ -19,7 +19,7 @@ namespace SimulationInsight.ESMDataViewer.Models
 
         public void GetESMData()
         {
-            ESMTrackData = ESMTrackListExamples.GenerateESMTrackListMultiple();
+            TrackData = ESMTrackListExamples.GenerateESMTrackListMultiple();
         }
     }
 }
