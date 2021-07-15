@@ -1,9 +1,8 @@
-﻿using SimulationInsight.MathLibrary;
-using static SimulationInsight.MathLibrary.PhysicalConstants;
+﻿using static SimulationInsight.MathLibrary.PhysicalConstants;
 using static SimulationInsight.MathLibrary.UnitConversions;
 using static System.Math;
 
-namespace PhysicalInsight.MathLibrary
+namespace SimulationInsight.MathLibrary
 {
     public static class UnitConversionMethods
     {

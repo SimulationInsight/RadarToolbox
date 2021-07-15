@@ -1,6 +1,4 @@
-﻿using PhysicalInsight.MathLibrary;
-
-namespace SimulationInsight.MathLibrary
+﻿namespace SimulationInsight.MathLibrary
 {
     public record LLA
     {

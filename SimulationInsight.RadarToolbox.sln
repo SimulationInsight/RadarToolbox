@@ -27,9 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.SimdisLib
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.SimdisLibrary.Tests", "SimulationInsight.SimdisLibrary.Tests\SimulationInsight.SimdisLibrary.Tests.csproj", "{6BD9E2A1-7338-46EB-97E3-F8966A08E27E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.RtsaLibrary", "SimulationInsight.RtsaLibrary\SimulationInsight.RtsaLibrary.csproj", "{5D9AE202-5C5D-4FDD-BF57-F05215459076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RtsaLibrary", "SimulationInsight.RtsaLibrary\SimulationInsight.RtsaLibrary.csproj", "{5D9AE202-5C5D-4FDD-BF57-F05215459076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.RtsaLibrary.Tests", "SimulationInsight.RtsaLibrary.Tests\SimulationInsight.RtsaLibrary.Tests.csproj", "{A1A1EF69-8921-4125-9FB9-76E76A9931E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RtsaLibrary.Tests", "SimulationInsight.RtsaLibrary.Tests\SimulationInsight.RtsaLibrary.Tests.csproj", "{A1A1EF69-8921-4125-9FB9-76E76A9931E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMTrackGenerator", "SimulationInsight.ESMTrackGenerator\SimulationInsight.ESMTrackGenerator.csproj", "{E467124F-D0F0-4DD5-93EF-8648E679994E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ESMTrackGenerator.Tests", "SimulationInsight.ESMTrackGenerator.Tests\SimulationInsight.ESMTrackGenerator.Tests.csproj", "{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{A1A1EF69-8921-4125-9FB9-76E76A9931E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1A1EF69-8921-4125-9FB9-76E76A9931E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1A1EF69-8921-4125-9FB9-76E76A9931E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E467124F-D0F0-4DD5-93EF-8648E679994E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E467124F-D0F0-4DD5-93EF-8648E679994E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E467124F-D0F0-4DD5-93EF-8648E679994E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E467124F-D0F0-4DD5-93EF-8648E679994E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

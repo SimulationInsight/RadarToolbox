@@ -2,9 +2,9 @@
 
 namespace SimulationInsight.ESMLibrary
 {
-    public record PulseDescriptorData
+    public record ESMPulseDescriptorData
     {
-        public List<PulseDescriptor> PulseDescriptors { get; init; }
+        public List<ESMPulseDescriptor> PulseDescriptors { get; init; }
 
         public int NumberOfPulses => PulseDescriptors.Count;
     }

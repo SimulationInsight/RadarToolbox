@@ -1,5 +1,4 @@
-﻿using PhysicalInsight.MathLibrary;
-using static System.Math;
+﻿using static System.Math;
 
 namespace SimulationInsight.MathLibrary
 {

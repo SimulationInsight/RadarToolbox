@@ -12,7 +12,7 @@ namespace SimulationInsight.ESMLibrary.Tests
             var expectedFrequencyBandwidth = 40.0e6;
 
             // Act:
-            var p = new PulseDescriptor()
+            var p = new ESMPulseDescriptor()
             {
                 FrequencyStart = 9.0e9,
                 FrequencyEnd = 8.96e9
