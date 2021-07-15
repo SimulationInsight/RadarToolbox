@@ -12,7 +12,7 @@ namespace SimulationInsight.ESMTrackGenerator
     {
         public List<ESMPulseDescriptorGeneratorInputs> ESMPulseDescriptorGeneratorInputs { get; set; }
 
-        public ESMTrackList ESMTrackList { get; set; }
+        public ESMTrackData ESMTrackList { get; set; }
 
         public bool IsGenerateIQSignals { get; set; }
 
@@ -22,7 +22,7 @@ namespace SimulationInsight.ESMTrackGenerator
         {
             var trackId = 0;
 
-            ESMTrackList = new ESMTrackList();
+            ESMTrackList = new ESMTrackData();
 
             foreach (var inputs in ESMPulseDescriptorGeneratorInputs)
             {

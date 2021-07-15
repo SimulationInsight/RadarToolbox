@@ -10,7 +10,7 @@ namespace SimulationInsight.ESMTrackGenerator
 {
     public static class ESMTrackListExamples
     {
-        public static ESMTrackList GenerateESMTrackListSingle()
+        public static ESMTrackData GenerateESMTrackListSingle()
         {
             var inputs = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
 
@@ -28,7 +28,7 @@ namespace SimulationInsight.ESMTrackGenerator
             return generator.ESMTrackList;
         }
 
-        public static ESMTrackList GenerateESMTrackListMultiple()
+        public static ESMTrackData GenerateESMTrackListMultiple()
         {
             var inputs1 = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
             var inputs2 = ESMPulseDescriptorGeneratorInputsFactory.Example_2();
