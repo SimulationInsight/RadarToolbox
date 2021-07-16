@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RtsaLibra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RtsaLibrary.Tests", "SimulationInsight.RtsaLibrary.Tests\SimulationInsight.RtsaLibrary.Tests.csproj", "{A1A1EF69-8921-4125-9FB9-76E76A9931E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMTrackGenerator", "SimulationInsight.ESMTrackGenerator\SimulationInsight.ESMTrackGenerator.csproj", "{E467124F-D0F0-4DD5-93EF-8648E679994E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMDataGenerator", "SimulationInsight.ESMDataGenerator\SimulationInsight.ESMDataGenerator.csproj", "{E467124F-D0F0-4DD5-93EF-8648E679994E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMTrackGenerator.Tests", "SimulationInsight.ESMTrackGenerator.Tests\SimulationInsight.ESMTrackGenerator.Tests.csproj", "{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.ESMDataGenerator.Tests", "SimulationInsight.ESMDataGenerator.Tests\SimulationInsight.ESMDataGenerator.Tests.csproj", "{CEE101E1-D78E-47C1-8D8F-9E59A99B3B8C}"
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "SimulationInsight.ESMDataViewer (Package)", "SimulationInsight.ESMDataViewer (Package)\SimulationInsight.ESMDataViewer (Package).wapproj", "{C3B21347-440B-41AD-9097-5878AE4C3688}"
 EndProject

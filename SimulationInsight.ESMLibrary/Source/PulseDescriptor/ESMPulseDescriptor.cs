@@ -54,5 +54,7 @@ namespace SimulationInsight.ESMLibrary
         public double AzimuthAngleDeg { get; init; }
 
         public double ElevationAngleDeg { get; init; }
+
+        public IQSignal Signal { get; set; }
     }
 }

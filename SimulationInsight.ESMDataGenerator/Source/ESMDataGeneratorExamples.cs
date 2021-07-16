@@ -6,29 +6,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulationInsight.ESMTrackGenerator
+namespace SimulationInsight.ESMDataGenerator
 {
-    public static class ESMTrackListExamples
+    public static class ESMDataGeneratorExamples
     {
-        public static ESMTrackData GenerateESMTrackListSingle()
+        public static ESMData GenerateESMDataSingle()
         {
             var inputs = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
 
             inputs = inputs with { EndTime = 0.015 };
 
-            var generator = new ESMTrackGenerator()
+            var generator = new ESMDataGenerator()
             {
                 ESMPulseDescriptorGeneratorInputs = new() { inputs },
                 IsGenerateIQSignals = true,
                 SampleRate = 100.0e6
             };
 
-            generator.GenerateESMTrackList();
+            generator.GenerateESMData();
 
-            return generator.ESMTrackList;
+            return generator.ESMData;
         }
 
-        public static ESMTrackData GenerateESMTrackListMultiple()
+        public static ESMData GenerateESMDataMultiple()
         {
             var inputs1 = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
             var inputs2 = ESMPulseDescriptorGeneratorInputsFactory.Example_2();
@@ -36,16 +36,16 @@ namespace SimulationInsight.ESMTrackGenerator
             inputs1 = inputs1 with { EndTime = 0.015 };
             inputs2 = inputs2 with { EndTime = 0.015 };
 
-            var generator = new ESMTrackGenerator()
+            var generator = new ESMDataGenerator()
             {
                 ESMPulseDescriptorGeneratorInputs = new() { inputs1, inputs2 },
                 IsGenerateIQSignals = true,
                 SampleRate = 100.0e6
             };
 
-            generator.GenerateESMTrackList();
+            generator.GenerateESMData();
 
-            return generator.ESMTrackList;
+            return generator.ESMData;
         }
     }
 }

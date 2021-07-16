@@ -1,5 +1,5 @@
 ﻿using SimulationInsight.ESMLibrary;
-using SimulationInsight.ESMTrackGenerator;
+using SimulationInsight.ESMDataGenerator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace SimulationInsight.ESMDataViewer.Models
 {
     public class ESMDataService : IESMDataService
     {
-        public ESMTrackData TrackData { get; set; }
+        public ESMData ESMData { get; set; }
 
         public ESMDataService()
         {
@@ -19,7 +19,7 @@ namespace SimulationInsight.ESMDataViewer.Models
 
         public void GetESMData()
         {
-            TrackData = ESMTrackListExamples.GenerateESMTrackListMultiple();
+            ESMData = ESMDataGeneratorExamples.GenerateESMDataMultiple();
         }
     }
 }

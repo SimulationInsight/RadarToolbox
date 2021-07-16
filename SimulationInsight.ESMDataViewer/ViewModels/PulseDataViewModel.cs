@@ -29,7 +29,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
         {
             Source.Clear();
             
-            var data = _esmDataService.TrackData.Tracks[0].PulseDescriptors;
+            var data = _esmDataService.ESMData.Tracks[0].PulseDescriptors;
 
             foreach (var item in data)
             {

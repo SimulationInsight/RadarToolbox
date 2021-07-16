@@ -9,6 +9,6 @@ namespace SimulationInsight.ESMDataViewer.Models
 {
     public interface IESMDataService
     {
-        ESMTrackData TrackData { get; set; }
+        ESMData ESMData { get; set; }
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimulationInsight.ESMLibrary
 {
-    public class ESMTrackData
+    public class ESMData
     {
         public List<ESMTrack> Tracks { get; set; }
 
         public int NumberOfTracks => Tracks.Count;
 
-        public ESMTrackData()
+        public ESMData()
         {
             Tracks = new List<ESMTrack>();
         }

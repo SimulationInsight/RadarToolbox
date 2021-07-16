@@ -3,10 +3,10 @@ using SimulationInsight.ESMPulseDescriptorGenerator;
 using System;
 using System.Collections.Generic;
 
-namespace SimulationInsight.ESMTrackGenerator.Tests
+namespace SimulationInsight.ESMDataGenerator.Tests
 {
     [TestClass]
-    public class ESMTrackGeneratorTests
+    public class ESMDataGeneratorTests
     {
         [TestMethod]
         public void GenerateESMTrackListSingle_Test_1()
@@ -14,10 +14,10 @@ namespace SimulationInsight.ESMTrackGenerator.Tests
             // Arrange:
 
             // Act:
-            var esmTrackList = ESMTrackListExamples.GenerateESMTrackListSingle();
+            var esmData = ESMDataGeneratorExamples.GenerateESMDataSingle();
 
             // Assert:
-            Assert.AreEqual(1, esmTrackList.NumberOfTracks);
+            Assert.AreEqual(1, esmData.NumberOfTracks);
         }
 
         [TestMethod]
@@ -26,10 +26,10 @@ namespace SimulationInsight.ESMTrackGenerator.Tests
             // Arrange:
 
             // Act:
-            var esmTrackList = ESMTrackListExamples.GenerateESMTrackListMultiple();
+            var esmData = ESMDataGeneratorExamples.GenerateESMDataMultiple();
 
             // Assert:
-            Assert.AreEqual(2, esmTrackList.NumberOfTracks);
+            Assert.AreEqual(2, esmData.NumberOfTracks);
         }
     }
 }

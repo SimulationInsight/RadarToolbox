@@ -27,12 +27,14 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.4" />
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="19.2.0.47" />
+    <PackageReference Include="Syncfusion.Core.WinUI" Version="19.2.0.47" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Strings\en-us\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimulationInsight.ESMDataGenerator\SimulationInsight.ESMDataGenerator.csproj" />
     <ProjectReference Include="..\SimulationInsight.ESMDataViewer.Core\SimulationInsight.ESMDataViewer.Core.csproj" />
-    <ProjectReference Include="..\SimulationInsight.ESMTrackGenerator\SimulationInsight.ESMTrackGenerator.csproj" />
   </ItemGroup>
 </Project>

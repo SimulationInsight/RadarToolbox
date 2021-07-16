@@ -6,7 +6,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 using SimulationInsight.ESMDataViewer.Contracts.ViewModels;
 using SimulationInsight.ESMDataViewer.Core.Contracts.Services;
-using SimulationInsight.ESMDataViewer.Core.Models;
 using SimulationInsight.ESMDataViewer.Models;
 using SimulationInsight.ESMLibrary;
 
@@ -41,7 +40,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
             SampleItems.Clear();
 
             // Replace this with your actual data
-            var data = _esmDataService.TrackData.Tracks[0].PulseDescriptors;
+            var data = _esmDataService.ESMData.Tracks[0].PulseDescriptors;
 
             foreach (var item in data)
             {

@@ -28,7 +28,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
         {
             Source.Clear();
 
-            var data = _esmDataService.TrackData.Tracks;
+            var data = _esmDataService.ESMData.Tracks;
 
             foreach (var item in data)
             {
