@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-
+using SimulationInsight.ESMData.Models;
 using SimulationInsight.ESMDataViewer.Core.Models;
 using SimulationInsight.ESMLibrary;
 

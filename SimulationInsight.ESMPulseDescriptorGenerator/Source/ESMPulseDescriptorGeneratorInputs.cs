@@ -1,4 +1,5 @@
-﻿using SimulationInsight.ESMLibrary;
+﻿using SimulationInsight.ESMData.Models;
+using SimulationInsight.ESMLibrary;
 using SimulationInsight.MathLibrary;
 
 namespace SimulationInsight.ESMPulseDescriptorGenerator

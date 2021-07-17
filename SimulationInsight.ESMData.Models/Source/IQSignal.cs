@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SimulationInsight.MathLibrary;
 
-namespace SimulationInsight.ESMLibrary
+namespace SimulationInsight.ESMData.Models
 {
     public class IQSignal
     {

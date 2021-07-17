@@ -1,4 +1,5 @@
-﻿using SimulationInsight.MathLibrary;
+﻿using SimulationInsight.ESMData.Models;
+using SimulationInsight.MathLibrary;
 using static SimulationInsight.MathLibrary.Vector;
 
 namespace SimulationInsight.ESMLibrary

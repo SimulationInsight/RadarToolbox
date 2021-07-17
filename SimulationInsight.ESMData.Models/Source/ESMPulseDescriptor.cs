@@ -1,7 +1,7 @@
 ﻿using SimulationInsight.MathLibrary;
 using static System.Math;
 
-namespace SimulationInsight.ESMLibrary
+namespace SimulationInsight.ESMData.Models
 {
     public record ESMPulseDescriptor
     {

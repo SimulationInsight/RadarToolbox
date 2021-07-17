@@ -10,7 +10,7 @@ namespace SimulationInsight.ESMDataGenerator
 {
     public static class ESMDataGeneratorExamples
     {
-        public static ESMData GenerateESMDataSingle()
+        public static ESMData.Models.ESMData GenerateESMDataSingle()
         {
             var inputs = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
 
@@ -28,7 +28,7 @@ namespace SimulationInsight.ESMDataGenerator
             return generator.ESMData;
         }
 
-        public static ESMData GenerateESMDataMultiple()
+        public static ESMData.Models.ESMData GenerateESMDataMultiple()
         {
             var inputs1 = ESMPulseDescriptorGeneratorInputsFactory.Example_1();
             var inputs2 = ESMPulseDescriptorGeneratorInputsFactory.Example_2();

@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:models="using:SimulationInsight.ESMDataViewer.Core.Models"
-    xmlns:models2="using:SimulationInsight.ESMLibrary"
+    xmlns:models2="using:SimulationInsight.ESMData.Models"
     xmlns:views="using:SimulationInsight.ESMDataViewer.Views"
     mc:Ignorable="d"
     xmlns:behaviors="using:SimulationInsight.ESMDataViewer.Behaviors"

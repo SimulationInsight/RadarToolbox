@@ -1,4 +1,5 @@
 ﻿using SimulationInsight.Core;
+using SimulationInsight.ESMData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace SimulationInsight.ESMLibrary.Source
 {
     public class ESMEmitterClassificationDatabase
     {
-        public List<ESMEmitterClassification> EmitterList { get; set; }
+        public List<ESMEmitterDatabaseLine> EmitterList { get; set; }
 
         public int NumberOfEmitters => EmitterList.Count;
 
         public void ReadFromFile(string fileName)
         {
-            EmitterList = CsvExtensionMethods.ReadFromCsvFile<ESMEmitterClassification>(fileName);
+            EmitterList = CsvExtensionMethods.ReadFromCsvFile<ESMEmitterDatabaseLine>(fileName);
         }
 
         public void WriteToFile(string fileName)

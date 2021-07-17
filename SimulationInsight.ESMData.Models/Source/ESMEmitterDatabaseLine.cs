@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulationInsight.ESMLibrary.Source
+namespace SimulationInsight.ESMData.Models
 {
-    public class ESMEmitterClassification
+    public class ESMEmitterDatabaseLine
     {
         public string EmitterName { get; set; }
 

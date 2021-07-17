@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SimulationInsight.ESMLibrary
+namespace SimulationInsight.ESMData.Models
 {
     public record ESMPulseDescriptorData
     {

@@ -1,4 +1,5 @@
-﻿using SimulationInsight.ESMLibrary;
+﻿using SimulationInsight.ESMData.Models;
+using SimulationInsight.ESMLibrary;
 using SimulationInsight.ESMPulseDescriptorGenerator;
 using System.Collections.Generic;
 
@@ -8,7 +9,7 @@ namespace SimulationInsight.ESMDataGenerator
     {
         public List<ESMPulseDescriptorGeneratorInputs> ESMPulseDescriptorGeneratorInputs { get; set; }
 
-        public ESMData ESMData { get; set; }
+        public ESMData.Models.ESMData ESMData { get; set; }
 
         public bool IsGenerateIQSignals { get; set; }
 
@@ -18,7 +19,7 @@ namespace SimulationInsight.ESMDataGenerator
         {
             var trackId = 0;
 
-            ESMData = new ESMData();
+            ESMData = new ESMData.Models.ESMData();
 
             foreach (var inputs in ESMPulseDescriptorGeneratorInputs)
             {
@@ -57,11 +58,11 @@ namespace SimulationInsight.ESMDataGenerator
 
         public void GenerateIQSignals(List<ESMPulseDescriptor> pulseDesciptors)
         {
-            foreach (var pulseDesciptor in pulseDesciptors)
+            foreach (var pulseDescriptor in pulseDesciptors)
             {
-                var signal = IQSignalGenerator.GenerateSignalFromPulseDescriptor(pulseDesciptor, SampleRate);
+                var signal = IQSignalGenerator.GenerateSignalFromPulseDescriptor(pulseDescriptor, SampleRate);
 
-                pulseDesciptor.Signal = signal;
+                pulseDescriptor.Signal = signal;
             }
         }
     }

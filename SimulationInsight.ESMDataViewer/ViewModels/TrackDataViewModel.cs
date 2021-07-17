@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
-
+using SimulationInsight.ESMData.Models;
 using SimulationInsight.ESMDataViewer.Contracts.ViewModels;
 using SimulationInsight.ESMDataViewer.Core.Contracts.Services;
 using SimulationInsight.ESMDataViewer.Models;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulationInsight.ESMLibrary
+namespace SimulationInsight.ESMData.Models
 {
     public class ESMData
     {
