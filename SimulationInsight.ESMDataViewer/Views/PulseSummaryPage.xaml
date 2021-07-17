@@ -17,7 +17,7 @@
             -->
             <StackPanel>
                 <TextBlock>Hello</TextBlock>
-                <chart:SfCartesianChart/>
+                <!--<chart:SfCartesianChart/>-->
 
             </StackPanel>
 
