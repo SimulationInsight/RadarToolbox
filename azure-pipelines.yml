@@ -29,4 +29,5 @@ steps:
     projects: |
      **/*Tests/*.csproj 
      !**/*Tests/*Rtsa*.csproj
+     !**/*Tests/*DAL*.csproj
     arguments: '--configuration $(buildConfiguration)'
