@@ -17,21 +17,21 @@ namespace SimulationInsight.ESMDataGenerator
 
         public void GenerateESMData()
         {
-            var trackId = 0;
+            var trackNumber = 0;
 
             ESMData = new ESMData.Models.ESMData();
 
             foreach (var inputs in ESMPulseDescriptorGeneratorInputs)
             {
-                trackId++;
+                trackNumber++;
 
-                var track = GenerateESMTrack(trackId, inputs);
+                var track = GenerateESMTrack(trackNumber, inputs);
 
                 ESMData.Tracks.Add(track);
             }
         }
 
-        public ESMTrack GenerateESMTrack(int trackId, ESMPulseDescriptorGeneratorInputs inputs)
+        public ESMTrack GenerateESMTrack(int trackNumber, ESMPulseDescriptorGeneratorInputs inputs)
         {
             var generator = new ESMPulseDescriptorGenerator.ESMPulseDescriptorGenerator()
             {
@@ -49,7 +49,7 @@ namespace SimulationInsight.ESMDataGenerator
 
             var esmTrack = new ESMTrack()
             {
-                TrackId = trackId,
+                TrackNumber = trackNumber,
                 PulseDescriptors = pulseDescriptors,
             };
 

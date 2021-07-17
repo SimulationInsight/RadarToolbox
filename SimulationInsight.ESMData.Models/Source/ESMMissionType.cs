@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public class ESMTrack
+    public enum ESMMissionType
     {
-        public int TrackNumber { get; set; }
-
-        public List<ESMPulseDescriptor> PulseDescriptors { get; set; }
+        Undefined = 0,
+        Real,
+        Simulated,
+        Test
     }
 }

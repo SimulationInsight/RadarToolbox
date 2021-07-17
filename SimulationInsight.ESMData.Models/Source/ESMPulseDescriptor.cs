@@ -7,7 +7,7 @@ namespace SimulationInsight.ESMData.Models
     {
         public int RadarId { get; init; }
 
-        public int PulseId { get; init; }
+        public int PulseNumber { get; init; }
 
         public double PulseTimeStart { get; init; }
 

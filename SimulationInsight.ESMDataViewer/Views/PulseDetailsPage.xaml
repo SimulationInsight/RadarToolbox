@@ -5,15 +5,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:models="using:SimulationInsight.ESMDataViewer.Core.Models"
-    xmlns:models2="using:SimulationInsight.ESMData.Models"
+    xmlns:models="using:SimulationInsight.ESMData.Models"
     xmlns:views="using:SimulationInsight.ESMDataViewer.Views"
     mc:Ignorable="d"
     xmlns:behaviors="using:SimulationInsight.ESMDataViewer.Behaviors"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
     Style="{StaticResource PageStyle}">
     <Page.Resources>
-        <DataTemplate x:Key="ItemTemplate" x:DataType="models2:ESMPulseDescriptor">
+        <DataTemplate x:Key="ItemTemplate" x:DataType="models:ESMPulseDescriptor">
             <Grid Height="90">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -23,7 +22,7 @@
                     Grid.Column="1"
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center">
-                    <TextBlock Text="{x:Bind PulseId}" Style="{StaticResource ListTitleStyle}" />
+                    <TextBlock Text="{x:Bind PulseNumber}" Style="{StaticResource ListTitleStyle}" />
                     <TextBlock Text="{x:Bind PulseTimeStart }" Style="{StaticResource ListSubTitleStyle}" />
                     <TextBlock Text="{x:Bind PulseWidth_us }" Style="{StaticResource ListSubTitleStyle}" />
                     <TextBlock Text="{x:Bind FrequencyCentre_MHz }" Style="{StaticResource ListSubTitleStyle}" />

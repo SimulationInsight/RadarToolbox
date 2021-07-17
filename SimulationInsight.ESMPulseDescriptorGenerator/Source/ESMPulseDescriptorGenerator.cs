@@ -15,7 +15,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
         {
             var currentTime = Inputs.StartTime;
 
-            var pulseId = 0;
+            var pulseNumber = 0;
 
             PulseDescriptorData = new ESMPulseDescriptorData()
             {
@@ -24,12 +24,12 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 
             while (currentTime <= Inputs.EndTime)
             {
-                pulseId++;
+                pulseNumber++;
 
-                var pw = Inputs.PulseWidth.GetCircularValue(pulseId);
-                var prf = Inputs.PulseRepetitionFrequency.GetCircularValue(pulseId);
-                var rfCentre = Inputs.FrequencyCentre.GetCircularValue(pulseId);
-                var rfBandwidth = Inputs.FrequencyBandwidth.GetCircularValue(pulseId);
+                var pw = Inputs.PulseWidth.GetCircularValue(pulseNumber);
+                var prf = Inputs.PulseRepetitionFrequency.GetCircularValue(pulseNumber);
+                var rfCentre = Inputs.FrequencyCentre.GetCircularValue(pulseNumber);
+                var rfBandwidth = Inputs.FrequencyBandwidth.GetCircularValue(pulseNumber);
 
                 var pri = 1.0 / prf;
 
@@ -39,7 +39,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
                 var p = new ESMPulseDescriptor()
                 {
                     RadarId = 1,
-                    PulseId = pulseId,
+                    PulseNumber = pulseNumber,
                     PulseTimeStart = pulseTimeStart,
                     PulseTimeEnd = pulseTimeEnd,
                     PulseWidth = pw,
