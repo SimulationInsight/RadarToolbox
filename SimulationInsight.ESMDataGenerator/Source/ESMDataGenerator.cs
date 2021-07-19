@@ -44,7 +44,7 @@ namespace SimulationInsight.ESMDataGenerator
 
             if (IsGenerateIQSignals)
             {
-                GenerateIQSignals(pulseDescriptors);
+                GenerateIQSignals(pulseDescriptors, inputs);
             }
 
             var esmTrack = new TrackDTO()
@@ -56,11 +56,15 @@ namespace SimulationInsight.ESMDataGenerator
             return esmTrack;
         }
 
-        public void GenerateIQSignals(List<PulseDescriptorDTO> pulseDesciptors)
+        public void GenerateIQSignals(List<PulseDescriptorDTO> pulseDesciptors, ESMPulseDescriptorGeneratorInputs inputs)
         {
             foreach (var pulseDescriptor in pulseDesciptors)
             {
                 var signal = IQSignalGenerator.GenerateSignalFromPulseDescriptor(pulseDescriptor, SampleRate);
+
+                signal.RFFrequencyOffset = inputs.FrequencyOffset;
+
+                signal.CalculateInstantaneousFrequency();
 
                 pulseDescriptor.Signal = signal;
             }

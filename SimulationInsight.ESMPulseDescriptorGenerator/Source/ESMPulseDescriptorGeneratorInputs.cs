@@ -12,6 +12,8 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 
         public double EndTime { get; init; }
 
+        public double FrequencyOffset { get; init; }
+
         public Vector PulseWidth { get; init; }
 
         public Vector FrequencyCentre { get; init; }
