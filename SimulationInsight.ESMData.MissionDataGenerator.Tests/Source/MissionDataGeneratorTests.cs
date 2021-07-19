@@ -31,7 +31,7 @@ namespace SimulationInsight.ESMData.MissionDataGenerator.Tests
 
             var mission = missionDataGenerator.Mission;
 
-            missionDataGenerator.SaveMissionToDatabase();
+            //missionDataGenerator.SaveMissionToDatabase();
 
             // Assert:
             Assert.AreEqual(2, mission.Tracks.Count);
