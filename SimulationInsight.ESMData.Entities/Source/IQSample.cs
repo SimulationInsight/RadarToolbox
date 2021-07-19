@@ -26,6 +26,12 @@ namespace SimulationInsight.ESMData.Entities
 
         public double Phase { get; set; }
 
+        public double PhaseUnwrapped { get; set; }
+
+        public double PhaseDeg => Phase.ToDegrees();
+
+        public double PhaseUnwrappedDeg => PhaseUnwrapped.ToDegrees();
+
         public double Power_dB { get; set; }
 
         public double InstantaneousFrequency { get; set; }

@@ -48,6 +48,7 @@ namespace SimulationInsight.ESMLibrary
 
             var signal = GenerateLFMPulse(sampleRate, p.PulseWidth, p.SignalAmplitude, frequencyStart, p.FrequencyBandwidth);
 
+
             return signal;
         }
     }

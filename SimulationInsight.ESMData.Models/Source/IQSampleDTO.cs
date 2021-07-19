@@ -19,6 +19,12 @@ namespace SimulationInsight.ESMData.Models
 
         public double Phase => Atan2(Q, I);
 
+        public double PhaseUnwrapped { get; set; }
+
+        public double PhaseDeg => Phase.ToDegrees();
+
+        public double PhaseUnwrappedDeg => PhaseUnwrapped.ToDegrees();
+
         public double Power_dB => Power.ToDecibels();
 
         public double InstantaneousFrequency { get; set; }

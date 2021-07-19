@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SimulationInsight.MathLibrary;
+using static System.Math;
 
 namespace SimulationInsight.ESMData.Models
 {
@@ -54,11 +55,32 @@ namespace SimulationInsight.ESMData.Models
             return result;
         }
 
-        public void CalculateInstantaneousFrequency()
+        public void CalculatePhaseUnwrapped()
         {
-            for (int i = 0; i < Samples.Count-1; i++)
+            var phaseOffset = 0.0;
+
+            Samples[0].PhaseUnwrapped = Samples[0].Phase;
+
+            for (int i = 0; i < Samples.Count - 1; i++)
             {
                 var phaseDiff = Samples[i + 1].Phase - Samples[i].Phase;
+
+                if (phaseDiff < -PI)
+                {
+                    phaseOffset += 2.0 * PI;
+                }
+
+                Samples[i + 1].PhaseUnwrapped = Samples[i + 1].Phase + phaseOffset;
+            }
+        }
+
+        public void CalculateInstantaneousFrequency()
+        {
+            CalculatePhaseUnwrapped();
+
+            for (int i = 0; i < Samples.Count - 1; i++)
+            {
+                var phaseDiff = Samples[i + 1].PhaseUnwrapped - Samples[i].PhaseUnwrapped;
 
                 var frequency = phaseDiff / SampleInterval;
 
@@ -66,6 +88,8 @@ namespace SimulationInsight.ESMData.Models
 
                 Samples[i].InstantaneousFrequency = frequency;
             }
+
+            Samples[^1].InstantaneousFrequency = Samples[^2].InstantaneousFrequency;
         }
     }
 }
