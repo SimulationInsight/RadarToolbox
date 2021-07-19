@@ -19,7 +19,7 @@ namespace SimulationInsight.ESMDataGenerator
         {
             var trackNumber = 0;
 
-            ESMData = new ESMData.Models.ESMDataDTO();
+            ESMData = new ESMDataDTO();
 
             foreach (var inputs in ESMPulseDescriptorGeneratorInputs)
             {

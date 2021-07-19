@@ -36,6 +36,8 @@ namespace SimulationInsight.ESMData.Entities
 
         public double ElevationAngleDeg { get; set; }
 
+        public List<IQSample> IQSamples { get; set; }
+
         public int TrackId { get; set; }
         public Track Track { get; set; }
     }

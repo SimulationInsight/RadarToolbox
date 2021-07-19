@@ -38,6 +38,6 @@ namespace SimulationInsight.ESMData.Models
 
         public int NumberOfSamples => Samples.Count;
 
-        public List<IQSample> Samples { get; set; }
+        public List<IQSampleDTO> Samples { get; set; }
     }
 }

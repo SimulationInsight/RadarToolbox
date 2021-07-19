@@ -3,8 +3,10 @@ using static System.Math;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public class IQSample
+    public class IQSampleDTO
     {
+        public int SampleNumber { get; set; }
+
         public double Time { get; init; }
 
         public double I { get; init; }

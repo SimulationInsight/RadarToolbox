@@ -5,7 +5,7 @@ namespace SimulationInsight.ESMData.Models
 {
     public class IQSignal
     {
-        public List<IQSample> Samples { get; set; }
+        public List<IQSampleDTO> Samples { get; set; }
 
         public int NumberOfSamples => Samples.Count;
 
@@ -31,12 +31,13 @@ namespace SimulationInsight.ESMData.Models
 
         public IQSignal(double[] time, double[] I, double[] Q)
         {
-            Samples = new List<IQSample>();
+            Samples = new List<IQSampleDTO>();
 
             for (int i = 0; i < time.Length; i++)
             {
-                var s = new IQSample() 
+                var s = new IQSampleDTO() 
                 { 
+                    SampleNumber = i,
                     Time = time[i], 
                     I = I[i], 
                     Q = Q[i] 

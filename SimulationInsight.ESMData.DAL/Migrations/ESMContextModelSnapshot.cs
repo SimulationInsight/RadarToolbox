@@ -19,6 +19,38 @@ namespace SimulationInsight.ESMData.DAL.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("SimulationInsight.ESMData.Entities.IQSample", b =>
+                {
+                    b.Property<int>("IQSampleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("I")
+                        .HasColumnType("float");
+
+                    b.Property<int>("PulseDescriptorId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Q")
+                        .HasColumnType("float");
+
+                    b.Property<int>("SampleNumber")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Time")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TimeStamp")
+                        .HasColumnType("float");
+
+                    b.HasKey("IQSampleId");
+
+                    b.HasIndex("PulseDescriptorId");
+
+                    b.ToTable("IQSample");
+                });
+
             modelBuilder.Entity("SimulationInsight.ESMData.Entities.Mission", b =>
                 {
                     b.Property<int>("MissionId")
@@ -157,6 +189,17 @@ namespace SimulationInsight.ESMData.DAL.Migrations
                     b.ToTable("Track");
                 });
 
+            modelBuilder.Entity("SimulationInsight.ESMData.Entities.IQSample", b =>
+                {
+                    b.HasOne("SimulationInsight.ESMData.Entities.PulseDescriptor", "PulseDescriptor")
+                        .WithMany("IQSamples")
+                        .HasForeignKey("PulseDescriptorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PulseDescriptor");
+                });
+
             modelBuilder.Entity("SimulationInsight.ESMData.Entities.PulseDescriptor", b =>
                 {
                     b.HasOne("SimulationInsight.ESMData.Entities.Track", "Track")
@@ -195,6 +238,11 @@ namespace SimulationInsight.ESMData.DAL.Migrations
                     b.Navigation("Recordings");
 
                     b.Navigation("Tracks");
+                });
+
+            modelBuilder.Entity("SimulationInsight.ESMData.Entities.PulseDescriptor", b =>
+                {
+                    b.Navigation("IQSamples");
                 });
 
             modelBuilder.Entity("SimulationInsight.ESMData.Entities.Track", b =>
