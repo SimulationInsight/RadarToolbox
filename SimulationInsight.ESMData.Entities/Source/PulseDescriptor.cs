@@ -35,5 +35,8 @@ namespace SimulationInsight.ESMData.Entities
         public double AzimuthAngleDeg { get; set; }
 
         public double ElevationAngleDeg { get; set; }
+
+        public int TrackId { get; set; }
+        public Track Track { get; set; }
     }
 }

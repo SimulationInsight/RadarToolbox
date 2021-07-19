@@ -3,7 +3,7 @@ using static System.Math;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public record ESMPulseDescriptor
+    public record PulseDescriptorDTO
     {
         public int RadarId { get; init; }
 

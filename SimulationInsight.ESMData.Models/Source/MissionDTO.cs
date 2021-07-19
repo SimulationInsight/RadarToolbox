@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulationInsight.ESMData.Models.Source
+namespace SimulationInsight.ESMData.Models
 {
-    public class ESMMission
+    public class MissionDTO
     {
         public int MissionNumber { get; set; }
 
-        public ESMMissionType MissionType { get; set; }
+        public MissionTypeDTO MissionType { get; set; }
 
         public DateTime StartDateTime { get; set; }
 
@@ -18,6 +18,6 @@ namespace SimulationInsight.ESMData.Models.Source
 
         public string Description { get; set; }
 
-        public List<ESMTrack> Tracks { get; set; }
+        public List<TrackDTO> Tracks { get; set; }
     }
 }

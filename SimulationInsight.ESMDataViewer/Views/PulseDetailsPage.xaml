@@ -12,7 +12,7 @@
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
     Style="{StaticResource PageStyle}">
     <Page.Resources>
-        <DataTemplate x:Key="ItemTemplate" x:DataType="models:ESMPulseDescriptor">
+        <DataTemplate x:Key="ItemTemplate" x:DataType="models:PulseDescriptorDTO">
             <Grid Height="90">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />

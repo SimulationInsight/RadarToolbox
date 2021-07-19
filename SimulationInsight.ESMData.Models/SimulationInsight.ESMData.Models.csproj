@@ -8,8 +8,4 @@
     <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Source\Mappers\" />
-  </ItemGroup>
-
 </Project>

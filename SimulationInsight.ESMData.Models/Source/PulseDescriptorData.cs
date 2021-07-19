@@ -2,9 +2,9 @@
 
 namespace SimulationInsight.ESMData.Models
 {
-    public record ESMPulseDescriptorData
+    public record PulseDescriptorData
     {
-        public List<ESMPulseDescriptor> PulseDescriptors { get; init; }
+        public List<PulseDescriptorDTO> PulseDescriptors { get; init; }
 
         public int NumberOfPulses => PulseDescriptors.Count;
     }

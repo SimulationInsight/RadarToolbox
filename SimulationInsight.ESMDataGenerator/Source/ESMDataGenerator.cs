@@ -9,7 +9,7 @@ namespace SimulationInsight.ESMDataGenerator
     {
         public List<ESMPulseDescriptorGeneratorInputs> ESMPulseDescriptorGeneratorInputs { get; set; }
 
-        public ESMData.Models.ESMData ESMData { get; set; }
+        public ESMData.Models.ESMDataDTO ESMData { get; set; }
 
         public bool IsGenerateIQSignals { get; set; }
 
@@ -19,7 +19,7 @@ namespace SimulationInsight.ESMDataGenerator
         {
             var trackNumber = 0;
 
-            ESMData = new ESMData.Models.ESMData();
+            ESMData = new ESMData.Models.ESMDataDTO();
 
             foreach (var inputs in ESMPulseDescriptorGeneratorInputs)
             {
@@ -31,7 +31,7 @@ namespace SimulationInsight.ESMDataGenerator
             }
         }
 
-        public ESMTrack GenerateESMTrack(int trackNumber, ESMPulseDescriptorGeneratorInputs inputs)
+        public TrackDTO GenerateESMTrack(int trackNumber, ESMPulseDescriptorGeneratorInputs inputs)
         {
             var generator = new ESMPulseDescriptorGenerator.ESMPulseDescriptorGenerator()
             {
@@ -47,7 +47,7 @@ namespace SimulationInsight.ESMDataGenerator
                 GenerateIQSignals(pulseDescriptors);
             }
 
-            var esmTrack = new ESMTrack()
+            var esmTrack = new TrackDTO()
             {
                 TrackNumber = trackNumber,
                 PulseDescriptors = pulseDescriptors,
@@ -56,7 +56,7 @@ namespace SimulationInsight.ESMDataGenerator
             return esmTrack;
         }
 
-        public void GenerateIQSignals(List<ESMPulseDescriptor> pulseDesciptors)
+        public void GenerateIQSignals(List<PulseDescriptorDTO> pulseDesciptors)
         {
             foreach (var pulseDescriptor in pulseDesciptors)
             {

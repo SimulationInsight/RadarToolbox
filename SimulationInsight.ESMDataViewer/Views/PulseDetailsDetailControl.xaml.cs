@@ -8,13 +8,13 @@ namespace SimulationInsight.ESMDataViewer.Views
 {
     public sealed partial class PulseDetailsDetailControl : UserControl
     {
-        public ESMPulseDescriptor ListDetailsMenuItem
+        public PulseDescriptorDTO ListDetailsMenuItem
         {
-            get { return GetValue(ListDetailsMenuItemProperty) as ESMPulseDescriptor; }
+            get { return GetValue(ListDetailsMenuItemProperty) as PulseDescriptorDTO; }
             set { SetValue(ListDetailsMenuItemProperty, value); }
         }
 
-        public static readonly DependencyProperty ListDetailsMenuItemProperty = DependencyProperty.Register("ListDetailsMenuItem", typeof(ESMPulseDescriptor), typeof(PulseDetailsDetailControl), new PropertyMetadata(null, OnListDetailsMenuItemPropertyChanged));
+        public static readonly DependencyProperty ListDetailsMenuItemProperty = DependencyProperty.Register("ListDetailsMenuItem", typeof(PulseDescriptorDTO), typeof(PulseDetailsDetailControl), new PropertyMetadata(null, OnListDetailsMenuItemPropertyChanged));
 
         public PulseDetailsDetailControl()
         {

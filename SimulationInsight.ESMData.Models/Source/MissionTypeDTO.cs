@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public enum ESMMissionType
+    public enum MissionTypeDTO
     {
         Undefined = 0,
         Real,

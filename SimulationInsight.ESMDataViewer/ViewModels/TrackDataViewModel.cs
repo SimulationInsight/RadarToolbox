@@ -16,7 +16,7 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
 
         private readonly IESMDataService _esmDataService;
 
-        public ObservableCollection<ESMTrack> Source { get; } = new ObservableCollection<ESMTrack>();
+        public ObservableCollection<TrackDTO> Source { get; } = new ObservableCollection<TrackDTO>();
 
         public TrackDataViewModel(ISampleDataService sampleDataService, IESMDataService esmDataService)
         {

@@ -42,7 +42,7 @@ namespace SimulationInsight.ESMLibrary
             return signal;
         }
 
-        public static IQSignal GenerateSignalFromPulseDescriptor(ESMPulseDescriptor p, double sampleRate)
+        public static IQSignal GenerateSignalFromPulseDescriptor(PulseDescriptorDTO p, double sampleRate)
         {
             var signal = GenerateLFMPulse(sampleRate, p.PulseWidth, p.SignalAmplitude, p.FrequencyStart, p.FrequencyBandwidth);
 

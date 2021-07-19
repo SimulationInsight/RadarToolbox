@@ -6,7 +6,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 {
     public record ESMPulseDescriptorGeneratorInputs
     {
-        public ESMPulseDescriptorData PulseDescriptorData { get; init; }
+        public PulseDescriptorData PulseDescriptorData { get; init; }
 
         public double StartTime { get; init; }
 

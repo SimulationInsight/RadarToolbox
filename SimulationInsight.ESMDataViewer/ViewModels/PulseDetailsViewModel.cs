@@ -17,17 +17,17 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
 
         private readonly IESMDataService _esmDataService;
 
-        public ObservableCollection<ESMPulseDescriptor> Source { get; } = new ObservableCollection<ESMPulseDescriptor>();
+        public ObservableCollection<PulseDescriptorDTO> Source { get; } = new ObservableCollection<PulseDescriptorDTO>();
 
-        private ESMPulseDescriptor _selected;
+        private PulseDescriptorDTO _selected;
 
-        public ESMPulseDescriptor Selected
+        public PulseDescriptorDTO Selected
         {
             get { return _selected; }
             set { SetProperty(ref _selected, value); }
         }
 
-        public ObservableCollection<ESMPulseDescriptor> SampleItems { get; private set; } = new ObservableCollection<ESMPulseDescriptor>();
+        public ObservableCollection<PulseDescriptorDTO> SampleItems { get; private set; } = new ObservableCollection<PulseDescriptorDTO>();
 
         public PulseDetailsViewModel(ISampleDataService sampleDataService, IESMDataService esmDataService)
         {

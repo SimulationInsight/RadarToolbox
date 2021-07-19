@@ -14,9 +14,9 @@ namespace SimulationInsight.ESMDataViewer.ViewModels
 
         private readonly IESMDataService _esmDataService;
 
-        private List<ESMPulseDescriptor> PulseDescriptors { get; set; }
+        private List<PulseDescriptorDTO> PulseDescriptors { get; set; }
 
-        public ObservableCollection<ESMPulseDescriptor> Source { get; } = new ObservableCollection<ESMPulseDescriptor>();
+        public ObservableCollection<PulseDescriptorDTO> Source { get; } = new ObservableCollection<PulseDescriptorDTO>();
 
         public PulseSummaryViewModel(IESMDataService esmDataService)
         {

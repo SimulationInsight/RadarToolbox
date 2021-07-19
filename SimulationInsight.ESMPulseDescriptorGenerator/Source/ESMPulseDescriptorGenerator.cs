@@ -9,7 +9,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
     {
         public ESMPulseDescriptorGeneratorInputs Inputs { get; set; }
 
-        public ESMPulseDescriptorData PulseDescriptorData { get; set; }
+        public PulseDescriptorData PulseDescriptorData { get; set; }
 
         public void GeneratePulseDescriptorData()
         {
@@ -17,9 +17,9 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
 
             var pulseNumber = 0;
 
-            PulseDescriptorData = new ESMPulseDescriptorData()
+            PulseDescriptorData = new PulseDescriptorData()
             {
-                PulseDescriptors = new List<ESMPulseDescriptor>()
+                PulseDescriptors = new List<PulseDescriptorDTO>()
             };
 
             while (currentTime <= Inputs.EndTime)
@@ -36,7 +36,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
                 var pulseTimeStart = currentTime;
                 var pulseTimeEnd = pulseTimeStart + pw;
 
-                var p = new ESMPulseDescriptor()
+                var p = new PulseDescriptorDTO()
                 {
                     RadarId = 1,
                     PulseNumber = pulseNumber,

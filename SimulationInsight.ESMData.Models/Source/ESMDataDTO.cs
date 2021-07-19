@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public class ESMData
+    public class ESMDataDTO
     {
-        public List<ESMTrack> Tracks { get; set; }
+        public List<TrackDTO> Tracks { get; set; }
 
         public int NumberOfTracks => Tracks.Count;
 
-        public ESMData()
+        public ESMDataDTO()
         {
-            Tracks = new List<ESMTrack>();
+            Tracks = new List<TrackDTO>();
         }
     }
 }

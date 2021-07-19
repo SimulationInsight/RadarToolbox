@@ -10,7 +10,7 @@ namespace SimulationInsight.ESMDataViewer.Models
 {
     public class ESMDataService : IESMDataService
     {
-        public ESMData.Models.ESMData ESMData { get; set; }
+        public ESMData.Models.ESMDataDTO ESMData { get; set; }
 
         public ESMDataService()
         {
