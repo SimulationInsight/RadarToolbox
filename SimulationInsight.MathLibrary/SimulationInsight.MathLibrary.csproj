@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Source\Vector\Vector.OperatorOverloads.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Source\Vector\Vector.OperatorOverloads.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
   </ItemGroup>
 

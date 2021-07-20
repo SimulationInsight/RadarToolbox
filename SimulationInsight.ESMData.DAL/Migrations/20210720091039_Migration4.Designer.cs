@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimulationInsight.ESMData.DAL;
 
 namespace SimulationInsight.ESMData.DAL.Migrations
 {
     [DbContext(typeof(ESMContext))]
-    partial class ESMContextModelSnapshot : ModelSnapshot
+    [Migration("20210720091039_Migration4")]
+    partial class Migration4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,34 +111,13 @@ namespace SimulationInsight.ESMData.DAL.Migrations
                     b.Property<double>("ElevationAngleDeg")
                         .HasColumnType("float");
 
-                    b.Property<double>("FrequencyBandwidth")
-                        .HasColumnType("float");
-
-                    b.Property<double>("FrequencyBandwidth_MHz")
-                        .HasColumnType("float");
-
-                    b.Property<double>("FrequencyCentre")
-                        .HasColumnType("float");
-
-                    b.Property<double>("FrequencyCentre_MHz")
-                        .HasColumnType("float");
-
                     b.Property<double>("FrequencyEnd")
-                        .HasColumnType("float");
-
-                    b.Property<double>("FrequencyEnd_MHz")
                         .HasColumnType("float");
 
                     b.Property<double>("FrequencyRampRate")
                         .HasColumnType("float");
 
-                    b.Property<double>("FrequencyRampRate_THz_s")
-                        .HasColumnType("float");
-
                     b.Property<double>("FrequencyStart")
-                        .HasColumnType("float");
-
-                    b.Property<double>("FrequencyStart_MHz")
                         .HasColumnType("float");
 
                     b.Property<double>("PulseModulationType")
@@ -154,22 +135,10 @@ namespace SimulationInsight.ESMData.DAL.Migrations
                     b.Property<double>("PulseWidth")
                         .HasColumnType("float");
 
-                    b.Property<double>("PulseWidth_us")
-                        .HasColumnType("float");
-
                     b.Property<double>("SignalPower")
                         .HasColumnType("float");
 
-                    b.Property<double>("SignalPower_dB")
-                        .HasColumnType("float");
-
-                    b.Property<double>("SignalPower_dBm")
-                        .HasColumnType("float");
-
                     b.Property<double>("SignalToNoiseRatio")
-                        .HasColumnType("float");
-
-                    b.Property<double>("SignalToNoiseRatio_dB")
                         .HasColumnType("float");
 
                     b.Property<int>("TrackId")

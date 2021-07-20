@@ -27,7 +27,7 @@ namespace SimulationInsight.ESMData.Models
 
         public double FrequencyBandwidth => Abs(FrequencyStart - FrequencyEnd);
 
-        public double FrequencyRampRate { get; init; }
+        public double FrequencyRampRate => FrequencyBandwidth / PulseWidth;
 
         public double FrequencyStart_MHz => FrequencyStart / 1.0e6;
 

@@ -3,7 +3,7 @@ using static System.Math;
 
 namespace SimulationInsight.MathLibrary
 {
-    public record Vector
+    public partial record Vector
     {
         public int NumberOfElements => Data.Length;
 
@@ -64,6 +64,71 @@ namespace SimulationInsight.MathLibrary
             return result;
         }
 
+        public static Vector Cos(Vector x)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = Math.Cos(x.Data[i]);
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector Sin(Vector x)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = Math.Sin(x.Data[i]);
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector RandomNormalVector(int numberOfElements, double mean, double stddev)
+        {
+            var random = new Random();
+
+            var data = new double[numberOfElements];
+
+            for (int i = 0; i < numberOfElements; i++)
+            {
+                data[i] = MathNet.Numerics.Distributions.Normal.Sample(random, mean, stddev);
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator +(Vector x, double y)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = x.Data[i] + y;
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator +(double x, Vector y)
+        {
+            var result = y + x;
+
+            return result;
+        }
+
         public static Vector operator +(Vector x, Vector y)
         {
             var data = new double[x.NumberOfElements];
@@ -78,13 +143,13 @@ namespace SimulationInsight.MathLibrary
             return result;
         }
 
-        public static Vector operator -(Vector x, Vector y)
+        public static Vector operator -(Vector x)
         {
             var data = new double[x.NumberOfElements];
 
             for (int i = 0; i < x.NumberOfElements; i++)
             {
-                data[i] = x.Data[i] - y.Data[i];
+                data[i] = -x.Data[i];
             }
 
             var result = new Vector(data);
@@ -92,13 +157,41 @@ namespace SimulationInsight.MathLibrary
             return result;
         }
 
-        public static Vector operator *(Vector x, Vector y)
+        public static Vector operator -(Vector x, double y)
         {
             var data = new double[x.NumberOfElements];
 
             for (int i = 0; i < x.NumberOfElements; i++)
             {
-                data[i] = x.Data[i] * y.Data[i];
+                data[i] = x.Data[i] - y;
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator -(double x, Vector y)
+        {
+            var data = new double[y.NumberOfElements];
+
+            for (int i = 0; i < y.NumberOfElements; i++)
+            {
+                data[i] = x - y.Data[i];
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator -(Vector x, Vector y)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = x.Data[i] - y.Data[i];
             }
 
             var result = new Vector(data);
@@ -127,6 +220,48 @@ namespace SimulationInsight.MathLibrary
             return result;
         }
 
+        public static Vector operator *(Vector x, Vector y)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = x.Data[i] * y.Data[i];
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator /(Vector x, double y)
+        {
+            var data = new double[x.NumberOfElements];
+
+            for (int i = 0; i < x.NumberOfElements; i++)
+            {
+                data[i] = x.Data[i] / y;
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
+        public static Vector operator /(double x, Vector y)
+        {
+            var data = new double[y.NumberOfElements];
+
+            for (int i = 0; i < y.NumberOfElements; i++)
+            {
+                data[i] = x / y.Data[i];
+            }
+
+            var result = new Vector(data);
+
+            return result;
+        }
+
         public static Vector operator /(Vector x, Vector y)
         {
             var data = new double[x.NumberOfElements];
@@ -134,34 +269,6 @@ namespace SimulationInsight.MathLibrary
             for (int i = 0; i < x.NumberOfElements; i++)
             {
                 data[i] = x.Data[i] / y.Data[i];
-            }
-
-            var result = new Vector(data);
-
-            return result;
-        }
-
-        public static Vector Cos(Vector x)
-        {
-            var data = new double[x.NumberOfElements];
-
-            for (int i = 0; i < x.NumberOfElements; i++)
-            {
-                data[i] = Math.Cos(x.Data[i]);
-            }
-
-            var result = new Vector(data);
-
-            return result;
-        }
-
-        public static Vector Sin(Vector x)
-        {
-            var data = new double[x.NumberOfElements];
-
-            for (int i = 0; i < x.NumberOfElements; i++)
-            {
-                data[i] = Math.Sin(x.Data[i]);
             }
 
             var result = new Vector(data);

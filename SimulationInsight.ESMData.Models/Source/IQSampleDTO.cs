@@ -3,9 +3,9 @@ using static System.Math;
 
 namespace SimulationInsight.ESMData.Models
 {
-    public class IQSampleDTO
+    public record IQSampleDTO
     {
-        public int SampleNumber { get; set; }
+        public int SampleNumber { get; init; }
 
         public double Time { get; init; }
 

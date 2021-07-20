@@ -58,13 +58,22 @@ namespace SimulationInsight.ESMDataGenerator
 
         public void GenerateIQSignals(List<PulseDescriptorDTO> pulseDesciptors, ESMPulseDescriptorGeneratorInputs inputs)
         {
+            var meanNoisePower = 1.0e-12;
+
             foreach (var pulseDescriptor in pulseDesciptors)
             {
-                var signal = IQSignalGenerator.GenerateSignalFromPulseDescriptor(pulseDescriptor, SampleRate);
+                var signal = IQSignalGenerator.GenerateSignalFromPulseDescriptor(pulseDescriptor, SampleRate, inputs.FrequencyOffset);
 
-                signal.RFFrequencyOffset = inputs.FrequencyOffset;
+                if (inputs.IsAddNoiseSignal)
+                {
+                    var noiseSignal = IQSignalGenerator.GenerateNoiseSignal(pulseDescriptor.PulseWidth, SampleRate, meanNoisePower);
+
+                    signal += noiseSignal;
+                }
 
                 signal.CalculateInstantaneousFrequency();
+
+                signal.CalculateFrequencySpectrum();
 
                 pulseDescriptor.Signal = signal;
             }

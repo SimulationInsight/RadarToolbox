@@ -1,5 +1,6 @@
 ﻿using SimulationInsight.ESMData.Models;
 using SimulationInsight.MathLibrary;
+using static System.Math;
 using static SimulationInsight.MathLibrary.Vector;
 
 namespace SimulationInsight.ESMLibrary
@@ -32,7 +33,7 @@ namespace SimulationInsight.ESMLibrary
             var timeSquared = time * time;
 
             var r = new Vector(time.NumberOfElements, amplitude);
-            var theta = beta * timeSquared + f0 * time;
+            var theta = PI * beta * timeSquared + f0 * time;
 
             var I = r * Cos(theta);
             var Q = r * Sin(theta);
@@ -42,12 +43,30 @@ namespace SimulationInsight.ESMLibrary
             return signal;
         }
 
-        public static IQSignal GenerateSignalFromPulseDescriptor(PulseDescriptorDTO p, double sampleRate)
+        public static IQSignal GenerateSignalFromPulseDescriptor(PulseDescriptorDTO p, double sampleRate, double frequencyOffset)
         {
-            var frequencyStart = 0.0;
+            var frequencyStartBB = p.FrequencyStart - frequencyOffset;
 
-            var signal = GenerateLFMPulse(sampleRate, p.PulseWidth, p.SignalAmplitude, frequencyStart, p.FrequencyBandwidth);
+            var signal = GenerateLFMPulse(sampleRate, p.PulseWidth, p.SignalAmplitude, frequencyStartBB, p.FrequencyBandwidth);
 
+            signal.RFFrequencyOffset = frequencyOffset;
+
+            return signal;
+        }
+
+        public static IQSignal GenerateNoiseSignal(double sampleRate, double pulseWidth, double meanNoisePower)
+        {
+            var sampleInterval = 1.0 / sampleRate;
+
+            var time = LinearlySpacedVector(0.0, pulseWidth, sampleInterval);
+
+            var mean = 0.0;
+            var amplitude = Sqrt(meanNoisePower / 2.0);
+
+            var I = RandomNormalVector(time.NumberOfElements, mean, amplitude);
+            var Q = RandomNormalVector(time.NumberOfElements, mean, amplitude);
+
+            var signal = new IQSignal(time, I, Q);
 
             return signal;
         }

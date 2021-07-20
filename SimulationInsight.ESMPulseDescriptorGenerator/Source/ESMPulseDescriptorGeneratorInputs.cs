@@ -21,5 +21,7 @@ namespace SimulationInsight.ESMPulseDescriptorGenerator
         public Vector FrequencyBandwidth { get; init; }
 
         public Vector PulseRepetitionFrequency { get; init; }
+
+        public bool IsAddNoiseSignal { get; init; } = true;
     }
 }

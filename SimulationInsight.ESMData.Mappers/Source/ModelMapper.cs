@@ -22,9 +22,11 @@ namespace SimulationInsight.ESMData.Mappers
                 cfg.CreateMap<Track, TrackDTO>();
                 cfg.CreateMap<TrackDTO, Track>();
                 cfg.CreateMap<PulseDescriptor, PulseDescriptorDTO>();
-                cfg.CreateMap<PulseDescriptorDTO, PulseDescriptor>().ForMember(s => s.IQSamples, opt => opt.MapFrom(src => src.Signal.Samples));
+                cfg.CreateMap<PulseDescriptorDTO, PulseDescriptor>().ForMember(s => s.IQSamples, opt => opt.MapFrom(src => src.Signal.Samples)).ForMember(s => s.SpectrumSamples, opt => opt.MapFrom(src => src.Signal.SpectrumSamples));
                 cfg.CreateMap<IQSample, IQSampleDTO>();
                 cfg.CreateMap<IQSampleDTO, IQSample>();
+                cfg.CreateMap<SpectrumSample, SpectrumSampleDTO>();
+                cfg.CreateMap<SpectrumSampleDTO, SpectrumSample>();
             });
 
             Mapper = mapperConfiguration.CreateMapper();
