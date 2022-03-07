@@ -34,7 +34,6 @@
     <PRIResource Include="Strings\en-us\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimulationInsight.ESMDataGenerator\SimulationInsight.ESMDataGenerator.csproj" />
     <ProjectReference Include="..\SimulationInsight.ESMDataViewer.Core\SimulationInsight.ESMDataViewer.Core.csproj" />
   </ItemGroup>
 </Project>

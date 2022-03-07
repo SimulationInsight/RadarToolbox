@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
-    <ProjectReference Include="..\SimulationInsight.ESMLibrary\SimulationInsight.ESMLibrary.csproj" />
   </ItemGroup>
 
 </Project>

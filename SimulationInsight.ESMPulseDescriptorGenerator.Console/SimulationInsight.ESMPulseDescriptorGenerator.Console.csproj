@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
-    <ProjectReference Include="..\SimulationInsight.ESMPulseDescriptorGenerator\SimulationInsight.ESMPulseDescriptorGenerator.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
-    <ProjectReference Include="..\SimulationInsight.RtsaLibrary\SimulationInsight.RtsaLibrary.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimulationInsight.ESMData.Entities\SimulationInsight.ESMData.Entities.csproj" />
-    <ProjectReference Include="..\SimulationInsight.ESMData.Mappers\SimulationInsight.ESMData.Mappers.csproj" />
     <ProjectReference Include="..\SimulationInsight.ESMData.Models\SimulationInsight.ESMData.Models.csproj" />
     <ProjectReference Include="..\SimulationInsight.ESMData.Service\SimulationInsight.ESMData.Service.csproj" />
     <ProjectReference Include="..\SimulationInsight.ESMDataGenerator\SimulationInsight.ESMDataGenerator.csproj" />

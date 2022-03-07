@@ -4,9 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SimulationInsight.ESMData.DAL\SimulationInsight.ESMData.DAL.csproj" />
-    <ProjectReference Include="..\SimulationInsight.ESMData.Entities\SimulationInsight.ESMData.Entities.csproj" />
-  </ItemGroup>
-
 </Project>

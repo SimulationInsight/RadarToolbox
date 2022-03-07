@@ -13,8 +13,4 @@
     <PackageReference Include="coverlet.collector" Version="1.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SimulationInsight.ESMPulseDescriptorGenerator\SimulationInsight.ESMPulseDescriptorGenerator.csproj" />
-  </ItemGroup>
-
 </Project>
