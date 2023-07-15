@@ -19,7 +19,7 @@ public class Matrix
     }
 
     public double this[int rowIndex, int columnIndex]
-    { 
+    {
         get => Data[rowIndex, columnIndex];
         set => Data[rowIndex, columnIndex] = value;
     }

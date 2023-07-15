@@ -7,7 +7,7 @@ public class Vector
     public double[] Data { get; set; }
 
     public Vector(int numberOfElements)
-    { 
+    {
         Data = new double[numberOfElements];
     }
 
@@ -16,9 +16,9 @@ public class Vector
         Data = data;
     }
 
-    public double this[int index] 
-    { 
-        get => Data[index]; 
-        set => Data[index] = value; 
+    public double this[int index]
+    {
+        get => Data[index];
+        set => Data[index] = value;
     }
 }
