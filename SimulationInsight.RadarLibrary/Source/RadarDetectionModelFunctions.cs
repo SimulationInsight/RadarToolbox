@@ -1,9 +1,4 @@
 ﻿using SimulationInsight.RadarFunctions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationInsight.RadarLibrary;
 
@@ -18,7 +13,6 @@ internal static class RadarDetectionModelFunctions
 
         return signalPower;
     }
-
 
     public static double CalculateNoisePower(RadarDetectionModelInputs inputs)
     {

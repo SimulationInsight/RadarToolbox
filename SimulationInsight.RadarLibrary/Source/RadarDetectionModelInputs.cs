@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimulationInsight.MathLibrary;
+﻿using SimulationInsight.MathLibrary;
 
 namespace SimulationInsight.RadarLibrary;
 
@@ -17,7 +12,7 @@ public record RadarDetectionModelInputs
 
     public double TransmitGain { get; set; }
 
-    public double TransmitGain_dB {  get => TransmitGain.PowerToDecibels(); set => TransmitGain = value.DecibelsToPower(); }
+    public double TransmitGain_dB { get => TransmitGain.PowerToDecibels(); set => TransmitGain = value.DecibelsToPower(); }
 
     public double ReceiveGain { get; set; }
 
