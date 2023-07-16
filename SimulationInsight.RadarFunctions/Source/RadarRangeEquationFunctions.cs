@@ -25,7 +25,7 @@ public static class RadarRangeEquationFunctions
         var systemLosses = systemLosses_dB.DecibelsToPower();
 
         var signalPower = CalculateSignalPower(transmitPower, pulseWidth, rfFrequency, transmitGain, receiveGain, targetRange, targetRcs, systemLosses);
-    
+
         var signalPower_dB = signalPower.PowerToDecibels();
 
         return signalPower_dB;
