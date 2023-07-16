@@ -1,0 +1,33 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core'
+  inputs:
+    version: 7.x
+    includePreviewVersions: true
+    
+- script: dotnet build SimulationInsight.RadarToolbox.sln --configuration $(buildConfiguration)
+  displayName: 'Build - $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run Tests'
+  inputs:
+    command: test
+    projects: |
+     **/*Tests/*.csproj 
+     !**/*Tests/*Rtsa*.csproj
+     !**/*Tests/*DAL*.csproj
+    arguments: '--configuration $(buildConfiguration)'
