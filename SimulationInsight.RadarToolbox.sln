@@ -5,7 +5,11 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.MathLibrary", "SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj", "{E4D177D0-4448-49E8-8390-B4BF8AA844FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.RadarFunctions", "SimulationInsight.RadarFunctions\SimulationInsight.RadarFunctions.csproj", "{13D221DB-849A-4FFA-B725-7F0BD7780DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarFunctions", "SimulationInsight.RadarFunctions\SimulationInsight.RadarFunctions.csproj", "{13D221DB-849A-4FFA-B725-7F0BD7780DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.TrackingLibrary", "SimulationInsight.TrackingLibrary\SimulationInsight.TrackingLibrary.csproj", "{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Core", "SimulationInsight.Core\SimulationInsight.Core.csproj", "{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{13D221DB-849A-4FFA-B725-7F0BD7780DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13D221DB-849A-4FFA-B725-7F0BD7780DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13D221DB-849A-4FFA-B725-7F0BD7780DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
