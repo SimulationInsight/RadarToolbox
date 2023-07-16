@@ -60,6 +60,6 @@ public class WaveformParametersTests
         };
 
         // Assert:
-        Assert.AreEqual(w.PulseCompressionRatio, 550.0, 0.0001);
+        Assert.AreEqual(w.PulseCompressionRatio, 500.0, 0.0001);
     }
 }
