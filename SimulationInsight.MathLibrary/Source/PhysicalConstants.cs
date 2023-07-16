@@ -8,7 +8,7 @@ public static class PhysicalConstants
 
     public const double SpeedOfLight = SpeedOfLightApproximate;
 
-    public const double NoiseReferenceTemperature = 290.0;
+    public const double SystemReferenceTemperature = 290.0;
 
     public const double BoltzmannConstant = 1.380649e-23;
 }

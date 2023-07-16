@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.MathLibra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarFunctions", "SimulationInsight.RadarFunctions\SimulationInsight.RadarFunctions.csproj", "{13D221DB-849A-4FFA-B725-7F0BD7780DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.TrackingLibrary", "SimulationInsight.TrackingLibrary\SimulationInsight.TrackingLibrary.csproj", "{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.TrackingLibrary", "SimulationInsight.TrackingLibrary\SimulationInsight.TrackingLibrary.csproj", "{A6E23FDF-13EE-4A23-89D0-156101DA7C1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Core", "SimulationInsight.Core\SimulationInsight.Core.csproj", "{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.Core", "SimulationInsight.Core\SimulationInsight.Core.csproj", "{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarLibrary", "SimulationInsight.RadarLibrary\SimulationInsight.RadarLibrary.csproj", "{8C8B4920-95F8-445C-8775-719D8E5314B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E41C7E7-F45F-4FA4-8877-F2CBBAA5B327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8B4920-95F8-445C-8775-719D8E5314B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8B4920-95F8-445C-8775-719D8E5314B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8B4920-95F8-445C-8775-719D8E5314B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8B4920-95F8-445C-8775-719D8E5314B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
