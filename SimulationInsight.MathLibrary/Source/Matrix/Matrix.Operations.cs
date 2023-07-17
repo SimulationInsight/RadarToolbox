@@ -4,6 +4,13 @@ namespace SimulationInsight.MathLibrary;
 
 public partial class Matrix
 {
+    public static Matrix IdentityMatrix(int numberOfRows)
+    {
+        var result = IdentityMatrix(numberOfRows, numberOfRows);
+
+        return result;
+    }
+
     public static Matrix IdentityMatrix(int numberOfRows, int numberOfColumns)
     {
         var result = new Matrix(numberOfRows, numberOfColumns);
