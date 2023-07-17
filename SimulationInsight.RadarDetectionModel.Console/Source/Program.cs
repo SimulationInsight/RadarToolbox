@@ -1,7 +1,5 @@
-﻿
-using SimulationInsight.Core;
+﻿using SimulationInsight.Core;
 using SimulationInsight.RadarLibrary;
-using System.Xml;
 
 namespace SimulationInsight.RadarDetectionModel;
 
@@ -18,7 +16,7 @@ public class Program
     public static RadarDetectionModelHarness Harness { get; set; }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="inputFileName">Input file name. Full path. Default extension is .json.rdmi</param>
     /// <param name="outputFileName">Output file name. Full path. Default extension is .csv</param>
