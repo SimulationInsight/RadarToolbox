@@ -27,7 +27,7 @@ public static class RadarFunctions
 
     public static double CalculateMaximumUnambiguousRange(double pulseRepetitionFrequency)
     {
-        var maximumUnambiguousRange = SpeedOfLight * pulseRepetitionFrequency / 2.0;
+        var maximumUnambiguousRange = SpeedOfLight / pulseRepetitionFrequency / 2.0;
 
         return maximumUnambiguousRange;
     }
