@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SimulationInsight.RadarDetectionModel.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "--input-file-name \"C:\\Temp\\RadarToolbox\\RadarDetectionModel\\RadarDetectionModel_Example_2.json\" --output-file-name \"C:\\Temp\\RadarToolbox\\RadarDetectionModel\\RadarDetectionModel_Example_1.csv\" --is-create-example-files false"
+    }
+  }
+}

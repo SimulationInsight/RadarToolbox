@@ -2,17 +2,11 @@
 
 public class RadarDetectionModelHarness
 {
-    public RadarDetectionModelInputs DetectionModelInputs { get; set; }
+    public RadarDetectionModelHarnessInputs RadarDetectionModelHarnessInputs { get; set; }
 
-    public RadarDetectionModel DetectionModel { get; set; }
+    public RadarDetectionModel RadarDetectionModel { get; set; }
 
-    public double TargetRangeMin { get; set; }
-
-    public double TargetRangeMax { get; set; }
-
-    public double TargetRangeStep { get; set; }
-
-    public List<RadarDetectionModelData> DetectionModelData { get; set; }
+    public List<RadarDetectionModelData> RadarDetectionModelData { get; set; }
 
     public RadarDetectionModelHarness()
     {
@@ -20,29 +14,29 @@ public class RadarDetectionModelHarness
 
     public void Run()
     {
-        DetectionModelData = new List<RadarDetectionModelData>();
+        RadarDetectionModelData = new List<RadarDetectionModelData>();
 
-        var range = TargetRangeMin;
+        var range = RadarDetectionModelHarnessInputs.TargetRangeMin;
 
-        DetectionModel = new RadarDetectionModel();
+        RadarDetectionModel = new RadarDetectionModel();
 
-        while (range <= TargetRangeMax)
+        while (range <= RadarDetectionModelHarnessInputs.TargetRangeMax)
         {
-            var inputs = DetectionModelInputs with { TargetRange = range };
+            var inputs = RadarDetectionModelHarnessInputs.RadarDetectionModelInputs with { TargetRange = range };
 
-            DetectionModel.Inputs = inputs;
+            RadarDetectionModel.Inputs = inputs;
 
-            DetectionModel.Run();
+            RadarDetectionModel.Run();
 
             var data = new RadarDetectionModelData()
             {
-                Inputs = DetectionModel.Inputs,
-                Outputs = DetectionModel.Outputs
+                Inputs = RadarDetectionModel.Inputs,
+                Outputs = RadarDetectionModel.Outputs
             };
 
-            DetectionModelData.Add(data);
+            RadarDetectionModelData.Add(data);
 
-            range += TargetRangeStep;
+            range += RadarDetectionModelHarnessInputs.TargetRangeStep;
         }
     }
 }

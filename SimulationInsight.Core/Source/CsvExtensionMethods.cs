@@ -11,6 +11,8 @@ public static class CsvExtensionMethods
 
         using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
 
+        Logger.Information($"      Writing {path}");
+
         csv.WriteRecords(data);
     }
 }

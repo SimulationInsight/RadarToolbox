@@ -1,12 +1,9 @@
-namespace SimulationInsight.RadarLibrary.Tests;
+﻿namespace SimulationInsight.RadarLibrary;
 
-[TestClass]
-public class RadarDetectionModelHarnessTests
+public static class RadarDetectionModelHarnessInputExamples
 {
-    [TestMethod]
-    public void Test_1()
+    public static RadarDetectionModelHarnessInputs Example_1()
     {
-        // Arrange:
         var w = new WaveformParameters()
         {
             WaveformName = "Waveform_1",
@@ -22,11 +19,10 @@ public class RadarDetectionModelHarnessTests
             RfSystemType = RfSystemType.MonostaticRadar,
             WaveformParameters = w,
             TransmitPeakPower = 500.0,
-            TransmitGain_dB = 32.0,
+            TransmitGain_dB = 35.0,
             ReceiveGain_dB = 32.0,
             ReceiverNoiseFigure_dB = 3.0,
             SystemLosses_dB = 5.0,
-            TargetRange = 1.0,
             TargetRadarCrossSection = 10.0
         };
 
@@ -38,15 +34,6 @@ public class RadarDetectionModelHarnessTests
             TargetRangeStep = 100.0
         };
 
-        var harness = new RadarDetectionModelHarness()
-        {
-            RadarDetectionModelHarnessInputs = harnessInputs
-        };
-
-        // Act:
-        harness.Run();
-
-        // Assert:
-        Assert.AreEqual(harness.RadarDetectionModelData.Count, 1000);
+        return harnessInputs;
     }
 }
