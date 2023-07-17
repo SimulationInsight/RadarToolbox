@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.RadarDetectionModel.Console", "SimulationInsight.RadarDetectionModel.Console\SimulationInsight.RadarDetectionModel.Console.csproj", "{A657312A-9192-4240-8F21-203C18D0547E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.ScenarioGenerator", "SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj", "{93BEB97F-ECD8-47C7-AFA5-1DE29B8FD86B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A657312A-9192-4240-8F21-203C18D0547E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A657312A-9192-4240-8F21-203C18D0547E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A657312A-9192-4240-8F21-203C18D0547E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BEB97F-ECD8-47C7-AFA5-1DE29B8FD86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BEB97F-ECD8-47C7-AFA5-1DE29B8FD86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BEB97F-ECD8-47C7-AFA5-1DE29B8FD86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BEB97F-ECD8-47C7-AFA5-1DE29B8FD86B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
