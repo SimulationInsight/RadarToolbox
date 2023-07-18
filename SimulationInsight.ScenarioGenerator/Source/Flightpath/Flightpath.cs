@@ -1,5 +1,4 @@
 ﻿using SimulationInsight.MathLibrary;
-using System.Collections.Generic;
 
 namespace SimulationInsight.ScenarioGenerator;
 

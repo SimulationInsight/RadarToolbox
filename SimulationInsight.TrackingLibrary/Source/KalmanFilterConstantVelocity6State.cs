@@ -1,5 +1,4 @@
-﻿
-using SimulationInsight.MathLibrary;
+﻿using SimulationInsight.MathLibrary;
 using static SimulationInsight.MathLibrary.Matrix;
 using static System.Math;
 

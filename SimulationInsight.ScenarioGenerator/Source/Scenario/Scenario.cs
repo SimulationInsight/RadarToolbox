@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SimulationInsight.ScenarioGenerator;
+﻿namespace SimulationInsight.ScenarioGenerator;
 
 public class Scenario
 {
