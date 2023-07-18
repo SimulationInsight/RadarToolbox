@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.DataRecor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.SystemMessages", "SimulationInsight.SystemMessages\SimulationInsight.SystemMessages.csproj", "{5B9BF99B-FA62-45FD-9E67-C4AB34C33FCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Simulation.Console", "SimulationInsight.Simulation.Console\SimulationInsight.Simulation.Console.csproj", "{95FD919B-9467-4345-8750-B7FEA7E99ED2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{5B9BF99B-FA62-45FD-9E67-C4AB34C33FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B9BF99B-FA62-45FD-9E67-C4AB34C33FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B9BF99B-FA62-45FD-9E67-C4AB34C33FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95FD919B-9467-4345-8750-B7FEA7E99ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95FD919B-9467-4345-8750-B7FEA7E99ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95FD919B-9467-4345-8750-B7FEA7E99ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95FD919B-9467-4345-8750-B7FEA7E99ED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

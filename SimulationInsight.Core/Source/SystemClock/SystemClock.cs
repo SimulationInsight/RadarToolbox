@@ -8,17 +8,17 @@ public class SystemClock : ISystemClock
 
     public double CurrentTime { get; set; }
 
-    public double
-        TimeStep
-    { get; set; }
-
     public void Initialise(double time)
     {
         CurrentTime = time;
     }
 
-    public void Update()
+    public void Update(double time)
     {
-        CurrentTime += TimeStep;
+        CurrentTime = time;
+    }
+
+    public void Finalise(double time)
+    {
     }
 }

@@ -2,16 +2,17 @@
 using SimulationInsight.DataRecorder;
 using SimulationInsight.Radar;
 
-namespace SimulationInsight.Simulation
+namespace SimulationInsight.Simulation;
+
+public interface ISimulation : IExecutableModel
 {
-    public interface ISimulation
-    {
-        ISimulationSettings SimulationSettings { get; set; }
+    ISimulationSettings SimulationSettings { get; set; }
 
-        ISystemClock SystemClock { get; set; }
+    ISystemClock SystemClock { get; set; }
 
-        IRadar Radar { get; set; }
+    IRadar Radar { get; set; }
 
-        IDataRecorder DataRecorder { get; set; }
-    }
+    IDataRecorder DataRecorder { get; set; }
+
+    void Run();
 }

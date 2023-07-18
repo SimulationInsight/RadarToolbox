@@ -4,7 +4,7 @@ public record ScanPattern
 {
     public double RadarId { get; init; }
 
-    public double ScanPatternType { get; init; }
+    public ScanPatternType ScanPatternType { get; init; }
 
     public double Time { get; init; }
 
