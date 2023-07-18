@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimulationInsight.Core;
+﻿namespace SimulationInsight.Core;
 
 public class SystemClock : ISystemClock
 {
@@ -14,8 +8,9 @@ public class SystemClock : ISystemClock
 
     public double CurrentTime { get; set; }
 
-    public double 
-        TimeStep { get; set; }
+    public double
+        TimeStep
+    { get; set; }
 
     public void Initialise(double time)
     {
