@@ -22,12 +22,12 @@ public class Scanner : IScanner
         ScanPattern = scanPattern;
     }
 
-    public void InitialiseScan(ScanData scanData)
+    public void Initialise(double time)
     {
-        ScanData = scanData;
+        ScanData = ScanData with { Time = time };
     }
 
-    public void UpdateScan(double time)
+    public void Update(double time)
     {
         var dt = time - ScanData.Time;
 
@@ -44,5 +44,9 @@ public class Scanner : IScanner
         azimuthAngleDeg = azimuthAngleDeg.ConstrainAngleDegTo0To360();
 
         ScanData = ScanData with { Time = time, AzimuthAngleDeg = azimuthAngleDeg, AzimuthAngleRateDeg = azimuthAngleRateDeg };
+    }
+
+    public void Finalise(double time)
+    {
     }
 }

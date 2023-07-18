@@ -1,14 +1,12 @@
-﻿namespace SimulationInsight.Radar;
+﻿using SimulationInsight.Core;
 
-public interface IScanner
+namespace SimulationInsight.Radar;
+
+public interface IScanner : IExecutableModel
 {
     ScanPattern ScanPattern { get; set; }
 
     ScanData ScanData { get; set; }
 
     void SetScanPattern(ScanPattern scanPattern);
-
-    void InitialiseScan(ScanData scanData);
-
-    void UpdateScan(double time);
 }
