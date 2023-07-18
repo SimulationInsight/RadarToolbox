@@ -1,16 +1,16 @@
-﻿using Wolverine;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Oakton;
-using SimulationInsight.Radar;
 using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
+using SimulationInsight.Radar;
+using Wolverine;
 
 namespace SimulationInsight.Simulation;
 
 public class Program
 {
-    public async static Task Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var h = Host.CreateDefaultBuilder(args);
 
