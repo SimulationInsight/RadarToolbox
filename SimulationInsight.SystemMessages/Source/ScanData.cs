@@ -1,4 +1,4 @@
-﻿namespace SimulationInsight.Radar;
+﻿namespace SimulationInsight.SystemMessages;
 
 public record ScanData
 {

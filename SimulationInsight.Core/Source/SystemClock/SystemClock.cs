@@ -14,7 +14,8 @@ public class SystemClock : ISystemClock
 
     public double CurrentTime { get; set; }
 
-    public double TimeStep { get; set; }
+    public double 
+        TimeStep { get; set; }
 
     public void Initialise(double time)
     {

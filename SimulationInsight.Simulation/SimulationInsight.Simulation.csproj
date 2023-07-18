@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
-    <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
-    <ProjectReference Include="..\SimulationInsight.SystemMessages\SimulationInsight.SystemMessages.csproj" />
+    <ProjectReference Include="..\SimulationInsight.DataRecorder\SimulationInsight.DataRecorder.csproj" />
+    <ProjectReference Include="..\SimulationInsight.Radar\SimulationInsight.Radar.csproj" />
   </ItemGroup>
 
 </Project>
