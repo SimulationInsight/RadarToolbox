@@ -1,6 +1,5 @@
 ﻿using SimulationInsight.Core;
 using SimulationInsight.SystemMessages;
-using System.IO;
 
 namespace SimulationInsight.DataRecorder;
 

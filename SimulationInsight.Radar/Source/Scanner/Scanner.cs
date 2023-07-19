@@ -1,7 +1,6 @@
 ﻿using SimulationInsight.MathLibrary;
 using SimulationInsight.SystemMessages;
 using Wolverine;
-using Wolverine.Attributes;
 
 namespace SimulationInsight.Radar;
 
