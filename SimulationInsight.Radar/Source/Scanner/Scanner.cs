@@ -19,12 +19,16 @@ public class Scanner : IScanner
 
     public int MessageId { get; set; }
 
+    public int ScanIndex { get; set; }
+
     public Scanner(IMessageBus bus)
     {
+        Bus = bus;
+
         MaximumAzimuthAccelerationDeg = 10.0;
         AzimuthAccelerationConstant = 5.0;
 
-        Bus = bus;
+        ScanIndex = 1;
     }
 
     public void SetScanPattern(ScanPattern scanPattern)
@@ -51,9 +55,15 @@ public class Scanner : IScanner
 
         var azimuthAngleDeg = ScanData.AzimuthAngleDeg + azimuthAngleRateDeg * dt;
 
-        azimuthAngleDeg = azimuthAngleDeg.ConstrainAngleDegTo0To360();
+        if (azimuthAngleDeg > 360.0)
+        {
+            ScanIndex++;
+            azimuthAngleDeg = azimuthAngleDeg.ConstrainAngleDegTo0To360();
 
-        ScanData = ScanData with { Time = time, AzimuthAngleDeg = azimuthAngleDeg, AzimuthAngleRateDeg = azimuthAngleRateDeg };
+            SendAzimuthChangePulseMessage();
+        }
+
+        ScanData = ScanData with { Time = time, ScanIndex = ScanIndex, AzimuthAngleDeg = azimuthAngleDeg, AzimuthAngleRateDeg = azimuthAngleRateDeg };
 
         SendScanDataMessage();
     }
@@ -70,6 +80,11 @@ public class Scanner : IScanner
         };
 
         Bus.PublishAsync(scanDataMessage);
+    }
+
+    public void SendAzimuthChangePulseMessage()
+    {
+
     }
 
     public void Finalise(double time)

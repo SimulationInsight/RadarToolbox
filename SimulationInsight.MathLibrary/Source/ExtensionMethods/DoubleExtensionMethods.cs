@@ -25,7 +25,7 @@ public static class DoubleExtensionMethods
     {
         var offset = Floor(value / 360.0) * 360.0;
 
-        var result = value + offset;
+        var result = value - offset;
 
         return result;
     }

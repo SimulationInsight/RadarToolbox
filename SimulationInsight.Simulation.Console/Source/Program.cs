@@ -17,13 +17,13 @@ public class Program
         h.UseWolverine(opts =>
         {
             opts.Services.AddHostedService<Worker>();
-            opts.Services.AddScoped(typeof(IDataRecorderSettings), typeof(DataRecorderSettings));
+            opts.Services.AddSingleton(typeof(IDataRecorderSettings), typeof(DataRecorderSettings));
             opts.Services.AddScoped(typeof(ISimulationSettings), typeof(SimulationSettings));
             opts.Services.AddScoped(typeof(ISimulation), typeof(Simulation));
             opts.Services.AddScoped(typeof(ISystemClock), typeof(SystemClock));
             opts.Services.AddScoped(typeof(IRadar), typeof(Radar.Radar));
             opts.Services.AddScoped(typeof(IScanner), typeof(Scanner));
-            opts.Services.AddScoped(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));
+            opts.Services.AddSingleton(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));
             opts.Discovery.IncludeAssembly(typeof(IDataRecorder).Assembly);
         });
 

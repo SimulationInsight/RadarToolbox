@@ -6,6 +6,8 @@ public record ScanData
 
     public double Time { get; init; }
 
+    public int ScanIndex { get; init; }
+
     public double AzimuthAngleDeg { get; init; }
 
     public double AzimuthAngleRateDeg { get; init; }
