@@ -70,4 +70,55 @@ public partial class Vector
 
         return result;
     }
+
+    public bool IsMonotonicallyIncreasing()
+    {
+        if (NumberOfElements < 2)
+        {
+            return true;
+        }
+
+        var delta = 0.0;
+
+        for (int i = 0; i < NumberOfElements - 1; i++)
+        {
+            delta = Data[i + 1] - Data[i];
+
+            if (delta < 0.0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool IsMonotonicallyDecreasing()
+    {
+        if (NumberOfElements < 2)
+        {
+            return true;
+        }
+
+        var delta = 0.0;
+
+        for (int i = 0; i < NumberOfElements - 2; i++)
+        {
+            delta = Data[i + 1] - Data[i];
+
+            if (delta > 0.0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool IsMonotonic()
+    {
+        var isMonotonic = IsMonotonicallyIncreasing() || IsMonotonicallyDecreasing();
+
+        return isMonotonic;
+    }
 }
