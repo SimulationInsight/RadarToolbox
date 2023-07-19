@@ -1,5 +1,7 @@
 ﻿using SimulationInsight.MathLibrary;
 using SimulationInsight.SystemMessages;
+using Wolverine;
+using Wolverine.Attributes;
 
 namespace SimulationInsight.Radar;
 
@@ -13,9 +15,16 @@ public class Scanner : IScanner
 
     public ScanData ScanData { get; set; }
 
-    public Scanner()
+    public IMessageBus Bus { get; set; }
+
+    public int MessageId { get; set; }
+
+    public Scanner(IMessageBus bus)
     {
         MaximumAzimuthAccelerationDeg = 10.0;
+        AzimuthAccelerationConstant = 5.0;
+
+        Bus = bus;
     }
 
     public void SetScanPattern(ScanPattern scanPattern)
@@ -45,6 +54,22 @@ public class Scanner : IScanner
         azimuthAngleDeg = azimuthAngleDeg.ConstrainAngleDegTo0To360();
 
         ScanData = ScanData with { Time = time, AzimuthAngleDeg = azimuthAngleDeg, AzimuthAngleRateDeg = azimuthAngleRateDeg };
+
+        SendScanDataMessage();
+    }
+
+    public void SendScanDataMessage()
+    {
+        MessageId++;
+
+        var scanDataMessage = new ScanDataMessage()
+        {
+            MessageId = MessageId,
+            MessageTime = ScanData.Time,
+            ScanData = ScanData
+        };
+
+        Bus.PublishAsync(scanDataMessage);
     }
 
     public void Finalise(double time)

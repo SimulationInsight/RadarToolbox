@@ -8,15 +8,18 @@ public class Simulation : ISimulation
 {
     public ISimulationSettings SimulationSettings { get; set; }
 
+    public IDataRecorderSettings DataRecorderSettings { get; set; }
+
     public ISystemClock SystemClock { get; set; }
 
     public IRadar Radar { get; set; }
 
     public IDataRecorder DataRecorder { get; set; }
 
-    public Simulation(ISimulationSettings simulationSettings, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
+    public Simulation(ISimulationSettings simulationSettings, DataRecorderSettings dataRecorderSettings, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
     {
         SimulationSettings = simulationSettings;
+        DataRecorderSettings = dataRecorderSettings;
         SystemClock = systemClock;
         Radar = radar;
         DataRecorder = dataRecorder;
@@ -24,7 +27,7 @@ public class Simulation : ISimulation
 
     public void Run()
     {
-        Logger.Information("Running Simulation...");
+        Logger.Information("Simulation Started...");
         Logger.Information("");
 
         InitialiseClock();
@@ -36,6 +39,8 @@ public class Simulation : ISimulation
         RunSimulation(time);
 
         FinaliseSimulation(time);
+
+        WriteData();
 
         Logger.Information("Simulation Finished.");
         Logger.Information("");
@@ -71,7 +76,7 @@ public class Simulation : ISimulation
             time += SimulationSettings.TimeStep;
         }
 
-        Logger.Information("   Finished...");
+        Logger.Information("   Finished.");
         Logger.Information("");
     }
 
@@ -81,12 +86,23 @@ public class Simulation : ISimulation
 
         Finalise(time);
 
+        Logger.Information("   Finished.");
+        Logger.Information("");
+    }
+
+    public void WriteData()
+    {
+        Logger.Information("   Writing Output Data...");
+
+        DataRecorder.WriteData();
+
         Logger.Information("   Finished...");
         Logger.Information("");
     }
 
     public void Initialise(double time)
     {
+        SystemClock.Initialise(time);
         Radar.Initialise(time);
     }
 
@@ -98,6 +114,7 @@ public class Simulation : ISimulation
 
     public void Finalise(double time)
     {
+        SystemClock.Finalise(time);
         Radar.Finalise(time);
     }
 }

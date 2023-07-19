@@ -14,6 +14,12 @@ public class SimulationBuilder
         simulation.SimulationSettings.EndTime = 50.0;
         simulation.SimulationSettings.TimeStep = 0.1;
 
+        simulation.DataRecorderSettings.SimulationName = simulation.SimulationSettings.SimulationName;
+        simulation.DataRecorderSettings.OutputFolderTopLevel = @"C:\temp\RadarToolbox\Simulation";
+
+        //todo: doesn't seem to automatically use the same settings object through DI. Need to understand and fix this.
+        simulation.DataRecorder.DataRecorderSettings = simulation.DataRecorderSettings;
+
         simulation.Radar.Scanner.ScanData = new ScanData()
         {
             RadarId = 1,
