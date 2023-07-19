@@ -1,4 +1,6 @@
-﻿namespace SimulationInsight.MathLibrary;
+﻿using CommunityToolkit.Diagnostics;
+
+namespace SimulationInsight.MathLibrary;
 
 public class Interpolation1D
 {
@@ -18,19 +20,30 @@ public class Interpolation1D
 
     public void Initialise()
     {
-        StepSize = X[1] - X[0];
+        Guard.IsGreaterThan(X.NumberOfElements, 0);
+        Guard.IsEqualTo(X.NumberOfElements, Y.NumberOfElements);
+
+        if (X.NumberOfElements > 1)
+        {
+            StepSize = X[1] - X[0];
+        }
     }
 
     public double Interpolate(double x)
     {
-        if (x < X[0])
+        if (X.NumberOfElements == 1)
         {
-            return X[0];
+            return Y[0];
         }
 
-        if (x > X[^1])
+        if (x <= X[0])
         {
-            return X[^1];
+            return Y[0];
+        }
+
+        if (x >= X[^1])
+        {
+            return Y[^1];
         }
 
         var index1 = (int)((x - X[0]) / StepSize);
@@ -38,11 +51,23 @@ public class Interpolation1D
         var x0 = X[index1];
         var x1 = X[index1 + 1];
 
-        var y0 = X[index1];
-        var y1 = X[index1 + 1];
+        var y0 = Y[index1];
+        var y1 = Y[index1 + 1];
 
         var y = y0 * (x1 - x) / StepSize + y1 * (x - x0) / StepSize;
 
         return y;
+    }
+
+    public Vector Interpolate(Vector x)
+    {
+        var result = new Vector(x.NumberOfElements);
+
+        for (int i = 0; i < x.NumberOfElements; i++)
+        {
+            result[i] = Interpolate(x[i]);
+        }
+
+        return result;
     }
 }
