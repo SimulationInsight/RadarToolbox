@@ -4,6 +4,8 @@ public partial class Vector
 {
     public int NumberOfElements => Data.Length;
 
+    public int Length => NumberOfElements;
+
     public double[] Data { get; init; }
 
     public Vector() : this(0)
