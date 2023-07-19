@@ -17,7 +17,9 @@ public class Scanner : IScanner
 
     public IMessageBus Bus { get; set; }
 
-    public int MessageId { get; set; }
+    public int ScanDataMessageId { get; set; }
+
+    public int AzimuthChangePulseDataMessageId { get; set; }
 
     public int ScanIndex { get; set; }
 
@@ -70,11 +72,11 @@ public class Scanner : IScanner
 
     public void SendScanDataMessage()
     {
-        MessageId++;
+        ScanDataMessageId++;
 
         var scanDataMessage = new ScanDataMessage()
         {
-            MessageId = MessageId,
+            MessageId = ScanDataMessageId,
             MessageTime = ScanData.Time,
             ScanData = ScanData
         };
@@ -84,7 +86,22 @@ public class Scanner : IScanner
 
     public void SendAzimuthChangePulseMessage()
     {
+        AzimuthChangePulseDataMessageId++;
 
+        var azimuthChangePulseData = new AzimuthChangePulseData()
+        {
+            Time = ScanData.Time,
+            ScanIndex = ScanData.ScanIndex,
+        };
+
+        var azimuthChangePulseDataMessage = new AzimuthChangePulseDataMessage()
+        {
+            MessageId = AzimuthChangePulseDataMessageId,
+            MessageTime = ScanData.Time,
+            AzimuthChangePulseData = azimuthChangePulseData,
+        };
+
+        Bus.PublishAsync(azimuthChangePulseDataMessage);
     }
 
     public void Finalise(double time)

@@ -10,6 +10,8 @@ namespace SimulationInsight.DataRecorder
 
         List<ScanDataMessage> ScanDataMessages { get; set; }
 
+        List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages { get; set; }
+
         void WriteData();
     }
 }

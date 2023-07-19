@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using SimulationInsight.SystemMessages;
+﻿using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.DataRecorder;
 
@@ -12,7 +11,7 @@ public class ScanDataMessageHandler
         DataRecorder = dataRecorder;
     }
 
-    public void Handle(ScanDataMessage scanDataMessage, ILogger<SystemMessageHandler> logger)
+    public void Handle(ScanDataMessage scanDataMessage)
     {
         DataRecorder.SystemMessages.Add(scanDataMessage);
 

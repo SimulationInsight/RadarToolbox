@@ -12,19 +12,25 @@ public class DataRecorder : IDataRecorder
 
     public List<ScanDataMessage> ScanDataMessages { get; set; }
 
+    public List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages { get; set; }
+
     public DataRecorder(IDataRecorderSettings dataRecorderSettings)
     {
         DataRecorderSettings = dataRecorderSettings;
         SystemMessages = new List<ISystemMessage>();
         ScanDataMessages = new List<ScanDataMessage>();
+        AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>();
     }
 
     public void WriteData()
     {
         Initialise();
 
+        SortMessages();
+
         WriteSystemMessages();
         WriteScanDataMessages();
+        WriteAzimuthChangePulseDataMessages();
     }
 
     public void Initialise()
@@ -43,6 +49,15 @@ public class DataRecorder : IDataRecorder
         }
     }
 
+    public void SortMessages()
+    {
+        SystemMessages = SystemMessages.OrderBy(s => s.MessageTime).ThenBy(s => s.MessageType).ToList();
+
+        ScanDataMessages = ScanDataMessages.OrderBy(s => s.MessageTime).ToList();
+
+        AzimuthChangePulseDataMessages = AzimuthChangePulseDataMessages.OrderBy(s => s.MessageTime).ToList();
+    }
+
     public void WriteSystemMessages()
     {
         var fileName = GetFullFileName("SystemMessages", ".csv");
@@ -55,6 +70,13 @@ public class DataRecorder : IDataRecorder
         var fileName = GetFullFileName("ScanData", ".csv");
 
         ScanDataMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteAzimuthChangePulseDataMessages()
+    {
+        var fileName = GetFullFileName("AzimuthChangePulseData", ".csv");
+
+        AzimuthChangePulseDataMessages.WriteToCsvFile(fileName);
     }
 
     public string GetFullFileName(string fileNamePart, string extension)
