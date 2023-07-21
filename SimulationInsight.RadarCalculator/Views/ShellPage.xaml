@@ -45,42 +45,44 @@
                 -->
                 <NavigationViewItem x:Uid="Shell_Main" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.MainViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE80F;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
                 <NavigationViewItem x:Uid="Shell_Transmitter" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.TransmitterViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE704;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Waveform" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.WaveformViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE877;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Antenna" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.AntennaViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE767;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Scanner" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.ScannerViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE14A;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Environment" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.EnvironmentViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE753;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Target" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.TargetViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
                 <NavigationViewItem x:Uid="Shell_SignalPower" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.SignalPowerViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE906;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_SignalDetection" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.SignalDetectionViewModel">
@@ -93,14 +95,15 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
                 <NavigationViewItem x:Uid="Shell_Import" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.ImportViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8E5;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Export" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.ExportViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE9F9;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
