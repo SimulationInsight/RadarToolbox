@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
@@ -18,9 +18,15 @@ steps:
   inputs:
     version: 7.x
     includePreviewVersions: true
-    
-- script: dotnet build SimulationInsight.RadarToolbox.sln --configuration $(buildConfiguration)
-  displayName: 'Build - $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: |
+     '**/*.csproj'
+     '!**/*RadarCalculator*.csproj'
+     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Run Tests'
@@ -28,6 +34,5 @@ steps:
     command: test
     projects: |
      **/*Tests/*.csproj 
-     !**/*Tests/*Rtsa*.csproj
-     !**/*Tests/*DAL*.csproj
+     !**/*RadarCalculator*.csproj
     arguments: '--configuration $(buildConfiguration)'
