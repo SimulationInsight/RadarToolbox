@@ -12,7 +12,11 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -85,6 +89,9 @@
                     Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
                     IsEnabled="True"/>
             </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Image Source="/Assets/radarbs.print.jpg" MaxHeight="500" MaxWidth="500"></Image>
         </StackPanel>
     </Grid>
 </Page>
