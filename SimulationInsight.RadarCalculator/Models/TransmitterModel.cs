@@ -64,6 +64,26 @@ public class TransmitterModel : ObservableObject
         }
     }
 
+    public double RfWavelength_cm
+    {
+        get => waveformParameters.RfWavelength_cm;
+        set
+        {
+            SetProperty(waveformParameters.RfWavelength_cm, value, waveformParameters, (u, n) => u.RfWavelength_cm = n);
+            UpdateBindings();
+        }
+    }
+
+    public double RfWavelength_mm
+    {
+        get => waveformParameters.RfWavelength_mm;
+        set
+        {
+            SetProperty(waveformParameters.RfWavelength_mm, value, waveformParameters, (u, n) => u.RfWavelength_mm = n);
+            UpdateBindings();
+        }
+    }
+
     public void UpdateBindings()
     {
         ViewModel.UpdateBindings();

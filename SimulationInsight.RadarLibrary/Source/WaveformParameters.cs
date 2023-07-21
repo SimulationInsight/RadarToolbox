@@ -32,13 +32,13 @@ public record WaveformParameters
 
     public double RfWavelength_cm
     {
-        get => RfWavelength / 100.0; 
+        get => RfWavelength * 100.0; 
         set => RfWavelength = value / 100.0;
     }
 
     public double RfWavelength_mm
     {
-        get => RfWavelength / 1000.0;
+        get => RfWavelength * 1000.0;
         set => RfWavelength = value / 1000.0;
     }
 

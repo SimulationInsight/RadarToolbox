@@ -28,6 +28,21 @@
                             CustomFormat="#0.000 MHz"
                             Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_MHz, Mode=TwoWay}"
                             IsEnabled="True"/>
+            <editors:SfNumberBox
+                            Header="Wavelength (m)"
+                            CustomFormat="#0.000 m"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
+                            IsEnabled="True"/>
+            <editors:SfNumberBox
+                            Header="Wavelength (cm)"
+                            CustomFormat="#0.000 cm"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_cm, Mode=TwoWay}"
+                            IsEnabled="True"/>
+            <editors:SfNumberBox
+                            Header="Wavelength (mm)"
+                            CustomFormat="#0.000 mm"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_mm, Mode=TwoWay}"
+                            IsEnabled="True"/>
         </StackPanel>
     </Grid>
 </Page>
