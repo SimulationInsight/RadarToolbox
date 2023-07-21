@@ -26,6 +26,7 @@ public class PageService : IPageService
         Configure<TrackingViewModel, TrackingPage>();
         Configure<ImportViewModel, ImportPage>();
         Configure<ExportViewModel, ExportPage>();
+        Configure<LearnViewModel, LearnPage>();
         Configure<SettingsViewModel, SettingsPage>();
     }
 

@@ -100,6 +100,9 @@
   <data name="Shell_Export.Content" xml:space="preserve">
     <value>Export</value>
   </data>
+	<data name="Shell_Learn.Content" xml:space="preserve">
+    <value>Learn</value>
+  </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
   </data>

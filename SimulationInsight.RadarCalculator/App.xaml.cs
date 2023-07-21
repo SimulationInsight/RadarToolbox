@@ -76,6 +76,8 @@ public partial class App : Application
             services.AddTransient<ExportPage>();
             services.AddTransient<ImportViewModel>();
             services.AddTransient<ImportPage>();
+            services.AddTransient<LearnViewModel>();
+            services.AddTransient<LearnPage>();
             services.AddTransient<TrackingViewModel>();
             services.AddTransient<TrackingPage>();
             services.AddTransient<SignalDetectionViewModel>();

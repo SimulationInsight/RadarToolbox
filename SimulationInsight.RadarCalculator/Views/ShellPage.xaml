@@ -106,6 +106,13 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE9F9;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
+                <NavigationViewItem x:Uid="Shell_Learn" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.LearnViewModel">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BE;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
             </NavigationView.MenuItems>
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
