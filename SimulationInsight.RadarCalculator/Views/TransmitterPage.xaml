@@ -13,36 +13,78 @@
 
     <Grid x:Name="ContentArea">
         <StackPanel>
-            <editors:SfNumberBox
-                            Header="Frequency (Hz)"
-                            CustomFormat="#0.000 Hz"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency, Mode=TwoWay}"
-                            IsEnabled="True"/>
-            <editors:SfNumberBox
-                            Header="Frequency (GHz)"
-                            CustomFormat="#0.000 GHz"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_GHz, Mode=TwoWay}"
-                            IsEnabled="True"/>
-            <editors:SfNumberBox
-                            Header="Frequency (MHz)"
-                            CustomFormat="#0.000 MHz"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_MHz, Mode=TwoWay}"
-                            IsEnabled="True"/>
-            <editors:SfNumberBox
-                            Header="Wavelength (m)"
-                            CustomFormat="#0.000 m"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
-                            IsEnabled="True"/>
-            <editors:SfNumberBox
-                            Header="Wavelength (cm)"
-                            CustomFormat="#0.000 cm"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_cm, Mode=TwoWay}"
-                            IsEnabled="True"/>
-            <editors:SfNumberBox
-                            Header="Wavelength (mm)"
-                            CustomFormat="#0.000 mm"
-                            Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_mm, Mode=TwoWay}"
-                            IsEnabled="True"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Frequency"
+                    Grid.Row="0"
+                    Grid.Column="0">
+                </TextBlock>
+                <editors:SfNumberBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    <!--Header="Frequency (GHz)"-->
+                    CustomFormat="#0.000 GHz"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_GHz, Mode=TwoWay}"
+                    IsEnabled="True"/>
+                <editors:SfNumberBox
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    <!--Header="Frequency (MHz)"-->
+                    CustomFormat="#0.000 MHz"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_MHz, Mode=TwoWay}"
+                    IsEnabled="True"/>
+                <editors:SfNumberBox
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    <!--Header="Frequency (kHz)"-->
+                    CustomFormat="#0.000 kHz"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_kHz, Mode=TwoWay}"
+                    IsEnabled="True"/>
+                <editors:SfNumberBox
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    <!--Header="Frequency (Hz)"-->
+                    CustomFormat="#0.000 Hz"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfFrequency, Mode=TwoWay}"
+                    IsEnabled="True"/>
+                <TextBlock Text="Wavelength"
+                    Grid.Row="1"
+                    Grid.Column="0">
+                </TextBlock>
+                <editors:SfNumberBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Header="Wavelength (mm)"
+                    CustomFormat="#0.000 mm"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_mm, Mode=TwoWay}"
+                    IsEnabled="True"/>                
+                <editors:SfNumberBox
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Header="Wavelength (cm)"
+                    CustomFormat="#0.000 cm"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_cm, Mode=TwoWay}"
+                    IsEnabled="True"/>
+                <editors:SfNumberBox
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Header="Wavelength (m)"
+                    CustomFormat="#0.000 m"
+                    Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
+                    IsEnabled="True"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>

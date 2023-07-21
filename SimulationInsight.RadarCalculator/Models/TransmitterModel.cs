@@ -54,6 +54,16 @@ public class TransmitterModel : ObservableObject
         }
     }
 
+    public double RfFrequency_kHz
+    {
+        get => waveformParameters.RfFrequency_kHz;
+        set
+        {
+            SetProperty(waveformParameters.RfFrequency_kHz, value, waveformParameters, (u, n) => u.RfFrequency_kHz = n);
+            UpdateBindings();
+        }
+    }
+
     public double RfWavelength
     {
         get => waveformParameters.RfWavelength;

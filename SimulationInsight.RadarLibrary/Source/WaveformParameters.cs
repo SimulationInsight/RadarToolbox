@@ -12,15 +12,21 @@ public record WaveformParameters
         get; set;
     }
 
+    public double RfFrequency_kHz
+    {
+        get => RfFrequency / 1.0e3;
+        set => RfFrequency = value * 1.0e3;
+    }
+
     public double RfFrequency_MHz
     {
-        get => RfFrequency / 1.0e6; 
+        get => RfFrequency / 1.0e6;
         set => RfFrequency = value * 1.0e6;
     }
 
     public double RfFrequency_GHz
     {
-        get => RfFrequency / 1.0e9; 
+        get => RfFrequency / 1.0e9;
         set => RfFrequency = value * 1.0e9;
     }
 
