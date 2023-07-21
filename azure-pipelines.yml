@@ -24,15 +24,15 @@ steps:
   inputs:
     command: 'build'
     projects: |
-     '**/*.csproj'
-     '!**/*RadarCalculator*.csproj'
+      **/*.csproj
+      !**/*RadarCalculator*.csproj
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Run Tests'
   inputs:
-    command: test
+    command: 'test'
     projects: |
-     **/*Tests/*.csproj 
-     !**/*RadarCalculator*.csproj
+      **/*Tests/*.csproj 
+      !**/*RadarCalculator*.csproj
     arguments: '--configuration $(buildConfiguration)'
