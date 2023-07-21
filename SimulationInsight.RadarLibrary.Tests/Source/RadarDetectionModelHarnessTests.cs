@@ -10,7 +10,7 @@ public class RadarDetectionModelHarnessTests
         var w = new WaveformParameters()
         {
             WaveformName = "Waveform_1",
-            RfFrequencyCentre = 9.0e9,
+            RfFrequency = 9.0e9,
             PulseWidth = 10.0e-6,
             PulseBandwidth = 50.0e6,
             PulseRepetitionFrequency = 1000.0,

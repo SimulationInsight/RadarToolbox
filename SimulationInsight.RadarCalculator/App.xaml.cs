@@ -11,6 +11,7 @@ using SimulationInsight.RadarCalculator.Models;
 using SimulationInsight.RadarCalculator.Services;
 using SimulationInsight.RadarCalculator.ViewModels;
 using SimulationInsight.RadarCalculator.Views;
+using SimulationInsight.RadarLibrary;
 
 namespace SimulationInsight.RadarCalculator;
 
@@ -97,6 +98,10 @@ public partial class App : Application
             services.AddTransient<MainPage>();
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
+
+            // Models:
+            services.AddSingleton<TransmitterModel>();
+            services.AddSingleton<WaveformParameters>();
 
             // Configuration
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

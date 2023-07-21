@@ -4,9 +4,30 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors" 
+    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges" 
+    xmlns:converters="using:Syncfusion.UI.Xaml.Core"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-        
+        <StackPanel>
+            <editors:SfNumberBox
+                            Header="Frequency (Hz)"
+                            CustomFormat="#0.000 Hz"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency, Mode=TwoWay}"
+                            IsEnabled="True"/>
+            <editors:SfNumberBox
+                            Header="Frequency (GHz)"
+                            CustomFormat="#0.000 GHz"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_GHz, Mode=TwoWay}"
+                            IsEnabled="True"/>
+            <editors:SfNumberBox
+                            Header="Frequency (MHz)"
+                            CustomFormat="#0.000 MHz"
+                            Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_MHz, Mode=TwoWay}"
+                            IsEnabled="True"/>
+        </StackPanel>
     </Grid>
 </Page>

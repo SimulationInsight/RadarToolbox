@@ -9,7 +9,7 @@ internal static class RadarDetectionModelFunctions
         var i = inputs;
         var w = inputs.WaveformParameters;
 
-        var signalPower = RadarRangeEquationFunctions.CalculateSignalPower(w.RfFrequencyCentre, i.TransmitPeakPower, w.PulseWidth, i.TransmitGain, i.ReceiveGain, w.NumberOfPulses, i.TargetRange, i.TargetRadarCrossSection, i.SystemLosses);
+        var signalPower = RadarRangeEquationFunctions.CalculateSignalPower(w.RfFrequency, i.TransmitPeakPower, w.PulseWidth, i.TransmitGain, i.ReceiveGain, w.NumberOfPulses, i.TargetRange, i.TargetRadarCrossSection, i.SystemLosses);
 
         return signalPower;
     }

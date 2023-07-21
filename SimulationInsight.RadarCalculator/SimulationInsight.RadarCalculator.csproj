@@ -24,11 +24,14 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230502000" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+    <PackageReference Include="Syncfusion.Core.WinUI" Version="22.1.39" />
+    <PackageReference Include="Syncfusion.Editors.WinUI" Version="22.1.39" />
     <PackageReference Include="WinUIEx" Version="2.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.RadarCalculator.Core\SimulationInsight.RadarCalculator.Core.csproj" />
+    <ProjectReference Include="..\SimulationInsight.RadarLibrary\SimulationInsight.RadarLibrary.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">

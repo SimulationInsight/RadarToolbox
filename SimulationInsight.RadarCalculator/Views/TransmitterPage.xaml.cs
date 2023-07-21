@@ -14,6 +14,14 @@ public sealed partial class TransmitterPage : Page
     public TransmitterPage()
     {
         ViewModel = App.GetService<TransmitterViewModel>();
+
+        ViewModel.TransmitterPage = this;
+
         InitializeComponent();
+    }
+
+    public void UpdateBindings()
+    {
+        Bindings.Update();
     }
 }
