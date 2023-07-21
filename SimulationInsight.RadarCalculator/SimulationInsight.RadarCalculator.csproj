@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.RadarCalculator.Core\SimulationInsight.RadarCalculator.Core.csproj" />
+    <ProjectReference Include="..\SimulationInsight.RadarFunctions\SimulationInsight.RadarFunctions.csproj" />
     <ProjectReference Include="..\SimulationInsight.RadarLibrary\SimulationInsight.RadarLibrary.csproj" />
   </ItemGroup>
   <ItemGroup>

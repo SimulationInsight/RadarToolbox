@@ -88,6 +88,20 @@
                     CustomFormat="#0.000 m"
                     Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
                     IsEnabled="True"/>
+                <TextBlock Text="Radar Band"
+                    Grid.Row="2"
+                    Grid.Column="0">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{x:Bind ViewModel.TransmitterModel.IeeeBand, Mode=OneWay}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="2"                    
+                    Text="{x:Bind ViewModel.TransmitterModel.NatoBand, Mode=OneWay}">
+                </TextBlock>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Column="1">

@@ -94,6 +94,10 @@ public class TransmitterModel : ObservableObject
         }
     }
 
+    public string IeeeBand => RadarFunctions.RadarFunctions.GetIeeeRadarBand(RfFrequency_GHz);
+
+    public string NatoBand => RadarFunctions.RadarFunctions.GetNatoRadarBand(RfFrequency_GHz);
+
     public void UpdateBindings()
     {
         ViewModel.UpdateBindings();
