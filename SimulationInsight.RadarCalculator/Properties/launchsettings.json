@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "SimulationInsight.RadarCalculator (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "SimulationInsight.RadarCalculator (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
