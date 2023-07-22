@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-
+using SimulationInsight.Antenna;
 using SimulationInsight.RadarCalculator.Activation;
 using SimulationInsight.RadarCalculator.Contracts.Services;
 using SimulationInsight.RadarCalculator.Core.Contracts.Services;
@@ -104,6 +104,7 @@ public partial class App : Application
             // Models:
             services.AddSingleton<TransmitterModel>();
             services.AddSingleton<TransmitterParameters>();
+            services.AddSingleton<AntennaParameters>();
             services.AddSingleton<WaveformParameters>();
 
             // Configuration

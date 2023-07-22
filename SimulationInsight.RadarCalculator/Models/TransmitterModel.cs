@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using SimulationInsight.Antenna;
+using SimulationInsight.MathLibrary;
 using SimulationInsight.RadarCalculator.ViewModels;
 using SimulationInsight.RadarLibrary;
 
@@ -16,16 +18,26 @@ public class TransmitterModel : ObservableObject
         get; set;
     }
 
+    public AntennaParameters AntennaParameters
+    {
+        get; set;
+    }
+
     public TransmitterViewModel ViewModel
     {
         get; set;
     }
 
-    public TransmitterModel(TransmitterParameters transmitterParameters, WaveformParameters waveformParameters)
+    public TransmitterModel(TransmitterParameters transmitterParameters, WaveformParameters waveformParameters, AntennaParameters antennaParameters)
     {
         WaveformParameters = waveformParameters;
         TransmitterParameters = transmitterParameters;
+        AntennaParameters = antennaParameters;
     }
+
+    public string IeeeBand => RadarFunctions.RadarFunctions.GetIeeeRadarBand(RfFrequency_GHz);
+
+    public string NatoBand => RadarFunctions.RadarFunctions.GetNatoRadarBand(RfFrequency_GHz);
 
     public double RfFrequency
     {
@@ -97,10 +109,6 @@ public class TransmitterModel : ObservableObject
         }
     }
 
-    public string IeeeBand => RadarFunctions.RadarFunctions.GetIeeeRadarBand(RfFrequency_GHz);
-
-    public string NatoBand => RadarFunctions.RadarFunctions.GetNatoRadarBand(RfFrequency_GHz);
-
     public double TransmitPower
     {
         get => TransmitterParameters.TransmitPower;
@@ -130,6 +138,32 @@ public class TransmitterModel : ObservableObject
             UpdateBindings();
         }
     }
+
+    public double AntennaGain
+    {
+        get => AntennaParameters.Gain;
+        set
+        {
+            SetProperty(AntennaParameters.Gain, value, AntennaParameters, (u, n) => u.Gain = n);
+            UpdateBindings();
+        }
+    }
+
+    public double AntennaGain_dB
+    {
+        get => AntennaParameters.Gain_dB;
+        set
+        {
+            SetProperty(AntennaParameters.Gain_dB, value, AntennaParameters, (u, n) => u.Gain_dB = n);
+            UpdateBindings();
+        }
+    }
+
+    public double Eirp => TransmitPower * AntennaGain;
+
+    public double Eirp_dB => Eirp.PowerToDecibels();
+
+    public double Eirp_dBm => Eirp_dB.dBTodBm();
 
     public void UpdateBindings()
     {

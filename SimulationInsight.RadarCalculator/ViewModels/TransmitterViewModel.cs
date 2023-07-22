@@ -26,6 +26,7 @@ public partial class TransmitterViewModel : ObservableRecipient
         {
             TransmitterModel.RfFrequency = 9e9;
             TransmitterModel.TransmitPower = 500.0;
+            TransmitterModel.AntennaGain_dB = 32.0;
         }
     }
 
