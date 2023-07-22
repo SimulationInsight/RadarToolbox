@@ -2,7 +2,10 @@
 
 public class Radar : IRadar
 {
-    public IScanner Scanner { get; set; }
+    public IScanner Scanner
+    {
+        get; set;
+    }
 
     public Radar(IScanner scanner)
     {

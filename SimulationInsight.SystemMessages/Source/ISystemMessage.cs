@@ -2,12 +2,24 @@
 {
     public interface ISystemMessage
     {
-        SystemMessageType MessageType { get; }
+        SystemMessageType MessageType
+        {
+            get;
+        }
 
-        int MessageOriginId { get; set; }
+        int MessageOriginId
+        {
+            get; set;
+        }
 
-        int MessageId { get; set; }
+        int MessageId
+        {
+            get; set;
+        }
 
-        double MessageTime { get; set; }
+        double MessageTime
+        {
+            get; set;
+        }
     }
 }

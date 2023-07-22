@@ -2,17 +2,41 @@
 
 public record Cartesians
 {
-    public double PositionX { get; init; }
+    public double PositionX
+    {
+        get;
+        init;
+    }
 
-    public double PositionY { get; init; }
+    public double PositionY
+    {
+        get;
+        init;
+    }
 
-    public double PositionZ { get; init; }
+    public double PositionZ
+    {
+        get;
+        init;
+    }
 
-    public double VelocityX { get; init; }
+    public double VelocityX
+    {
+        get;
+        init;
+    }
 
-    public double VelocityY { get; init; }
+    public double VelocityY
+    {
+        get;
+        init;
+    }
 
-    public double VelocityZ { get; init; }
+    public double VelocityZ
+    {
+        get;
+        init;
+    }
 
     public Cartesians()
     {

@@ -6,7 +6,10 @@ public class SystemClock : ISystemClock
 
     public DateTime CurrentDateTime => DateTimeOrigin.AddSeconds(CurrentTime);
 
-    public double CurrentTime { get; set; }
+    public double CurrentTime
+    {
+        get; set;
+    }
 
     public void Initialise(double time)
     {

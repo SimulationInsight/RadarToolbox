@@ -4,11 +4,20 @@ namespace SimulationInsight.MathLibrary;
 
 public record XYZ
 {
-    public double X { get; init; }
+    public double X
+    {
+        get; init;
+    }
 
-    public double Y { get; init; }
+    public double Y
+    {
+        get; init;
+    }
 
-    public double Z { get; init; }
+    public double Z
+    {
+        get; init;
+    }
 
     public XYZ()
     {

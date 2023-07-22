@@ -1,7 +1,7 @@
 ﻿using SimulationInsight.MathLibrary;
+using static System.Math;
 using static SimulationInsight.MathLibrary.PhysicalConstants;
 using static SimulationInsight.RadarFunctions.RadarFunctions;
-using static System.Math;
 
 namespace SimulationInsight.RadarFunctions;
 

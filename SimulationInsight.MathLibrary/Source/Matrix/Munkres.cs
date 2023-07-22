@@ -41,15 +41,30 @@ public class Munkres
         SolutionMatrix = new Matrix();
     }
 
-    public Matrix CostMatrix { get; set; }
+    public Matrix CostMatrix
+    {
+        get; set;
+    }
 
-    public Matrix AssignmentMatrix { get; set; }
+    public Matrix AssignmentMatrix
+    {
+        get; set;
+    }
 
-    public Matrix SolutionMatrix { get; set; }
+    public Matrix SolutionMatrix
+    {
+        get; set;
+    }
 
-    public double TotalCost { get; set; }
+    public double TotalCost
+    {
+        get; set;
+    }
 
-    public bool IsShowDiagnostics { get; set; }
+    public bool IsShowDiagnostics
+    {
+        get; set;
+    }
 
     public void Solve()
     {

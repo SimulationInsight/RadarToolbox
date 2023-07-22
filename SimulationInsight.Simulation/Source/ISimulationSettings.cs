@@ -2,16 +2,34 @@
 {
     public interface ISimulationSettings
     {
-        string SimulationName { get; set; }
+        string SimulationName
+        {
+            get; set;
+        }
 
-        string SimulationDescription { get; set; }
+        string SimulationDescription
+        {
+            get; set;
+        }
 
-        DateTime SimulationStartDateTime { get; set; }
+        DateTime SimulationStartDateTime
+        {
+            get; set;
+        }
 
-        double StartTime { get; set; }
+        double StartTime
+        {
+            get; set;
+        }
 
-        double EndTime { get; set; }
+        double EndTime
+        {
+            get; set;
+        }
 
-        double TimeStep { get; set; }
+        double TimeStep
+        {
+            get; set;
+        }
     }
 }

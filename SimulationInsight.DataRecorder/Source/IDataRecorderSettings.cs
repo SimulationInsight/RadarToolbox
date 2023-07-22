@@ -2,9 +2,18 @@
 
 public interface IDataRecorderSettings
 {
-    string SimulationName { get; set; }
+    string SimulationName
+    {
+        get; set;
+    }
 
-    string OutputFolderTopLevel { get; set; }
+    string OutputFolderTopLevel
+    {
+        get; set;
+    }
 
-    string OutputFolder { get; }
+    string OutputFolder
+    {
+        get;
+    }
 }

@@ -7,5 +7,8 @@ public class ScanDataMessage : SystemMessage
         MessageType = SystemMessageType.ScanData;
     }
 
-    public ScanData ScanData { get; set; }
+    public ScanData ScanData
+    {
+        get; set;
+    }
 }

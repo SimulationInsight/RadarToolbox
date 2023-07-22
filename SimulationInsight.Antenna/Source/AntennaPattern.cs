@@ -2,7 +2,10 @@
 
 public abstract class AntennaPattern
 {
-    public AntennaPatternType AntennaPatternType { get; init; }
+    public AntennaPatternType AntennaPatternType
+    {
+        get; init;
+    }
 
     public abstract double GetAntennaGain_dB(double azimuthAngleDeg, double elevationAngleDeg);
 }

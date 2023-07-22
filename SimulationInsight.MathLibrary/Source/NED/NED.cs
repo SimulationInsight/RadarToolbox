@@ -4,11 +4,20 @@ namespace SimulationInsight.MathLibrary;
 
 public record NED
 {
-    public double N { get; init; }
+    public double N
+    {
+        get; init;
+    }
 
-    public double E { get; init; }
+    public double E
+    {
+        get; init;
+    }
 
-    public double D { get; init; }
+    public double D
+    {
+        get; init;
+    }
 
     public NED()
     {

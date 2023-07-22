@@ -6,7 +6,6 @@ using SimulationInsight.RadarCalculator.Activation;
 using SimulationInsight.RadarCalculator.Contracts.Services;
 using SimulationInsight.RadarCalculator.Core.Contracts.Services;
 using SimulationInsight.RadarCalculator.Core.Services;
-using SimulationInsight.RadarCalculator.Helpers;
 using SimulationInsight.RadarCalculator.Models;
 using SimulationInsight.RadarCalculator.Services;
 using SimulationInsight.RadarCalculator.ViewModels;
@@ -41,7 +40,10 @@ public partial class App : Application
 
     public static WindowEx MainWindow { get; } = new MainWindow();
 
-    public static UIElement? AppTitlebar { get; set; }
+    public static UIElement? AppTitlebar
+    {
+        get; set;
+    }
 
     public App()
     {
@@ -125,7 +127,7 @@ public partial class App : Application
         // https://docs.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.unhandledexception.
     }
 
-    protected async override void OnLaunched(LaunchActivatedEventArgs args)
+    protected override async void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
 

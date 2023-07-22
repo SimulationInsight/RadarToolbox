@@ -2,7 +2,10 @@
 {
     public class AntennaPatternFixedGain : AntennaPattern
     {
-        public double Gain_dB { get; set; }
+        public double Gain_dB
+        {
+            get; set;
+        }
 
         public AntennaPatternFixedGain()
         {

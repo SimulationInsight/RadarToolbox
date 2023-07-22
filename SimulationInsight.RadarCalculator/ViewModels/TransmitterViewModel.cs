@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using SimulationInsight.RadarCalculator.Models;
-using SimulationInsight.RadarCalculator.Views;
+﻿using SimulationInsight.RadarCalculator.Models;
 
 namespace SimulationInsight.RadarCalculator.ViewModels;
 

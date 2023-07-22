@@ -7,5 +7,8 @@ public class AzimuthChangePulseDataMessage : SystemMessage
         MessageType = SystemMessageType.AzimuthChangePulse;
     }
 
-    public AzimuthChangePulseData AzimuthChangePulseData { get; set; }
+    public AzimuthChangePulseData AzimuthChangePulseData
+    {
+        get; set;
+    }
 }

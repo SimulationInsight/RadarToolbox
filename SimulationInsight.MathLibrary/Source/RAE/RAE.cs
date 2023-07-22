@@ -2,11 +2,20 @@
 
 public record RAE
 {
-    public double R { get; init; }
+    public double R
+    {
+        get; init;
+    }
 
-    public double A { get; init; }
+    public double A
+    {
+        get; init;
+    }
 
-    public double E { get; init; }
+    public double E
+    {
+        get; init;
+    }
 
     public RAE()
     {

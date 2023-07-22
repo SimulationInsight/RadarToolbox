@@ -4,11 +4,20 @@ namespace SimulationInsight.MathLibrary;
 
 public class Interpolation1D
 {
-    public Vector X { get; set; }
+    public Vector X
+    {
+        get; set;
+    }
 
-    public Vector Y { get; set; }
+    public Vector Y
+    {
+        get; set;
+    }
 
-    public double StepSize { get; set; }
+    public double StepSize
+    {
+        get; set;
+    }
 
     public Interpolation1D(Vector x, Vector y)
     {

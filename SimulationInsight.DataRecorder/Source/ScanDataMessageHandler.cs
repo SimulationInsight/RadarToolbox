@@ -4,7 +4,10 @@ namespace SimulationInsight.DataRecorder;
 
 public class ScanDataMessageHandler
 {
-    public IDataRecorder DataRecorder { get; set; }
+    public IDataRecorder DataRecorder
+    {
+        get; set;
+    }
 
     public ScanDataMessageHandler(IDataRecorder dataRecorder)
     {

@@ -6,21 +6,45 @@ namespace SimulationInsight.Radar;
 
 public class Scanner : IScanner
 {
-    public double MaximumAzimuthAccelerationDeg { get; set; }
+    public double MaximumAzimuthAccelerationDeg
+    {
+        get; set;
+    }
 
-    public double AzimuthAccelerationConstant { get; set; }
+    public double AzimuthAccelerationConstant
+    {
+        get; set;
+    }
 
-    public ScanPattern ScanPattern { get; set; }
+    public ScanPattern ScanPattern
+    {
+        get; set;
+    }
 
-    public ScanData ScanData { get; set; }
+    public ScanData ScanData
+    {
+        get; set;
+    }
 
-    public IMessageBus Bus { get; set; }
+    public IMessageBus Bus
+    {
+        get; set;
+    }
 
-    public int ScanDataMessageId { get; set; }
+    public int ScanDataMessageId
+    {
+        get; set;
+    }
 
-    public int AzimuthChangePulseDataMessageId { get; set; }
+    public int AzimuthChangePulseDataMessageId
+    {
+        get; set;
+    }
 
-    public int ScanIndex { get; set; }
+    public int ScanIndex
+    {
+        get; set;
+    }
 
     public Scanner(IMessageBus bus)
     {

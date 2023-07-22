@@ -4,14 +4,35 @@ namespace SimulationInsight.Antenna;
 
 public class AntennaPattern1D : AntennaPattern
 {
-    public Vector AzimuthDeg { get; set; }
-    public Vector AzimuthGain_dB { get; set; }
+    public Vector AzimuthDeg
+    {
+        get; set;
+    }
 
-    public Vector ElevationDeg { get; set; }
-    public Vector ElevationGain_dB { get; set; }
+    public Vector AzimuthGain_dB
+    {
+        get; set;
+    }
 
-    public Interpolation1D AzimuthInterpolant { get; set; }
-    public Interpolation1D ElevationInterpolant { get; set; }
+    public Vector ElevationDeg
+    {
+        get; set;
+    }
+
+    public Vector ElevationGain_dB
+    {
+        get; set;
+    }
+
+    public Interpolation1D AzimuthInterpolant
+    {
+        get; set;
+    }
+
+    public Interpolation1D ElevationInterpolant
+    {
+        get; set;
+    }
 
     public AntennaPattern1D()
     {

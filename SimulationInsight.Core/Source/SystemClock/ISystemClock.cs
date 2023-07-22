@@ -2,10 +2,19 @@
 {
     public interface ISystemClock : IExecutableModel
     {
-        DateTime DateTimeOrigin { get; set; }
+        DateTime DateTimeOrigin
+        {
+            get; set;
+        }
 
-        DateTime CurrentDateTime { get; }
+        DateTime CurrentDateTime
+        {
+            get;
+        }
 
-        double CurrentTime { get; set; }
+        double CurrentTime
+        {
+            get; set;
+        }
     }
 }

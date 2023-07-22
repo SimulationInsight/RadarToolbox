@@ -2,7 +2,10 @@
 
 public class Signal
 {
-    public double RFFrequencyCentre { get; set; }
+    public double RFFrequencyCentre
+    {
+        get; set;
+    }
 
     public double RFFrequencyMin => RFFrequencyCentre - SampleRate / 2.0;
 
@@ -10,7 +13,10 @@ public class Signal
 
     public double RFBandwidth => SampleRate;
 
-    public double SampleRate { get; set; }
+    public double SampleRate
+    {
+        get; set;
+    }
 
     public int NumberOfSamples => I.Length;
 
@@ -18,9 +24,15 @@ public class Signal
 
     public double EndTime => (NumberOfSamples - 1) / SampleRate;
 
-    public double[] I { get; set; }
+    public double[] I
+    {
+        get; set;
+    }
 
-    public double[] Q { get; set; }
+    public double[] Q
+    {
+        get; set;
+    }
 
     public float[] GetSampleDataFloat()
     {

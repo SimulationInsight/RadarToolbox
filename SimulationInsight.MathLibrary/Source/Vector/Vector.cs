@@ -6,7 +6,10 @@ public partial class Vector
 
     public int Length => NumberOfElements;
 
-    public double[] Data { get; init; }
+    public double[] Data
+    {
+        get; init;
+    }
 
     public Vector() : this(0)
     {

@@ -4,9 +4,15 @@ namespace SimulationInsight.RadarLibrary;
 
 public class RadarDetectionModel
 {
-    public RadarDetectionModelInputs Inputs { get; set; }
+    public RadarDetectionModelInputs Inputs
+    {
+        get; set;
+    }
 
-    public RadarDetectionModelOutputs Outputs { get; set; }
+    public RadarDetectionModelOutputs Outputs
+    {
+        get; set;
+    }
 
     public RadarDetectionModel()
     {

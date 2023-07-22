@@ -9,7 +9,8 @@ public record WaveformParameters
 
     public double RfFrequency
     {
-        get; set;
+        get;
+        set;
     }
 
     public double RfFrequency_kHz
@@ -32,13 +33,13 @@ public record WaveformParameters
 
     public double RfWavelength
     {
-        get => SpeedOfLight / RfFrequency; 
+        get => SpeedOfLight / RfFrequency;
         set => RfFrequency = SpeedOfLight / value;
     }
 
     public double RfWavelength_cm
     {
-        get => RfWavelength * 100.0; 
+        get => RfWavelength * 100.0;
         set => RfWavelength = value / 100.0;
     }
 
@@ -50,34 +51,38 @@ public record WaveformParameters
 
     public double PulseWidth
     {
-        get; set;
+        get;
+        set;
     }
 
     public double PulseWidth_us
     {
-        get => PulseWidth * 1.0e6; 
+        get => PulseWidth * 1.0e6;
         set => PulseWidth = value * 1.0e-6;
     }
 
     public double PulseBandwidth
     {
-        get; set;
+        get;
+        set;
     }
 
     public double PulseRepetitionFrequency
     {
-        get; set;
+        get;
+        set;
     }
 
     public double PulseRepetitionInterval
     {
-        get => 1.0 / PulseRepetitionFrequency; 
+        get => 1.0 / PulseRepetitionFrequency;
         set => PulseRepetitionFrequency = 1.0 / value;
     }
 
     public int NumberOfPulses
     {
-        get; set;
+        get;
+        set;
     }
 
     public double BurstTime => PulseRepetitionInterval * NumberOfPulses;

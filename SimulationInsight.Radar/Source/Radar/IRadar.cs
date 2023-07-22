@@ -4,5 +4,8 @@ namespace SimulationInsight.Radar;
 
 public interface IRadar : IExecutableModel
 {
-    IScanner Scanner { get; set; }
+    IScanner Scanner
+    {
+        get; set;
+    }
 }

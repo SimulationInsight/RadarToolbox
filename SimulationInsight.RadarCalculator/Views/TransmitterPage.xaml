@@ -1,15 +1,10 @@
 ﻿<userControls:PageBase
     x:Class="SimulationInsight.RadarCalculator.Views.TransmitterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
-    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
-    xmlns:editors="using:Syncfusion.UI.Xaml.Editors" 
     xmlns:userControls="using:SimulationInsight.RadarCalculator.Views"
-    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges" 
-    xmlns:converters="using:Syncfusion.UI.Xaml.Core"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
@@ -36,9 +31,9 @@
                     <ColumnDefinition MaxWidth="150"></ColumnDefinition>
                     <ColumnDefinition MaxWidth="150"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <userControls:FrequencyUserControl 
+                <userControls:FrequencyUserControl
                     Grid.Row="0"
-                    Grid.Column="0"/>
+                    Grid.Column="0" />
             </Grid>
         </StackPanel>
         <StackPanel Grid.Column="1">

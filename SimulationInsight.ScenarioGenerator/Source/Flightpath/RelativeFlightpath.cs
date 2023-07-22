@@ -2,9 +2,15 @@
 
 public class RelativeFlightpath
 {
-    public Flightpath Origin { get; set; }
+    public Flightpath Origin
+    {
+        get; set;
+    }
 
-    public Flightpath Target { get; set; }
+    public Flightpath Target
+    {
+        get; set;
+    }
 
     public RelativeFlightpathData GetRelativeFlightpathData(double time)
     {

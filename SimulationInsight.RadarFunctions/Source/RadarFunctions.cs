@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using static SimulationInsight.MathLibrary.PhysicalConstants;
+﻿using static SimulationInsight.MathLibrary.PhysicalConstants;
 
 namespace SimulationInsight.RadarFunctions;
 

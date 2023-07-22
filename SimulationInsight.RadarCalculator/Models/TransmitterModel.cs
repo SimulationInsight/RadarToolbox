@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using SimulationInsight.Antenna;
-using SimulationInsight.MathLibrary;
-using SimulationInsight.RadarCalculator.ViewModels;
+﻿using SimulationInsight.Antenna;
 using SimulationInsight.RadarLibrary;
 
 namespace SimulationInsight.RadarCalculator.Models;

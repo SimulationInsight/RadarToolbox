@@ -12,7 +12,7 @@ public partial class TransmitterViewModelBase : ViewModelBase
 
     public TransmitterModel TransmitterModel
     {
-        get; 
+        get;
         set;
     }
 

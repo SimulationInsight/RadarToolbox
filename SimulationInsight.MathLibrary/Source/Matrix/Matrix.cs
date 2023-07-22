@@ -8,7 +8,10 @@ public partial class Matrix
 
     public int NumberOfElements => NumberOfRows * NumberOfColumns;
 
-    public double[,] Data { get; set; }
+    public double[,] Data
+    {
+        get; set;
+    }
 
     public Matrix() : this(0, 0)
     {

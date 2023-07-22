@@ -4,11 +4,20 @@ namespace SimulationInsight.RadarLibrary;
 
 public record RadarDetectionModelOutputs
 {
-    public double SignalPower { get; set; }
+    public double SignalPower
+    {
+        get; set;
+    }
 
-    public double NoisePower { get; set; }
+    public double NoisePower
+    {
+        get; set;
+    }
 
-    public double SignalToNoiseRatio { get; set; }
+    public double SignalToNoiseRatio
+    {
+        get; set;
+    }
 
     public double SignalPower_dB => SignalPower.PowerToDecibels();
 

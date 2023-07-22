@@ -2,11 +2,20 @@
 
 public class Scenario
 {
-    public ScenarioSettings ScenarioSettings { get; set; }
+    public ScenarioSettings ScenarioSettings
+    {
+        get; set;
+    }
 
-    public List<Flightpath> Flightpaths { get; set; }
+    public List<Flightpath> Flightpaths
+    {
+        get; set;
+    }
 
-    public List<RelativeFlightpath> RelativeFlightpaths { get; set; }
+    public List<RelativeFlightpath> RelativeFlightpaths
+    {
+        get; set;
+    }
 
     public Scenario(ScenarioSettings scenarioSettings)
     {

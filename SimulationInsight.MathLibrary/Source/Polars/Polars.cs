@@ -4,17 +4,35 @@ namespace SimulationInsight.MathLibrary;
 
 public record Polars
 {
-    public double Range { get; init; }
+    public double Range
+    {
+        get; init;
+    }
 
-    public double RangeRate { get; init; }
+    public double RangeRate
+    {
+        get; init;
+    }
 
-    public double AzimuthAngle { get; init; }
+    public double AzimuthAngle
+    {
+        get; init;
+    }
 
-    public double AzimuthRate { get; init; }
+    public double AzimuthRate
+    {
+        get; init;
+    }
 
-    public double ElevationAngle { get; init; }
+    public double ElevationAngle
+    {
+        get; init;
+    }
 
-    public double ElevationRate { get; init; }
+    public double ElevationRate
+    {
+        get; init;
+    }
 
     public double GroundRange => Range * Cos(ElevationAngle);
 

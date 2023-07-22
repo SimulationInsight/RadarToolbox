@@ -2,11 +2,20 @@
 
 public class RadarDetectionModelHarness
 {
-    public RadarDetectionModelHarnessInputs RadarDetectionModelHarnessInputs { get; set; }
+    public RadarDetectionModelHarnessInputs RadarDetectionModelHarnessInputs
+    {
+        get; set;
+    }
 
-    public RadarDetectionModel RadarDetectionModel { get; set; }
+    public RadarDetectionModel RadarDetectionModel
+    {
+        get; set;
+    }
 
-    public List<RadarDetectionModelData> RadarDetectionModelData { get; set; }
+    public List<RadarDetectionModelData> RadarDetectionModelData
+    {
+        get; set;
+    }
 
     public RadarDetectionModelHarness()
     {

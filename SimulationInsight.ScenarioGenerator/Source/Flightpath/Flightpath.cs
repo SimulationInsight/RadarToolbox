@@ -4,11 +4,20 @@ namespace SimulationInsight.ScenarioGenerator;
 
 public record Flightpath : IFlightpath
 {
-    public LLA LLAOrigin { get; set; }
+    public LLA LLAOrigin
+    {
+        get; set;
+    }
 
-    public FlightpathSettings FlightpathSettings { get; set; }
+    public FlightpathSettings FlightpathSettings
+    {
+        get; set;
+    }
 
-    public List<FlightpathData> FlightpathData { get; set; }
+    public List<FlightpathData> FlightpathData
+    {
+        get; set;
+    }
 
     public Flightpath(LLA llaOrigin, FlightpathSettings flightpathSettings)
     {

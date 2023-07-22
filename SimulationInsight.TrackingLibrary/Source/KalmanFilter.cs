@@ -6,35 +6,80 @@ namespace SimulationInsight.TrackingLibrary;
 
 public abstract class KalmanFilterBase : IKalmanFilter
 {
-    public int NumberOfStates { get; set; }
+    public int NumberOfStates
+    {
+        get; set;
+    }
 
-    public double LastUpdateTime { get; set; }
+    public double LastUpdateTime
+    {
+        get; set;
+    }
 
-    public Vector X { get; set; }
+    public Vector X
+    {
+        get; set;
+    }
 
-    public Matrix P { get; set; }
+    public Matrix P
+    {
+        get; set;
+    }
 
-    public Matrix Phi { get; set; }
+    public Matrix Phi
+    {
+        get; set;
+    }
 
-    public Matrix Q { get; set; }
+    public Matrix Q
+    {
+        get; set;
+    }
 
-    public Vector XPred { get; set; }
+    public Vector XPred
+    {
+        get; set;
+    }
 
-    public Matrix PPred { get; set; }
+    public Matrix PPred
+    {
+        get; set;
+    }
 
-    public Vector Z { get; set; }
+    public Vector Z
+    {
+        get; set;
+    }
 
-    public Matrix R { get; set; }
+    public Matrix R
+    {
+        get; set;
+    }
 
-    public Vector ZPred { get; set; }
+    public Vector ZPred
+    {
+        get; set;
+    }
 
-    public Matrix H { get; set; }
+    public Matrix H
+    {
+        get; set;
+    }
 
-    public Vector Y { get; set; }
+    public Vector Y
+    {
+        get; set;
+    }
 
-    public Matrix S { get; set; }
+    public Matrix S
+    {
+        get; set;
+    }
 
-    public Matrix K { get; set; }
+    public Matrix K
+    {
+        get; set;
+    }
 
     public void Initalise(double time, Vector x, Matrix P)
     {

@@ -1,12 +1,15 @@
 ﻿using SimulationInsight.MathLibrary;
-using static SimulationInsight.MathLibrary.Matrix;
 using static System.Math;
+using static SimulationInsight.MathLibrary.Matrix;
 
 namespace SimulationInsight.TrackingLibrary;
 
 public class KalmanFilterConstantVelocity6State : KalmanFilterBase
 {
-    public Vector QSd { get; set; }
+    public Vector QSd
+    {
+        get; set;
+    }
 
     public KalmanFilterConstantVelocity6State()
     {

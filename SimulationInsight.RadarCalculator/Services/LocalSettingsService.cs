@@ -5,8 +5,6 @@ using SimulationInsight.RadarCalculator.Core.Contracts.Services;
 using SimulationInsight.RadarCalculator.Core.Helpers;
 using SimulationInsight.RadarCalculator.Helpers;
 using SimulationInsight.RadarCalculator.Models;
-
-using Windows.ApplicationModel;
 using Windows.Storage;
 
 namespace SimulationInsight.RadarCalculator.Services;

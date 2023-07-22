@@ -5,13 +5,25 @@ namespace SimulationInsight.DataRecorder;
 
 public class DataRecorder : IDataRecorder
 {
-    public IDataRecorderSettings DataRecorderSettings { get; set; }
+    public IDataRecorderSettings DataRecorderSettings
+    {
+        get; set;
+    }
 
-    public List<ISystemMessage> SystemMessages { get; set; }
+    public List<ISystemMessage> SystemMessages
+    {
+        get; set;
+    }
 
-    public List<ScanDataMessage> ScanDataMessages { get; set; }
+    public List<ScanDataMessage> ScanDataMessages
+    {
+        get; set;
+    }
 
-    public List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages { get; set; }
+    public List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages
+    {
+        get; set;
+    }
 
     public DataRecorder(IDataRecorderSettings dataRecorderSettings)
     {

@@ -4,7 +4,10 @@ namespace SimulationInsight.DataRecorder;
 
 public class AzimuthChangePulseDataMessageHandler
 {
-    public IDataRecorder DataRecorder { get; set; }
+    public IDataRecorder DataRecorder
+    {
+        get; set;
+    }
 
     public AzimuthChangePulseDataMessageHandler(IDataRecorder dataRecorder)
     {

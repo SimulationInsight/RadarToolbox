@@ -6,15 +6,30 @@ namespace SimulationInsight.Simulation;
 
 public class Simulation : ISimulation
 {
-    public ISimulationSettings SimulationSettings { get; set; }
+    public ISimulationSettings SimulationSettings
+    {
+        get; set;
+    }
 
-    public IDataRecorderSettings DataRecorderSettings { get; set; }
+    public IDataRecorderSettings DataRecorderSettings
+    {
+        get; set;
+    }
 
-    public ISystemClock SystemClock { get; set; }
+    public ISystemClock SystemClock
+    {
+        get; set;
+    }
 
-    public IRadar Radar { get; set; }
+    public IRadar Radar
+    {
+        get; set;
+    }
 
-    public IDataRecorder DataRecorder { get; set; }
+    public IDataRecorder DataRecorder
+    {
+        get; set;
+    }
 
     public Simulation(ISimulationSettings simulationSettings, DataRecorderSettings dataRecorderSettings, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
     {

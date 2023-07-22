@@ -1,5 +1,5 @@
-﻿using static SimulationInsight.MathLibrary.PhysicalConstants;
-using static System.Math;
+﻿using static System.Math;
+using static SimulationInsight.MathLibrary.PhysicalConstants;
 
 namespace SimulationInsight.MathLibrary;
 

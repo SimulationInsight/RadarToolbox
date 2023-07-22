@@ -1,6 +1,4 @@
-﻿using Microsoft.UI.Xaml.Controls;
-
-using SimulationInsight.RadarCalculator.ViewModels;
+﻿using SimulationInsight.RadarCalculator.ViewModels;
 using Syncfusion.UI.Xaml.Core;
 
 namespace SimulationInsight.RadarCalculator.Views;
