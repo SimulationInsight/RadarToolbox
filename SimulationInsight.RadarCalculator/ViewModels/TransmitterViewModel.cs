@@ -25,6 +25,7 @@ public partial class TransmitterViewModel : ObservableRecipient
         if (TransmitterModel.RfFrequency == 0)
         {
             TransmitterModel.RfFrequency = 9e9;
+            TransmitterModel.TransmitPower = 500.0;
         }
     }
 

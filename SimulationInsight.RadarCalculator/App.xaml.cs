@@ -103,6 +103,7 @@ public partial class App : Application
 
             // Models:
             services.AddSingleton<TransmitterModel>();
+            services.AddSingleton<TransmitterParameters>();
             services.AddSingleton<WaveformParameters>();
 
             // Configuration
