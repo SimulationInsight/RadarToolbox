@@ -113,6 +113,9 @@ public partial class App : Application
         }).
         Build();
 
+        //Register Syncfusion license
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8 / V1NGaF5cXmpCdkx0RHxbf1xzZFREalxWTndZUj0eQnxTdEZjXn1ccXZVTmNVU0BwWQ ==");
+
         UnhandledException += App_UnhandledException;
     }
 

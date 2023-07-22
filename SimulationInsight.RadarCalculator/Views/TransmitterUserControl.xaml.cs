@@ -30,6 +30,6 @@ public sealed partial class TransmitterUserControl : UserControl
 
     public void UpdateBindings()
     {
-        DispatcherQueue.TryEnqueue(Bindings.Update);
+        Bindings.Update();
     }
 }

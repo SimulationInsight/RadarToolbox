@@ -23,7 +23,7 @@ public sealed partial class WaveformPage : PageBase
 
     public override void UpdateBindings()
     {
-        DispatcherQueue.TryEnqueue(Bindings.Update);
+        Bindings.Update();
 
         var control = this.FindChild<TransmitterUserControl>();
 
