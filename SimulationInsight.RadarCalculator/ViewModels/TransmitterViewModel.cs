@@ -6,6 +6,18 @@ namespace SimulationInsight.RadarCalculator.ViewModels;
 
 public partial class TransmitterViewModel : ObservableRecipient
 {
+    private bool isShowHeaders;
+
+    public bool IsShowHeaders 
+    {
+        get => isShowHeaders;
+        set
+        {
+            isShowHeaders = value;
+            UpdateBindings();
+        }
+    }
+
     public TransmitterPage TransmitterPage
     {
         get; set;
@@ -28,6 +40,13 @@ public partial class TransmitterViewModel : ObservableRecipient
             TransmitterModel.TransmitPower = 500.0;
             TransmitterModel.AntennaGain_dB = 32.0;
         }
+
+        isShowHeaders = false;
+    }
+
+    public string GetHeaderString(string header)
+    {
+        return IsShowHeaders ? header : "";
     }
 
     public void UpdateBindings()

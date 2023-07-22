@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <Grid>
+            <Grid HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -44,7 +44,7 @@
                     Grid.Column="1"
                     MaskType="RegEx"
                     Mask="[A-Za-z0-9._%-]"
-                    Header="IEEE Radar Band"
+                    Header="{x:Bind ViewModel.GetHeaderString('IEEE Radar Band')}"
                     Value="{x:Bind ViewModel.TransmitterModel.IeeeBand}"
                     IsEnabled="False"/>
                 <editors:SfMaskedTextBox
@@ -52,7 +52,7 @@
                     Grid.Column="2"
                     MaskType="RegEx"
                     Mask="[A-Za-z0-9._%-]"
-                    Header="NATO Radar Band"
+                    Header="{x:Bind ViewModel.GetHeaderString('NATO Radar Band')}"
                     Value="{x:Bind ViewModel.TransmitterModel.NatoBand}"
                     IsEnabled="False"/>
                 <TextBlock Text="Frequency"
@@ -61,28 +61,28 @@
                 <editors:SfNumberBox
                     Grid.Row="1"
                     Grid.Column="1"
-                    Header="Frequency (GHz)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Frequency (GHz)')}"
                     CustomFormat="#0.000 GHz"
                     Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_GHz, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="1"
                     Grid.Column="2"
-                    Header="Frequency (MHz)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Frequency (MHz)')}"
                     CustomFormat="#0.000 MHz"
                     Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_MHz, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="1"
                     Grid.Column="3"
-                    Header="Frequency (kHz)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Frequency (kHz)')}"
                     CustomFormat="#0.000 kHz"
                     Value="{x:Bind ViewModel.TransmitterModel.RfFrequency_kHz, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="1"
                     Grid.Column="4"
-                    Header="Frequency (Hz)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Frequency (Hz)')}"
                     CustomFormat="#0.000 Hz"
                     Value="{x:Bind ViewModel.TransmitterModel.RfFrequency, Mode=TwoWay}"
                     IsEnabled="True"/>
@@ -92,21 +92,21 @@
                 <editors:SfNumberBox
                     Grid.Row="2"
                     Grid.Column="1"
-                    Header="Wavelength (mm)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Wavelength (mm)')}"
                     CustomFormat="#0.000 mm"
                     Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_mm, Mode=TwoWay}"
                     IsEnabled="True"/>                
                 <editors:SfNumberBox
                     Grid.Row="2"
                     Grid.Column="2"
-                    Header="Wavelength (cm)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Wavelength (cm)')}"
                     CustomFormat="#0.000 cm"
                     Value="{x:Bind ViewModel.TransmitterModel.RfWavelength_cm, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="2"
                     Grid.Column="3"
-                    Header="Wavelength (m)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Wavelength (m)')}"
                     CustomFormat="#0.000 m"
                     Value="{x:Bind ViewModel.TransmitterModel.RfWavelength, Mode=TwoWay}"
                     IsEnabled="True"/>
@@ -117,21 +117,21 @@
                 <editors:SfNumberBox
                     Grid.Row="3"
                     Grid.Column="1"
-                    Header="Power (W)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Power (W)')}"
                     CustomFormat="#0.000 W"
                     Value="{x:Bind ViewModel.TransmitterModel.TransmitPower, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="3"
                     Grid.Column="2"
-                    Header="Power (dB)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Power (dB)')}"
                     CustomFormat="#0.000 dB"
                     Value="{x:Bind ViewModel.TransmitterModel.TransmitPower_dB, Mode=TwoWay}"
                     IsEnabled="True"/>
                 <editors:SfNumberBox
                     Grid.Row="3"
                     Grid.Column="3"
-                    Header="Power (dBm)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Power (dBm)')}"
                     CustomFormat="#0.000 dBm"
                     Value="{x:Bind ViewModel.TransmitterModel.TransmitPower_dBm, Mode=TwoWay}"
                     IsEnabled="True"/>
@@ -141,7 +141,7 @@
                 <editors:SfNumberBox
                     Grid.Row="4"
                     Grid.Column="1"
-                    Header="Gain (dB)"
+                    Header="{x:Bind ViewModel.GetHeaderString('Gain (dB)')}"
                     CustomFormat="#0.000 dB"
                     Value="{x:Bind ViewModel.TransmitterModel.AntennaGain_dB, Mode=TwoWay}"
                     IsEnabled="True"/>
@@ -151,14 +151,14 @@
                 <editors:SfNumberBox
                     Grid.Row="5"
                     Grid.Column="1"
-                    Header="EIRP (dB)"
+                    Header="{x:Bind ViewModel.GetHeaderString('EIRP (dB)')}"
                     CustomFormat="#0.000 dB"
                     Value="{x:Bind ViewModel.TransmitterModel.Eirp_dB, Mode=OneWay}"
                     IsEnabled="False"/>
                 <editors:SfNumberBox
                     Grid.Row="5"
                     Grid.Column="2"
-                    Header="EIRP (dBm)"
+                    Header="{x:Bind ViewModel.GetHeaderString('EIRP (dBm)')}"
                     CustomFormat="#0.000 dBm"
                     Value="{x:Bind ViewModel.TransmitterModel.Eirp_dBm, Mode=OneWay}"
                     IsEnabled="False"/>
