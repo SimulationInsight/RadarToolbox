@@ -4,30 +4,8 @@ using SimulationInsight.RadarCalculator.Views;
 
 namespace SimulationInsight.RadarCalculator.ViewModels;
 
-public partial class TransmitterViewModel : ObservableRecipient
+public partial class TransmitterViewModel : TransmitterViewModelBase
 {
-    private bool isShowHeaders;
-
-    public bool IsShowHeaders 
-    {
-        get => isShowHeaders;
-        set
-        {
-            isShowHeaders = value;
-            UpdateBindings();
-        }
-    }
-
-    public TransmitterPage TransmitterPage
-    {
-        get; set;
-    }
-
-    public TransmitterModel TransmitterModel
-    {
-        get; set;
-    }
-
     public TransmitterViewModel(TransmitterModel transmitterModel)
     {
         TransmitterModel = transmitterModel;
@@ -41,19 +19,6 @@ public partial class TransmitterViewModel : ObservableRecipient
             TransmitterModel.AntennaGain_dB = 32.0;
         }
 
-        isShowHeaders = false;
-    }
-
-    public string GetHeaderString(string header)
-    {
-        return IsShowHeaders ? header : "";
-    }
-
-    public void UpdateBindings()
-    {
-        if (TransmitterPage is not null)
-        {
-            TransmitterPage.UpdateBindings();
-        }
+        IsShowHeaders = false;
     }
 }

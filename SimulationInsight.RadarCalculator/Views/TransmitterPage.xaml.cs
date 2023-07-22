@@ -5,7 +5,7 @@ using Syncfusion.UI.Xaml.Core;
 
 namespace SimulationInsight.RadarCalculator.Views;
 
-public sealed partial class TransmitterPage : Page
+public sealed partial class TransmitterPage : PageBase
 {
     public TransmitterViewModel ViewModel
     {
@@ -16,17 +16,20 @@ public sealed partial class TransmitterPage : Page
     {
         ViewModel = App.GetService<TransmitterViewModel>();
 
-        ViewModel.TransmitterPage = this;
+        ViewModel.Page = this;
 
         InitializeComponent();
     }
 
-    public void UpdateBindings()
+    public override void UpdateBindings()
     {
-        Bindings.Update();
+        DispatcherQueue.TryEnqueue(Bindings.Update);
 
         var control = this.FindChild<TransmitterUserControl>();
 
-        control.UpdateBindings();
+        if (control is not null)
+        {
+            control.UpdateBindings();
+        }
     }
 }

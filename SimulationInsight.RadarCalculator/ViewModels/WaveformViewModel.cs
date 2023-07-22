@@ -4,25 +4,8 @@ using SimulationInsight.RadarCalculator.Views;
 
 namespace SimulationInsight.RadarCalculator.ViewModels;
 
-public partial class WaveformViewModel : ObservableRecipient
+public partial class WaveformViewModel : TransmitterViewModelBase
 {
-    private bool isShowHeaders;
-
-    public bool IsShowHeaders
-    {
-        get => isShowHeaders;
-        set
-        {
-            isShowHeaders = value;
-            UpdateBindings();
-        }
-    }
-
-    public WaveformPage WaveformPage
-    {
-        get; set;
-    }
-
     public WaveformModel WaveformModel
     {
         get; set;
@@ -41,19 +24,6 @@ public partial class WaveformViewModel : ObservableRecipient
             WaveformModel.AntennaGain_dB = 32.0;
         }
 
-        isShowHeaders = false;
-    }
-
-    public string GetHeaderString(string header)
-    {
-        return IsShowHeaders ? header : "";
-    }
-
-    public void UpdateBindings()
-    {
-        if (WaveformPage is not null)
-        {
-            WaveformPage.UpdateBindings();
-        }
+        IsShowHeaders = false;
     }
 }
