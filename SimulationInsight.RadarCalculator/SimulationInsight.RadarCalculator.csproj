@@ -16,8 +16,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\radarbs.print.jpg" />
+    <None Remove="Views\FrequencyUserControl.xaml" />
     <None Remove="Views\LearnPage.xaml" />
-    <None Remove="Views\TransmitterUserControl.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +54,7 @@
     <Page Update="Views\LearnPage.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-    <Page Update="Views\TransmitterUserControl.xaml">
+    <Page Update="Views\FrequencyUserControl.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>

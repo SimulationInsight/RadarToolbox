@@ -10,10 +10,9 @@
     <Grid x:Name="ContentArea">
         <StackPanel>
             <TextBlock Text="{x:Bind ViewModel.GetHeaderString('Image')}"></TextBlock>
-            <!--<userControls:TransmitterUserControl 
-                IsTransmitterPage="False"
+            <userControls:FrequencyUserControl 
                 Grid.Row="0"
-                Grid.Column="0"/>-->
+                Grid.Column="0"/>
         </StackPanel>
     </Grid>
 </userControls:PageBase>

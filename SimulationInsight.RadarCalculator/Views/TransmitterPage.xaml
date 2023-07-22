@@ -36,8 +36,7 @@
                     <ColumnDefinition MaxWidth="150"></ColumnDefinition>
                     <ColumnDefinition MaxWidth="150"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <userControls:TransmitterUserControl 
-                    IsTransmitterPage="true"
+                <userControls:FrequencyUserControl 
                     Grid.Row="0"
                     Grid.Column="0"/>
             </Grid>

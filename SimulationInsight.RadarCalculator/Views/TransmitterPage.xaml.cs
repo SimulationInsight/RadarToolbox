@@ -25,7 +25,7 @@ public sealed partial class TransmitterPage : PageBase
     {
         Bindings.Update();
 
-        var control = this.FindChild<TransmitterUserControl>();
+        var control = this.FindChild<FrequencyUserControl>();
 
         if (control is not null)
         {
