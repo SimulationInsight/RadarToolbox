@@ -94,7 +94,7 @@ public partial class App : Application
             services.AddTransient<AntennaPage>();
             services.AddTransient<WaveformViewModel>();
             services.AddTransient<WaveformPage>();
-            services.AddTransient<TransmitterViewModel>();
+            services.AddSingleton<TransmitterViewModel>();
             services.AddTransient<TransmitterPage>();
             services.AddTransient<MainViewModel>();
             services.AddTransient<MainPage>();

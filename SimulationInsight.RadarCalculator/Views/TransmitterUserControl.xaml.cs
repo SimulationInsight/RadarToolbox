@@ -1,21 +1,18 @@
 ﻿using Microsoft.UI.Xaml.Controls;
-
 using SimulationInsight.RadarCalculator.ViewModels;
 
 namespace SimulationInsight.RadarCalculator.Views;
 
-public sealed partial class TransmitterPage : Page
+public sealed partial class TransmitterUserControl : UserControl
 {
     public TransmitterViewModel ViewModel
     {
         get;
     }
 
-    public TransmitterPage()
+    public TransmitterUserControl()
     {
         ViewModel = App.GetService<TransmitterViewModel>();
-
-        ViewModel.TransmitterPage = this;
 
         InitializeComponent();
     }
@@ -23,7 +20,5 @@ public sealed partial class TransmitterPage : Page
     public void UpdateBindings()
     {
         Bindings.Update();
-
-        MyTransmitterUserControl.UpdateBindings();
     }
 }
