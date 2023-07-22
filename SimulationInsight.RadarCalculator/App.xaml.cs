@@ -92,7 +92,7 @@ public partial class App : Application
             services.AddTransient<ScannerPage>();
             services.AddTransient<AntennaViewModel>();
             services.AddTransient<AntennaPage>();
-            services.AddTransient<WaveformViewModel>();
+            services.AddSingleton<WaveformViewModel>();
             services.AddTransient<WaveformPage>();
             services.AddSingleton<TransmitterViewModel>();
             services.AddTransient<TransmitterPage>();
@@ -103,6 +103,7 @@ public partial class App : Application
 
             // Models:
             services.AddSingleton<TransmitterModel>();
+            services.AddSingleton<WaveformModel>();
             services.AddSingleton<TransmitterParameters>();
             services.AddSingleton<AntennaParameters>();
             services.AddSingleton<WaveformParameters>();

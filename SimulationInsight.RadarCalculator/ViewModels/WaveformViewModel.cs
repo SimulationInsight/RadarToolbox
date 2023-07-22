@@ -1,10 +1,59 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using SimulationInsight.RadarCalculator.Models;
+using SimulationInsight.RadarCalculator.Views;
 
 namespace SimulationInsight.RadarCalculator.ViewModels;
 
 public partial class WaveformViewModel : ObservableRecipient
 {
-    public WaveformViewModel()
+    private bool isShowHeaders;
+
+    public bool IsShowHeaders
     {
+        get => isShowHeaders;
+        set
+        {
+            isShowHeaders = value;
+            UpdateBindings();
+        }
+    }
+
+    public WaveformPage WaveformPage
+    {
+        get; set;
+    }
+
+    public WaveformModel WaveformModel
+    {
+        get; set;
+    }
+
+    public WaveformViewModel(WaveformModel waveformModel)
+    {
+        WaveformModel = waveformModel;
+
+        WaveformModel.ViewModel = this;
+
+        if (WaveformModel.RfFrequency == 0)
+        {
+            WaveformModel.RfFrequency = 9e9;
+            WaveformModel.TransmitPower = 500.0;
+            WaveformModel.AntennaGain_dB = 32.0;
+        }
+
+        isShowHeaders = false;
+    }
+
+    public string GetHeaderString(string header)
+    {
+        return IsShowHeaders ? header : "";
+    }
+
+    public void UpdateBindings()
+    {
+        if (WaveformPage is not null)
+        {
+            WaveformPage.UpdateBindings();
+        }
     }
 }
