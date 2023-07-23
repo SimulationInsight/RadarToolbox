@@ -13,9 +13,33 @@
 	<Nullable>enable</Nullable>
 	<UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>D3C01BAC82A534E7DD9A0A7CCD6C2A96223AF57F</PackageCertificateThumbprint>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppInstallerUri>C:\Temp\RadarToolbox\RadarCalculator\</AppInstallerUri>
+    <AppxPackageDir>C:\Temp\RadarToolbox\RadarCalculator</AppxPackageDir>
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="Assets\BadgeLogo.scale-100.png" />
+    <Content Remove="Assets\BadgeLogo.scale-125.png" />
+    <Content Remove="Assets\BadgeLogo.scale-150.png" />
+    <Content Remove="Assets\BadgeLogo.scale-200.png" />
+    <Content Remove="Assets\BadgeLogo.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\BadgeLogo.png" />
+    <None Remove="Assets\Radar Calculator Icon.png" />
     <None Remove="Assets\radarbs.print.jpg" />
+    <None Remove="Assets\StoreLogo.backup.png" />
+    <None Remove="Assets\StoreLogo.png" />
+    <None Remove="Views\CommunityPage.xaml" />
     <None Remove="Views\FrequencyUserControl.xaml" />
     <None Remove="Views\LearnPage.xaml" />
   </ItemGroup>
@@ -51,6 +75,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Views\CommunityPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\LearnPage.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

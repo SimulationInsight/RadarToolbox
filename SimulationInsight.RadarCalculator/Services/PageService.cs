@@ -27,6 +27,7 @@ public class PageService : IPageService
         Configure<ImportViewModel, ImportPage>();
         Configure<ExportViewModel, ExportPage>();
         Configure<LearnViewModel, LearnPage>();
+        Configure<CommunityViewModel, CommunityPage>();
         Configure<SettingsViewModel, SettingsPage>();
     }
 

@@ -86,10 +86,10 @@
     <value>Target</value>
   </data>
   <data name="Shell_SignalPower.Content" xml:space="preserve">
-    <value>SignalPower</value>
+    <value>Signal Power</value>
   </data>
   <data name="Shell_SignalDetection.Content" xml:space="preserve">
-    <value>SignalDetection</value>
+    <value>Signal Detection 2</value>
   </data>
   <data name="Shell_Tracking.Content" xml:space="preserve">
     <value>Tracking</value>
@@ -100,8 +100,11 @@
   <data name="Shell_Export.Content" xml:space="preserve">
     <value>Export</value>
   </data>
-	<data name="Shell_Learn.Content" xml:space="preserve">
+  <data name="Shell_Learn.Content" xml:space="preserve">
     <value>Learn</value>
+  </data>
+  <data name="Shell_Community.Content" xml:space="preserve">
+    <value>Community</value>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>

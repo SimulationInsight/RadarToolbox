@@ -80,6 +80,8 @@ public partial class App : Application
             services.AddTransient<ImportPage>();
             services.AddTransient<LearnViewModel>();
             services.AddTransient<LearnPage>();
+            services.AddTransient<CommunityViewModel>();
+            services.AddTransient<CommunityPage>();
             services.AddTransient<TrackingViewModel>();
             services.AddTransient<TrackingPage>();
             services.AddTransient<SignalDetectionViewModel>();

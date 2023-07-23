@@ -110,6 +110,11 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BE;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem x:Uid="Shell_Community" helpers:NavigationHelper.NavigateTo="SimulationInsight.RadarCalculator.ViewModels.CommunityViewModel">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEBDA;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItemSeparator></NavigationViewItemSeparator>
             </NavigationView.MenuItems>
             <NavigationView.HeaderTemplate>
