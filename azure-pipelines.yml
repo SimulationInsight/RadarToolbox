@@ -17,6 +17,7 @@ steps:
 - task: UseDotNet@2
   displayName: 'Use .NET Core'
   inputs:
+    packageType: 'sdk'
     version: 7.x
     includePreviewVersions: true
 
@@ -50,7 +51,7 @@ steps:
     projects: |
       **/*Tests/*.csproj 
       !**/*RadarCalculator*.csproj
-    arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Include="[*Tests*]*" /p:Exclude="[*RadarCalculator*]*"'
+    arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Include="[*Tests]*" /p:Exclude="[*RadarCalculator]*"'
   
 - task: reportgenerator@5
   displayName: Generate Code Coverage Reports
