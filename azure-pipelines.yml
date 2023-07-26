@@ -52,14 +52,12 @@ steps:
       !**/*RadarCalculator*.csproj
     arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Include="[*Tests*]*" /p:Exclude="[*RadarCalculator*]*"'
   
-- task: Palmmedia.reportgenerator.reportgenerator-build-release-task.reportgenerator@4
+- task: reportgenerator@5
   displayName: Generate Code Coverage Reports
   inputs:
-    reports: '**\coverage.cobertura.xml'
-    targetdir: 'results'
+    reports: $(Build.SourcesDirectory)/tests/**/coverage.cobertura.xml
+    targetdir: $(build.artifactstagingdirectory)/TestResults/
     reporttypes: 'HTML;HtmlInline_AzurePipelines;Badges;Cobertura'
-    assemblyfilters: '-*tests*'
-    continueOnError: true
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish Code Coverage Results'
