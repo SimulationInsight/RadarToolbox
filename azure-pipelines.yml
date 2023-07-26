@@ -56,7 +56,7 @@ steps:
 - task: reportgenerator@5
   displayName: Generate Code Coverage Reports
   inputs:
-    reports: $(Build.SourcesDirectory)/tests/SimulationInsight.RadarFunctions.Tests/coverage.cobertura.xml
+    reports: $(Build.SourcesDirectory)/**/coverage.cobertura.xml
     targetdir: $(build.artifactstagingdirectory)/TestResults/
     reporttypes: 'HTML;HtmlInline_AzurePipelines;Badges;Cobertura'
 
