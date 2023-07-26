@@ -20,6 +20,8 @@ public class SimulationBuilder
         //todo: doesn't seem to automatically use the same settings object through DI. Need to understand and fix this.
         simulation.DataRecorder.DataRecorderSettings = simulation.DataRecorderSettings;
 
+        simulation.Radar.RadarProfile.ProfileName = "Waveform_1";
+
         simulation.Radar.Scanner.ScanData = new ScanData()
         {
             RadarId = 1,

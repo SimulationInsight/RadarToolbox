@@ -7,28 +7,53 @@ public class DataRecorder : IDataRecorder
 {
     public IDataRecorderSettings DataRecorderSettings
     {
-        get; set;
+        get; 
+        set;
     }
 
     public List<ISystemMessage> SystemMessages
     {
-        get; set;
+        get; 
+        set;
+    }
+
+    public List<RadarProfileDemandMessage> RadarProfileDemandMessages
+    {
+        get;
+        set;
+    }
+
+    public List<RadarProfileStatusMessage> RadarProfileStatusMessages
+    {
+        get; 
+        set;
+    }
+
+    public List<ScanControlDataMessage> ScanControlDataMessages
+    {
+        get;
+        set;
     }
 
     public List<ScanDataMessage> ScanDataMessages
     {
-        get; set;
+        get; 
+        set;
     }
 
     public List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages
     {
-        get; set;
+        get; 
+        set;
     }
 
     public DataRecorder(IDataRecorderSettings dataRecorderSettings)
     {
         DataRecorderSettings = dataRecorderSettings;
         SystemMessages = new List<ISystemMessage>();
+        RadarProfileDemandMessages = new List<RadarProfileDemandMessage>();
+        RadarProfileStatusMessages = new List<RadarProfileStatusMessage>();
+        ScanControlDataMessages = new List<ScanControlDataMessage>();
         ScanDataMessages = new List<ScanDataMessage>();
         AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>();
     }
@@ -40,6 +65,9 @@ public class DataRecorder : IDataRecorder
         SortMessages();
 
         WriteSystemMessages();
+        WriteRadarProfileDemandMessages();
+        WriteRadarProfileStatusMessages();
+        WriteScanControlDataMessages();
         WriteScanDataMessages();
         WriteAzimuthChangePulseDataMessages();
     }
@@ -74,6 +102,27 @@ public class DataRecorder : IDataRecorder
         var fileName = GetFullFileName("SystemMessages", ".csv");
 
         SystemMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteRadarProfileDemandMessages()
+    {
+        var fileName = GetFullFileName("RadarProfileDemand", ".csv");
+
+        RadarProfileDemandMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteRadarProfileStatusMessages()
+    {
+        var fileName = GetFullFileName("RadarProfileStatus", ".csv");
+
+        RadarProfileStatusMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteScanControlDataMessages()
+    {
+        var fileName = GetFullFileName("ScanControlData", ".csv");
+
+        ScanControlDataMessages.WriteToCsvFile(fileName);
     }
 
     public void WriteScanDataMessages()

@@ -139,6 +139,20 @@ public static class UnitConversionMethods
         return result;
     }
 
+    public static double RadiansToRpm(this double angleRate)
+    {
+        var angleRateRpm = angleRate.ToDegrees().DegreesToRpm();
+
+        return angleRateRpm;
+    }
+
+    public static double RpmToRadians(this double angleRateRpm)
+    {
+        var angleRateRad = angleRateRpm.RpmToDegrees().FromDegrees();
+
+        return angleRateRad;
+    }
+
     public static double ToMilliseconds(this double x)
     {
         var result = x * 1.0e3;

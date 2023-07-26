@@ -22,9 +22,11 @@ public class Program
             opts.Services.AddScoped(typeof(ISimulation), typeof(Simulation));
             opts.Services.AddScoped(typeof(ISystemClock), typeof(SystemClock));
             opts.Services.AddScoped(typeof(IRadar), typeof(Radar.Radar));
+            opts.Services.AddScoped(typeof(IRadarProfile), typeof(RadarProfile));
             opts.Services.AddScoped(typeof(IScanner), typeof(Scanner));
             opts.Services.AddSingleton(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));
             opts.Discovery.IncludeAssembly(typeof(IDataRecorder).Assembly);
+            opts.Discovery.IncludeAssembly(typeof(IRadar).Assembly);
         });
 
         await h.RunOaktonCommands(args);

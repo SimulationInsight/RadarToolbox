@@ -5,7 +5,11 @@ namespace SimulationInsight.RadarLibrary;
 
 public record WaveformParameters
 {
-    public string WaveformName { get; set; } = "Undefined";
+    public string WaveformName 
+    { 
+        get; 
+        set; 
+    } = "Undefined";
 
     public double RfFrequency
     {
