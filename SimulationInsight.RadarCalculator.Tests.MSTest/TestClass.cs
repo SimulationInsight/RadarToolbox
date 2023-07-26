@@ -41,10 +41,4 @@ public class TestClass
     {
         Assert.IsTrue(true);
     }
-
-    [UITestMethod]
-    public void UITestMethod()
-    {
-        Assert.AreEqual(0, new Grid().ActualWidth);
-    }
 }
