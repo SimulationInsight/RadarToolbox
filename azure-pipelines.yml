@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  disable.coverage.autogenerate: 'true'
 
 steps:
 - task: UseDotNet@2
@@ -18,6 +19,20 @@ steps:
   inputs:
     version: 7.x
     includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  displayName: Install ReportGenerator tool
+  inputs:
+    command: custom
+    custom: tool
+    arguments: install --tool-path . dotnet-reportgenerator-globaltool
+
+- task: DotNetCoreCLI@2
+  displayName: Install Coverlet.Console tool
+  inputs:
+    command: custom
+    custom: tool
+    arguments: install --tool-path . coverlet.console
 
 - task: DotNetCoreCLI@2
   displayName: 'Build'
@@ -35,4 +50,4 @@ steps:
     projects: |
       **/*Tests/*.csproj 
       !**/*RadarCalculator*.csproj
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Include="[*Tests*]*" /p:Exclude="[*RadarCalculator*]*"'
