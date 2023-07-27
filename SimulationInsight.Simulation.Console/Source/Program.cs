@@ -13,9 +13,16 @@ namespace SimulationInsight.Simulation;
 
 public class Program
 {
-    public static async Task Main(string[] args)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="simulationSettingsFile"></param>
+    /// <param name="scenarioSettingsFile"></param>
+    /// <param name="isRunExample"></param>
+    /// <returns></returns>
+    public static async Task Main(string simulationSettingsFile, string scenarioSettingsFile, bool isRunExample = false)
     {
-        var h = Host.CreateDefaultBuilder(args);
+        var h = Host.CreateDefaultBuilder();
 
         h.UseWolverine(opts =>
         {
@@ -39,8 +46,9 @@ public class Program
             opts.Discovery.IncludeAssembly(typeof(IRadar).Assembly);
             opts.Discovery.IncludeAssembly(typeof(ITrackManager).Assembly);
             opts.Discovery.IncludeAssembly(typeof(IScenario).Assembly);
+            opts.Discovery.IncludeAssembly(typeof(Program).Assembly);
         });
 
-        await h.RunOaktonCommands(args);
+        await h.RunConsoleAsync();
     }
 }

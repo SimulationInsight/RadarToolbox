@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SimulationInsight.Simulation.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "-?"
+    }
+  }
+}
