@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Oakton;
 using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
+using SimulationInsight.MathLibrary;
 using SimulationInsight.Radar;
 using SimulationInsight.ScenarioGenerator;
 using SimulationInsight.Tracker;
@@ -19,17 +20,20 @@ public class Program
         h.UseWolverine(opts =>
         {
             opts.Services.AddHostedService<Worker>();
+
+            opts.Services.AddSingleton(typeof(ISimulationSettings), typeof(SimulationSettings));
+            opts.Services.AddSingleton(typeof(ISimulation), typeof(Simulation));
+            opts.Services.AddSingleton(typeof(IScenarioSettings), typeof(ScenarioSettings));
+            opts.Services.AddSingleton(typeof(IScenario), typeof(Scenario));
+            opts.Services.AddSingleton(typeof(ILLAOrigin), typeof(LLAOrigin));
+            opts.Services.AddSingleton(typeof(ISystemClock), typeof(SystemClock));
+            opts.Services.AddSingleton(typeof(IRadar), typeof(Radar.Radar));
+            opts.Services.AddSingleton(typeof(IRadarProfile), typeof(RadarProfile));
+            opts.Services.AddSingleton(typeof(IScanner), typeof(Scanner));
+            opts.Services.AddSingleton(typeof(ITargetReportGenerator), typeof(TargetReportGenerator));
+            opts.Services.AddSingleton(typeof(ITrackManager), typeof(TrackManager));
+            opts.Services.AddSingleton(typeof(ITrackManagerSettings), typeof(TrackManagerSettings));
             opts.Services.AddSingleton(typeof(IDataRecorderSettings), typeof(DataRecorderSettings));
-            opts.Services.AddScoped(typeof(ISimulationSettings), typeof(SimulationSettings));
-            opts.Services.AddScoped(typeof(ISimulation), typeof(Simulation));
-            opts.Services.AddScoped(typeof(ISystemClock), typeof(SystemClock));
-            opts.Services.AddScoped(typeof(IScenario), typeof(Scenario));
-            opts.Services.AddScoped(typeof(IRadar), typeof(Radar.Radar));
-            opts.Services.AddScoped(typeof(IRadarProfile), typeof(RadarProfile));
-            opts.Services.AddScoped(typeof(IScanner), typeof(Scanner));
-            opts.Services.AddScoped(typeof(ITargetReportGenerator), typeof(TargetReportGenerator));
-            opts.Services.AddScoped(typeof(ITrackManager), typeof(TrackManager));
-            opts.Services.AddScoped(typeof(ITrackManagerSettings), typeof(TrackManagerSettings));
             opts.Services.AddSingleton(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));
             opts.Discovery.IncludeAssembly(typeof(IDataRecorder).Assembly);
             opts.Discovery.IncludeAssembly(typeof(IRadar).Assembly);

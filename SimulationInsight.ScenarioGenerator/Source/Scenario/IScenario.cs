@@ -14,7 +14,7 @@ public interface IScenario
         set;
     }
 
-    ScenarioSettings ScenarioSettings
+    IScenarioSettings ScenarioSettings
     {
         get;
         set;

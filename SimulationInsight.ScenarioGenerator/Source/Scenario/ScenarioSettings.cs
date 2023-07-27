@@ -2,9 +2,9 @@
 
 namespace SimulationInsight.ScenarioGenerator;
 
-public record ScenarioSettings
+public class ScenarioSettings : IScenarioSettings
 {
-    public LLA LLAOrigin
+    public ILLAOrigin LLAOrigin
     {
         get; init;
     }

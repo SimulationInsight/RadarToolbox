@@ -2,7 +2,7 @@
 
 public class Scenario : IScenario
 {
-    public ScenarioSettings ScenarioSettings
+    public IScenarioSettings ScenarioSettings
     {
         get; set;
     }
@@ -17,7 +17,7 @@ public class Scenario : IScenario
         get; set;
     }
 
-    public Scenario(ScenarioSettings scenarioSettings)
+    public Scenario(IScenarioSettings scenarioSettings)
     {
         ScenarioSettings = scenarioSettings;
     }

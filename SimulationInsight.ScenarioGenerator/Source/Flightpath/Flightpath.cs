@@ -4,7 +4,7 @@ namespace SimulationInsight.ScenarioGenerator;
 
 public record Flightpath : IFlightpath
 {
-    public LLA LLAOrigin
+    public ILLAOrigin LLAOrigin
     {
         get; set;
     }
@@ -19,7 +19,7 @@ public record Flightpath : IFlightpath
         get; set;
     }
 
-    public Flightpath(LLA llaOrigin, FlightpathSettings flightpathSettings)
+    public Flightpath(ILLAOrigin llaOrigin, FlightpathSettings flightpathSettings)
     {
         LLAOrigin = llaOrigin;
         FlightpathSettings = flightpathSettings;
@@ -47,7 +47,7 @@ public record Flightpath : IFlightpath
             Z = fp.InitialPositionDown
         };
 
-        var lla = LLAConversions.ConvertXYZToLLA(position, LLAOrigin);
+        var lla = LLAConversions.ConvertXYZToLLA(position, LLAOrigin.LLA);
 
         var flightpathData = new FlightpathData()
         {
