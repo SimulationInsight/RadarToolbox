@@ -2,12 +2,13 @@
 
 public interface ISimulationRunner
 {
-    ISimulation Simulation
+    ISimulationRunnerSettings SimulationRunnerSettings
     {
         get;
         set;
     }
-    ISimulationRunnerSettings SimulationRunnerSettings
+
+    ISimulation Simulation
     {
         get;
         set;

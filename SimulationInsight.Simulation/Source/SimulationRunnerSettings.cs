@@ -36,15 +36,13 @@ public class SimulationRunnerSettings : ISimulationRunnerSettings
     public void DisplaySettings()
     {
         Logger.Information("");
-        Logger.Information("SimulationRunnerSettings...");
-        Logger.Information("");
+        Logger.Information("Displaying Simulation Runner Settings...");
 
         Logger.Information($"   SimulationSettingsFile = {SimulationSettingsFile}");
         Logger.Information($"   ScenarioSettingsFile   = {ScenarioSettingsFile}");
         Logger.Information($"   IsUseExampleFiles      = {IsUseExampleFiles}");
         Logger.Information($"   Number Of Runs         = {NumberOfRuns}");
 
-        Logger.Information("");
         Logger.Information("Finished.");
         Logger.Information("");
 

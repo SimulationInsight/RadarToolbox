@@ -1,7 +1,8 @@
 {
   "profiles": {
     "SimulationInsight.Simulation.Console": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "--is-use-example-files true"
     }
   }
 }
