@@ -6,35 +6,44 @@ namespace SimulationInsight.Simulation;
 
 public class Worker : BackgroundService
 {
+    public static ISimulationRunnerSettings SimulationRunnerSettings
+    {
+        get;
+        set;
+    }
+
     public ILogger<Worker> Logger
     {
-        get; set;
+        get; 
+        set;
     }
 
     public IMessageBus Bus
     {
-        get; set;
+        get; 
+        set;
     }
 
-    public ISimulation Simulation
+    public ISimulationRunner SimulationRunner
     {
-        get; set;
+        get; 
+        set;
     }
 
-    public Worker(ILogger<Worker> logger, IMessageBus bus, ISimulation simulation)
+    public Worker(ILogger<Worker> logger, IMessageBus bus, ISimulationRunner simulationRunner)
     {
         Logger = logger;
         Bus = bus;
-        Simulation = simulation;
+        SimulationRunner = simulationRunner;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         CreateLogger();
 
-        SimulationBuilder.Example1(Simulation);
+        SimulationRunner.SimulationRunnerSettings = SimulationRunnerSettings;
 
-        Simulation.Run();
+        SimulationRunner.Run();
     }
 
     private static void CreateLogger()

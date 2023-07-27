@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Oakton;
 using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.MathLibrary;
@@ -18,16 +17,29 @@ public class Program
     /// </summary>
     /// <param name="simulationSettingsFile"></param>
     /// <param name="scenarioSettingsFile"></param>
-    /// <param name="isRunExample"></param>
+    /// <param name="isUseExampleFiles"></param>
+    /// <param name="numberOfRuns"></param>
     /// <returns></returns>
-    public static async Task Main(string simulationSettingsFile, string scenarioSettingsFile, bool isRunExample = false)
+    public static async Task Main(string simulationSettingsFile, string scenarioSettingsFile, bool isUseExampleFiles = false, int numberOfRuns = 1)
     {
         var h = Host.CreateDefaultBuilder();
+
+        var simulationRunnerSettings = new SimulationRunnerSettings()
+        {
+            SimulationSettingsFile = simulationSettingsFile,
+            ScenarioSettingsFile = scenarioSettingsFile,
+            IsUseExampleFiles = isUseExampleFiles,
+            NumberOfRuns = numberOfRuns
+        };
+
+        Worker.SimulationRunnerSettings = simulationRunnerSettings;
 
         h.UseWolverine(opts =>
         {
             opts.Services.AddHostedService<Worker>();
 
+            opts.Services.AddSingleton(typeof(ISimulationRunnerSettings), typeof(SimulationRunnerSettings));
+            opts.Services.AddSingleton(typeof(ISimulationRunner), typeof(SimulationRunner));
             opts.Services.AddSingleton(typeof(ISimulationSettings), typeof(SimulationSettings));
             opts.Services.AddSingleton(typeof(ISimulation), typeof(Simulation));
             opts.Services.AddSingleton(typeof(IScenarioSettings), typeof(ScenarioSettings));
@@ -49,6 +61,6 @@ public class Program
             opts.Discovery.IncludeAssembly(typeof(Program).Assembly);
         });
 
-        await h.RunConsoleAsync();
+        await h.StartAsync();
     }
 }
