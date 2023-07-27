@@ -1,6 +1,6 @@
 ﻿namespace SimulationInsight.ScenarioGenerator;
 
-public class Scenario
+public class Scenario : IScenario
 {
     public ScenarioSettings ScenarioSettings
     {

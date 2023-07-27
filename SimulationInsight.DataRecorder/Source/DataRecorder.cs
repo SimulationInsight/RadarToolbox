@@ -7,13 +7,13 @@ public class DataRecorder : IDataRecorder
 {
     public IDataRecorderSettings DataRecorderSettings
     {
-        get; 
+        get;
         set;
     }
 
     public List<ISystemMessage> SystemMessages
     {
-        get; 
+        get;
         set;
     }
 
@@ -25,7 +25,7 @@ public class DataRecorder : IDataRecorder
 
     public List<RadarProfileStatusMessage> RadarProfileStatusMessages
     {
-        get; 
+        get;
         set;
     }
 
@@ -37,13 +37,13 @@ public class DataRecorder : IDataRecorder
 
     public List<ScanDataMessage> ScanDataMessages
     {
-        get; 
+        get;
         set;
     }
 
     public List<AzimuthChangePulseDataMessage> AzimuthChangePulseDataMessages
     {
-        get; 
+        get;
         set;
     }
 
@@ -70,11 +70,31 @@ public class DataRecorder : IDataRecorder
         WriteScanControlDataMessages();
         WriteScanDataMessages();
         WriteAzimuthChangePulseDataMessages();
+
+        GenerateZipFile();
+    }
+
+    public void GenerateZipFile()
+    {
+        var inputPath = DataRecorderSettings.OutputFolder;
+
+        var zipPath = GetFullFileName("All", ".zip");
+
+        Logger.Information("");
+        Logger.Information($"      Creating Zip File...");
+        Logger.Information($"         {zipPath}");
+
+        ZipUtilities.ZipDirectory(inputPath, zipPath);
+
+        Logger.Information("      Finished.");
+        Logger.Information("");
     }
 
     public void Initialise()
     {
         var path = DataRecorderSettings.OutputFolder;
+
+        Logger.Information("");
 
         if (!Directory.Exists(path))
         {

@@ -1,6 +1,7 @@
 ﻿using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.Radar;
+using SimulationInsight.ScenarioGenerator;
 
 namespace SimulationInsight.Simulation;
 
@@ -8,33 +9,46 @@ public class Simulation : ISimulation
 {
     public ISimulationSettings SimulationSettings
     {
-        get; set;
+        get;
+        set;
+    }
+
+    public IScenario Scenario
+    {
+        get;
+        set;
     }
 
     public IDataRecorderSettings DataRecorderSettings
     {
-        get; set;
+        get;
+        set;
     }
 
     public ISystemClock SystemClock
     {
-        get; set;
+        get;
+        set;
     }
 
     public IRadar Radar
     {
-        get; set;
+        get;
+        set;
     }
 
     public IDataRecorder DataRecorder
     {
-        get; set;
+        get;
+        set;
     }
 
-    public Simulation(ISimulationSettings simulationSettings, DataRecorderSettings dataRecorderSettings, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
+    public Simulation(ISimulationSettings simulationSettings, DataRecorderSettings dataRecorderSettings, IScenario scenario, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
     {
         SimulationSettings = simulationSettings;
         DataRecorderSettings = dataRecorderSettings;
+
+        Scenario = scenario;
         SystemClock = systemClock;
         Radar = radar;
         DataRecorder = dataRecorder;
@@ -74,7 +88,7 @@ public class Simulation : ISimulation
 
         Initialise(time);
 
-        Logger.Information("   Finished...");
+        Logger.Information("   Finished.");
         Logger.Information("");
     }
 
@@ -111,13 +125,14 @@ public class Simulation : ISimulation
 
         DataRecorder.WriteData();
 
-        Logger.Information("   Finished...");
+        Logger.Information("   Finished.");
         Logger.Information("");
     }
 
     public void Initialise(double time)
     {
         SystemClock.Initialise(time);
+        //Scenario.GenerateScenario();
         Radar.Initialise(time);
     }
 

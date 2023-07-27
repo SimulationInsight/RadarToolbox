@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace SimulationInsight.MathLibrary.Tests;
 
 [TestClass]

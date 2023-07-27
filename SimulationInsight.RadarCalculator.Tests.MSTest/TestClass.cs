@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
 
-using Microsoft.UI.Xaml.Controls;
-
 namespace SimulationInsight.RadarCalculator.Tests.MSTest;
 
 // TODO: Write unit tests.

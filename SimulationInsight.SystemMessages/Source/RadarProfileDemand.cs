@@ -4,13 +4,13 @@ public record RadarProfileDemand
 {
     public double RadarId
     {
-        get; 
+        get;
         init;
     }
 
     public string ProfileName
     {
-        get; 
+        get;
         init;
     }
 }

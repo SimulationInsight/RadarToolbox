@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarCalc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarCalculator.Tests.MSTest", "SimulationInsight.RadarCalculator.Tests.MSTest\SimulationInsight.RadarCalculator.Tests.MSTest.csproj", "{7C4AC51B-1583-4A0E-9606-EEB48A228565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.RadarFunctions.Tests", "SimulationInsight.RadarFunctions.Tests\SimulationInsight.RadarFunctions.Tests.csproj", "{F58EE345-C837-4C1E-A4FA-6E8FD9ED10B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.RadarFunctions.Tests", "SimulationInsight.RadarFunctions.Tests\SimulationInsight.RadarFunctions.Tests.csproj", "{F58EE345-C837-4C1E-A4FA-6E8FD9ED10B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Tracker", "SimulationInsight.Tracker\SimulationInsight.Tracker.csproj", "{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -365,6 +367,22 @@ Global
 		{F58EE345-C837-4C1E-A4FA-6E8FD9ED10B8}.Release|x64.Build.0 = Release|Any CPU
 		{F58EE345-C837-4C1E-A4FA-6E8FD9ED10B8}.Release|x86.ActiveCfg = Release|Any CPU
 		{F58EE345-C837-4C1E-A4FA-6E8FD9ED10B8}.Release|x86.Build.0 = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|arm64.Build.0 = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|x64.Build.0 = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Debug|x86.Build.0 = Debug|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|arm64.ActiveCfg = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|arm64.Build.0 = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|x64.ActiveCfg = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|x64.Build.0 = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|x86.ActiveCfg = Release|Any CPU
+		{4DFA83A8-364E-41D0-989D-658E4AEBA4ED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

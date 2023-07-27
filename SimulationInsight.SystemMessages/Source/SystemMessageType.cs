@@ -11,6 +11,6 @@ public enum SystemMessageType
     WaveformData,
     VideoData,
     TargetReports,
-    UpdatedTrack,
+    SmoothedTrack,
     PredictedTrack
 }

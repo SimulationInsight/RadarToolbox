@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
     <ProjectReference Include="..\SimulationInsight.Simulation\SimulationInsight.Simulation.csproj" />
+    <ProjectReference Include="..\SimulationInsight.Tracker\SimulationInsight.Tracker.csproj" />
   </ItemGroup>
 
 </Project>

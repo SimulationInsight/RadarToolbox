@@ -1,25 +1,24 @@
-﻿namespace SimulationInsight.SystemMessages
+﻿namespace SimulationInsight.SystemMessages;
+
+public class SystemMessage : ISystemMessage
 {
-    public class SystemMessage : ISystemMessage
+    public SystemMessageType MessageType
     {
-        public SystemMessageType MessageType
-        {
-            get; set;
-        }
+        get; set;
+    }
 
-        public int MessageOriginId
-        {
-            get; set;
-        }
+    public int MessageOriginId
+    {
+        get; set;
+    }
 
-        public int MessageId
-        {
-            get; set;
-        }
+    public int MessageId
+    {
+        get; set;
+    }
 
-        public double MessageTime
-        {
-            get; set;
-        }
+    public double MessageTime
+    {
+        get; set;
     }
 }

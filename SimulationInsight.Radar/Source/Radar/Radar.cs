@@ -1,4 +1,5 @@
 ﻿using SimulationInsight.SystemMessages;
+using SimulationInsight.Tracker;
 using Wolverine;
 
 namespace SimulationInsight.Radar;
@@ -25,7 +26,19 @@ public class Radar : IRadar
 
     public IScanner Scanner
     {
-        get; 
+        get;
+        set;
+    }
+
+    public ITargetReportGenerator TargetReportGenerator
+    {
+        get;
+        set;
+    }
+
+    public ITrackManager TrackManager
+    {
+        get;
         set;
     }
 
@@ -35,11 +48,13 @@ public class Radar : IRadar
         set;
     }
 
-    public Radar(IMessageBus bus, IRadarProfile radarProfile, IScanner scanner)
+    public Radar(IMessageBus bus, IRadarProfile radarProfile, IScanner scanner, ITargetReportGenerator targetReportGenerator, ITrackManager trackManager)
     {
         Bus = bus;
         RadarProfile = radarProfile;
         Scanner = scanner;
+        TargetReportGenerator = targetReportGenerator;
+        TrackManager = trackManager;
     }
 
     public void Initialise(double time)
@@ -49,6 +64,8 @@ public class Radar : IRadar
         SendRadarProfileDemandMessage();
 
         Scanner.Initialise(time);
+        TargetReportGenerator.Initialise(time);
+        TrackManager.Initialise(time);
     }
 
     public void Update(double time)
@@ -56,6 +73,8 @@ public class Radar : IRadar
         Time = time;
 
         Scanner.Update(time);
+        TargetReportGenerator.Update(time);
+        TrackManager.Update(time);
     }
 
     public void Finalise(double time)
@@ -63,6 +82,8 @@ public class Radar : IRadar
         Time = time;
 
         Scanner.Finalise(time);
+        TargetReportGenerator.Finalise(time);
+        TrackManager.Finalise(time);
     }
 
     public void ProcessRadarProfileDemandMessage(RadarProfileDemandMessage radarProfileDemandMessage)
@@ -77,7 +98,7 @@ public class Radar : IRadar
         var radarProfileStatusMessage = new RadarProfileStatusMessage()
         {
             MessageId = 1,
-            MessageTime = Time, 
+            MessageTime = Time,
             RadarProfileStatus = new RadarProfileStatus()
             {
                 RadarId = RadarId,
@@ -96,7 +117,7 @@ public class Radar : IRadar
             MessageTime = Time,
             RadarProfileDemand = new RadarProfileDemand()
             {
-                RadarId = 1,
+                RadarId = RadarId,
                 ProfileName = "Profile 1"
             }
         };

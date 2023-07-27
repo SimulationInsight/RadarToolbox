@@ -4,19 +4,19 @@ public record ScanControlData
 {
     public double RadarId
     {
-        get; 
+        get;
         init;
     }
 
     public double Time
     {
-        get; 
+        get;
         init;
     }
 
     public double AzimuthScanRateDemand
     {
-        get; 
+        get;
         init;
     }
 }
