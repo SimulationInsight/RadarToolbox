@@ -6,11 +6,19 @@ public class ScenarioSettings : IScenarioSettings
 {
     public ILLAOrigin LLAOrigin
     {
-        get; init;
+        get; 
+        set;
     }
 
     public List<FlightpathSettings> FlightpathSettings
     {
-        get; init;
+        get;
+        set;
+    }
+
+    public ScenarioSettings(ILLAOrigin llaAOrigin)
+    {
+        LLAOrigin = llaAOrigin;
+        FlightpathSettings = new List<FlightpathSettings>();
     }
 }

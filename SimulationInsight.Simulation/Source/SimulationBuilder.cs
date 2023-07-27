@@ -1,4 +1,5 @@
-﻿using SimulationInsight.Radar;
+﻿using SimulationInsight.MathLibrary;
+using SimulationInsight.Radar;
 using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.Simulation;
@@ -13,6 +14,18 @@ public class SimulationBuilder
         simulation.SimulationSettings.StartTime = 5.0;
         simulation.SimulationSettings.EndTime = 50.0;
         simulation.SimulationSettings.TimeStep = 0.1;
+
+        var ss = simulation.ScenarioSettings;
+        var fp = simulation.ScenarioSettings.FlightpathSettings;
+
+        ss.LLAOrigin.LLA = new LLA()
+        {
+            LatitudeDeg = 55.0,
+            LongitudeDeg = 12.0,
+            Altitude = 0.0
+        };
+
+        FlightpathSettingsBuilder.Example1(fp);
 
         simulation.DataRecorderSettings.SimulationName = simulation.SimulationSettings.SimulationName;
         simulation.DataRecorderSettings.OutputFolderTopLevel = @"C:\temp\RadarToolbox\Simulation";

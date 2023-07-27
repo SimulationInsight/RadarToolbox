@@ -13,13 +13,19 @@ public class Simulation : ISimulation
         set;
     }
 
-    public IScenario Scenario
+    public IScenarioSettings ScenarioSettings
     {
         get;
         set;
     }
 
     public IDataRecorderSettings DataRecorderSettings
+    {
+        get;
+        set;
+    }
+
+    public IScenario Scenario
     {
         get;
         set;
@@ -43,9 +49,10 @@ public class Simulation : ISimulation
         set;
     }
 
-    public Simulation(ISimulationSettings simulationSettings, DataRecorderSettings dataRecorderSettings, IScenario scenario, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
+    public Simulation(ISimulationSettings simulationSettings, IScenarioSettings scenarioSettings, DataRecorderSettings dataRecorderSettings, IScenario scenario, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
     {
         SimulationSettings = simulationSettings;
+        ScenarioSettings = scenarioSettings;
         DataRecorderSettings = dataRecorderSettings;
 
         Scenario = scenario;
@@ -132,7 +139,7 @@ public class Simulation : ISimulation
     public void Initialise(double time)
     {
         SystemClock.Initialise(time);
-        //Scenario.GenerateScenario();
+        Scenario.GenerateScenario();
         Radar.Initialise(time);
     }
 

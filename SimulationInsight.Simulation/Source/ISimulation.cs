@@ -1,6 +1,7 @@
 ﻿using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.Radar;
+using SimulationInsight.ScenarioGenerator;
 
 namespace SimulationInsight.Simulation;
 
@@ -11,7 +12,17 @@ public interface ISimulation : IExecutableModel
         get; set;
     }
 
+    IScenarioSettings ScenarioSettings
+    {
+        get; set;
+    }
+
     IDataRecorderSettings DataRecorderSettings
+    {
+        get; set;
+    }
+
+    IScenario Scenario
     {
         get; set;
     }
