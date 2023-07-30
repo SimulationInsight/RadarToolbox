@@ -4,13 +4,21 @@ namespace SimulationInsight.Ais.Database;
 
 public class AisDataContext : DbContext
 {
-    public DbSet<AisData> AisData { get; set; }
+    public DbSet<AisData> AisData
+    {
+        get; 
+        set;
+    }
 
-    public string ConnectionString { get; set; }
+    public string ConnectionString
+    {
+        get; 
+        set;
+    }
 
     public AisDataContext()
     {
-        ConnectionString = "Server=localhost;Database=Ais;Trusted_Connection=True;";
+        ConnectionString = "Server=localhost;Database=Ais;Trusted_Connection=True;TrustServerCertificate=True";
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)

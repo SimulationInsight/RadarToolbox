@@ -1,13 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿namespace SimulationInsight.Ais.Database;
 
-namespace SimulationInsight.Ais.Database;
-
-public class AisService : IAisService
+public class AisDataService : IAisDataService
 {
-    public AisService()
+    public AisDataService()
     {
+    }
+
+    public int GetMMSIFromName(string name)
+    {
+        using var db = new AisDataContext();
+
+        var mmsi = db.AisData.Where(s => s.Name.Contains(name)).Select(s => s.MMSI).FirstOrDefault();
+
+        return mmsi;
+    }
+
+    public List<int> GetMMSIs()
+    {
+        using var db = new AisDataContext();
+
+        var mmsis = db.AisData.Select(s => s.MMSI).Distinct().OrderBy(s => s).ToList();
+
+        return mmsis;
     }
 
     public List<int> GetMMSIs(DateTime startTime, DateTime endTime)
@@ -50,7 +64,7 @@ public class AisService : IAisService
     {
         using var db = new AisDataContext();
 
-        var aisData = db.AisData.FilterByMMSI(mmsi).ToList();
+        var aisData = db.AisData.FilterByMMSI(mmsi).OrderByTime().ToList();
 
         return aisData;
     }

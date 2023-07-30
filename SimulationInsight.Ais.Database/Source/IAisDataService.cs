@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace SimulationInsight.Ais.Database;
 
-namespace SimulationInsight.Ais.Database;
-
-public interface IAisService
+public interface IAisDataService
 {
+    int GetMMSIFromName(string name);
+
+    List<int> GetMMSIs();
+
     List<int> GetMMSIs(DateTime startTime, DateTime endTime);
 
     List<int> GetMMSIs(DateTime startTime, DateTime endTime, double latitudeMinDeg, double latitudeMaxDeg, double longitudeMinDeg, double longitudeMaxDeg);
