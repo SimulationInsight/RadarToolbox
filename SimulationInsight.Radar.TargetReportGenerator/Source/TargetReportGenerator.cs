@@ -1,6 +1,7 @@
 ﻿using SimulationInsight.ScenarioGenerator;
+using SimulationInsight.SystemMessages;
 
-namespace SimulationInsight.Radar;
+namespace SimulationInsight.Radar.TargetReportGenerator;
 
 public class TargetReportGenerator : ITargetReportGenerator
 {
@@ -11,12 +12,6 @@ public class TargetReportGenerator : ITargetReportGenerator
     }
 
     public IScenario Scenario
-    {
-        get;
-        set;
-    }
-
-    public IRadar Radar
     {
         get;
         set;

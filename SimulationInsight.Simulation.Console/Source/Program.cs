@@ -4,6 +4,7 @@ using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.MathLibrary;
 using SimulationInsight.Radar;
+using SimulationInsight.Radar.TargetReportGenerator;
 using SimulationInsight.ScenarioGenerator;
 using SimulationInsight.Tracker;
 using Wolverine;
@@ -50,7 +51,10 @@ public class Program
             opts.Services.AddSingleton(typeof(IRadarProfile), typeof(RadarProfile));
             opts.Services.AddSingleton(typeof(IScanner), typeof(Scanner));
             opts.Services.AddSingleton(typeof(ITargetReportGenerator), typeof(TargetReportGenerator));
+            opts.Services.AddSingleton(typeof(ITargetReportList), typeof(TargetReportList));
             opts.Services.AddSingleton(typeof(ITrackManager), typeof(TrackManager));
+            opts.Services.AddSingleton(typeof(ITrackDataManager), typeof(TrackDataManager));
+            opts.Services.AddSingleton(typeof(ITrackList), typeof(TrackList));
             opts.Services.AddSingleton(typeof(ITrackManagerSettings), typeof(TrackManagerSettings));
             opts.Services.AddSingleton(typeof(IDataRecorderSettings), typeof(DataRecorderSettings));
             opts.Services.AddSingleton(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));

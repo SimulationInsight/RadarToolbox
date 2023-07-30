@@ -1,4 +1,5 @@
-﻿using SimulationInsight.SystemMessages;
+﻿using SimulationInsight.Radar.TargetReportGenerator;
+using SimulationInsight.SystemMessages;
 using SimulationInsight.Tracker;
 using Wolverine;
 

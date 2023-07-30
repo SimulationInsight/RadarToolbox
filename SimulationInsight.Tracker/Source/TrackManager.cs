@@ -1,4 +1,5 @@
-﻿using SimulationInsight.SystemMessages;
+﻿using MathNet.Numerics.LinearAlgebra.Complex;
+using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.Tracker;
 
@@ -10,7 +11,19 @@ public class TrackManager : ITrackManager
         set;
     }
 
-    public List<Track> Tracks
+    public ITrackDataManager TrackDataManager
+    {
+        get;
+        set;
+    }
+
+    public List<TargetReport> TargetReports
+    {
+        get;
+        set;
+    }
+
+    public ITrackList TrackList
     {
         get;
         set;
@@ -22,12 +35,23 @@ public class TrackManager : ITrackManager
         set;
     }
 
-    public int NumberOfTracks => Tracks.Count;
+    public Matrix WeightedDistanceMatrix
+    {
+        get;
+        set; 
+    }
 
-    public TrackManager(ITrackManagerSettings trackManagerSettings)
+    public Matrix AssociationMatrix
+    {
+        get;
+        set;
+    }
+
+    public TrackManager(ITrackManagerSettings trackManagerSettings, ITrackList trackList, ITrackDataManager trackDataManager)
     {
         TrackManagerSettings = trackManagerSettings;
-        Tracks = new List<Track>();
+        TrackList = trackList;
+        TrackDataManager = trackDataManager;
     }
 
     public void Initialise(double time)
@@ -44,13 +68,47 @@ public class TrackManager : ITrackManager
 
     public void ProcessTargetReports()
     {
+        CalculateWeightedDistanceMatrix();
+
+        GenerateAssociationMatrix();
+
+        InitialiseTracks();
+
+        UpdateTracks();
+
+        DeleteTracks();
+    }
+
+    public void CalculateWeightedDistanceMatrix()
+    {
+
+    }
+
+    public void GenerateAssociationMatrix()
+    {
+
+    }
+
+    public void InitialiseTracks()
+    {
+
+    }
+
+    public void UpdateTracks()
+    {
+
+    }
+
+    public void DeleteTracks()
+    {
+
     }
 
     public void PredictTracks(double time)
     {
         PredictedTracks.Clear();
 
-        foreach (var track in Tracks)
+        foreach (var track in TrackList.Tracks)
         {
             var predictedTrack = track.PredictTrack(time);
 
@@ -58,23 +116,13 @@ public class TrackManager : ITrackManager
         }
     }
 
-    public void SendSmoothedTracksMessage()
-    {
-    }
-
-    public void SendPredictedTracksMessage()
-    {
-    }
-
     public void DeleteAllTracks()
     {
-        Tracks.Clear();
+        TrackList.DeleteAllTracks();
     }
 
     public void DeleteTrack(int trackId)
     {
-        var track = Tracks.Where(s => s.TrackId == trackId).First();
-
-        Tracks.Remove(track);
+        TrackList.DeleteTrack(trackId);
     }
 }

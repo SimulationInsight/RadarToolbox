@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
+    <ProjectReference Include="..\SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj" />
+    <ProjectReference Include="..\SimulationInsight.SystemMessages\SimulationInsight.SystemMessages.csproj" />
+  </ItemGroup>
+
+</Project>

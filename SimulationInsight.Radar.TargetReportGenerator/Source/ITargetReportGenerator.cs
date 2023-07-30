@@ -1,6 +1,7 @@
 ﻿using SimulationInsight.Core;
+using SimulationInsight.SystemMessages;
 
-namespace SimulationInsight.Radar;
+namespace SimulationInsight.Radar.TargetReportGenerator;
 
 public interface ITargetReportGenerator : IExecutableModel
 {

@@ -1,22 +1,25 @@
 ﻿using SimulationInsight.Core;
+using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.Tracker;
 
 public interface ITrackManager : IExecutableModel
 {
-    List<Track> Tracks
+    List<TargetReport> TargetReports
     {
         get;
         set;
     }
 
+    ITrackList TrackList
+    {
+        get; 
+        set; 
+    }
+
     void ProcessTargetReports();
 
     void PredictTracks(double time);
-
-    void SendSmoothedTracksMessage();
-
-    void SendPredictedTracksMessage();
 
     void DeleteAllTracks();
 

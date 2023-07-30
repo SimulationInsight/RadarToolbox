@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
     <ProjectReference Include="..\SimulationInsight.MathLibrary\SimulationInsight.MathLibrary.csproj" />
+    <ProjectReference Include="..\SimulationInsight.Radar.TargetReportGenerator\SimulationInsight.Radar.TargetReportGenerator.csproj" />
     <ProjectReference Include="..\SimulationInsight.RadarLibrary\SimulationInsight.RadarLibrary.csproj" />
     <ProjectReference Include="..\SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj" />
     <ProjectReference Include="..\SimulationInsight.SystemMessages\SimulationInsight.SystemMessages.csproj" />
