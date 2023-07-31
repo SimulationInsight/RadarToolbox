@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.Ais.Datab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.Ais.Database.Tests", "SimulationInsight.Ais.Database.Tests\SimulationInsight.Ais.Database.Tests.csproj", "{C1327C07-1978-4FF4-AD3D-C3D988F9096F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Radar.TargetReportGenerator", "SimulationInsight.Radar.TargetReportGenerator\SimulationInsight.Radar.TargetReportGenerator.csproj", "{1DB8B17E-6F3D-4997-AC92-05354A8E9435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimulationInsight.Radar.TargetReportGenerator", "SimulationInsight.Radar.TargetReportGenerator\SimulationInsight.Radar.TargetReportGenerator.csproj", "{1DB8B17E-6F3D-4997-AC92-05354A8E9435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInsight.Core.Tests", "SimulationInsight.Core.Tests\SimulationInsight.Core.Tests.csproj", "{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -437,6 +439,22 @@ Global
 		{1DB8B17E-6F3D-4997-AC92-05354A8E9435}.Release|x64.Build.0 = Release|Any CPU
 		{1DB8B17E-6F3D-4997-AC92-05354A8E9435}.Release|x86.ActiveCfg = Release|Any CPU
 		{1DB8B17E-6F3D-4997-AC92-05354A8E9435}.Release|x86.Build.0 = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|arm64.Build.0 = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|x64.Build.0 = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Debug|x86.Build.0 = Debug|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|arm64.ActiveCfg = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|arm64.Build.0 = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|x64.ActiveCfg = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|x64.Build.0 = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|x86.ActiveCfg = Release|Any CPU
+		{304A0861-06C2-407F-8ED6-F3CEDA9EC56E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
