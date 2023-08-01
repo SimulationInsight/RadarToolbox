@@ -1,4 +1,6 @@
-﻿using SimulationInsight.SystemMessages;
+﻿using SimulationInsight.Ais.Server;
+using SimulationInsight.MathLibrary;
+using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.DataRecorder;
 
@@ -7,6 +9,12 @@ public interface IDataRecorder
     IDataRecorderSettings DataRecorderSettings
     {
         get; set;
+    }
+
+    public ILLAOrigin LLAOrigin
+    {
+        get;
+        set;
     }
 
     List<ISystemMessage> SystemMessages
@@ -39,5 +47,13 @@ public interface IDataRecorder
         get; set;
     }
 
+    public IAisDataList AisDataList
+    {
+        get;
+        set;
+    }
+
     void WriteData();
+
+    string GetFullFileName(string fileNamePart, string extension);
 }

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimulationInsight.Ais.Server\SimulationInsight.Ais.Server.csproj" />
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
     <ProjectReference Include="..\SimulationInsight.Radar.TargetReportGenerator\SimulationInsight.Radar.TargetReportGenerator.csproj" />
     <ProjectReference Include="..\SimulationInsight.Simulation\SimulationInsight.Simulation.csproj" />

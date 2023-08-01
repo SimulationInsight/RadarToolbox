@@ -1,4 +1,6 @@
-﻿using SimulationInsight.Core;
+﻿using SimulationInsight.Ais.Server;
+using SimulationInsight.Core;
+using SimulationInsight.MathLibrary;
 using SimulationInsight.SystemMessages;
 
 namespace SimulationInsight.DataRecorder;
@@ -47,15 +49,30 @@ public class DataRecorder : IDataRecorder
         set;
     }
 
-    public DataRecorder(IDataRecorderSettings dataRecorderSettings)
+    public IAisDataList AisDataList
+    {
+        get;
+        set;
+    }
+
+    public ILLAOrigin LLAOrigin
+    {
+        get;
+        set;
+    }
+
+    public DataRecorder(IDataRecorderSettings dataRecorderSettings, IAisDataList aisDataList, ILLAOrigin llaOrigin)
     {
         DataRecorderSettings = dataRecorderSettings;
+        AisDataList = aisDataList;
+        LLAOrigin = llaOrigin;
+
         SystemMessages = new List<ISystemMessage>();
         RadarProfileDemandMessages = new List<RadarProfileDemandMessage>();
         RadarProfileStatusMessages = new List<RadarProfileStatusMessage>();
         ScanControlDataMessages = new List<ScanControlDataMessage>();
         ScanDataMessages = new List<ScanDataMessage>();
-        AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>();
+        AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>(); 
     }
 
     public void WriteData()
@@ -70,6 +87,8 @@ public class DataRecorder : IDataRecorder
         WriteScanControlDataMessages();
         WriteScanDataMessages();
         WriteAzimuthChangePulseDataMessages();
+
+        WriteAisData();
 
         GenerateZipFile();
     }
@@ -157,6 +176,13 @@ public class DataRecorder : IDataRecorder
         var fileName = GetFullFileName("AzimuthChangePulseData", ".csv");
 
         AzimuthChangePulseDataMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteAisData()
+    {
+        var fileName = GetFullFileName("AisData", ".csv");
+
+        AisDataList.AisData.WriteToCsvFile(fileName);
     }
 
     public string GetFullFileName(string fileNamePart, string extension)

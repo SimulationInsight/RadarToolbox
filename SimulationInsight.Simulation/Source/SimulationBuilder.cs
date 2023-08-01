@@ -1,4 +1,5 @@
-﻿using SimulationInsight.MathLibrary;
+﻿using SimulationInsight.Ais.Server;
+using SimulationInsight.MathLibrary;
 using SimulationInsight.Radar;
 using SimulationInsight.SystemMessages;
 
@@ -8,25 +9,42 @@ public class SimulationBuilder
 {
     public static void Example1(ISimulation simulation)
     {
+        var startDateTime = new DateTime(2023, 07, 27, 10, 00, 00);
+        var startDateOffset = 5.0; 
+        var endTime = 6000.0;
+        var timeStep = 0.1;
+
         simulation.SimulationSettings.SimulationName = "Example_1";
         simulation.SimulationSettings.SimulationDescription = "Example_1 Description";
-        simulation.SimulationSettings.SimulationStartDateTime = new DateTime(2023, 07, 16, 10, 15, 00);
-        simulation.SimulationSettings.StartTime = 5.0;
-        simulation.SimulationSettings.EndTime = 50.0;
-        simulation.SimulationSettings.TimeStep = 0.1;
+        simulation.SimulationSettings.SimulationStartDateTime = startDateTime;
+        simulation.SimulationSettings.StartTime = startDateOffset;
+        simulation.SimulationSettings.EndTime = endTime;
+        simulation.SimulationSettings.TimeStep = timeStep;
 
         var ss = simulation.ScenarioSettings;
         var fp = simulation.ScenarioSettings.FlightpathSettings;
 
         ss.LLAOrigin.LLA = new LLA()
         {
-            LatitudeDeg = 55.0,
-            LongitudeDeg = 12.0,
+            LatitudeDeg = 56.0,
+            LongitudeDeg = 10.0,
             Altitude = 0.0
         };
 
         FlightpathSettingsBuilder.Example1(fp);
 
+        //
+        simulation.AisServer.AisServerSettings = new AisServerSettings()
+        {
+            DateTimeStart = startDateTime,
+            DateTimeEnd = startDateTime.AddSeconds(endTime),
+            LatitudeMinDeg = 55.958753,
+            LatitudeMaxDeg = 56.224782,
+            LongitudeMinDeg = 10.105650,
+            LongitudeMaxDeg = 11.594830
+        };
+
+        //
         simulation.DataRecorderSettings.SimulationName = simulation.SimulationSettings.SimulationName;
         simulation.DataRecorderSettings.OutputFolderTopLevel = @"C:\temp\RadarToolbox\Simulation";
 

@@ -2,7 +2,7 @@
 
 namespace SimulationInsight.RadarLibrary;
 
-internal static class RadarDetectionModelFunctions
+public static class RadarDetectionModelFunctions
 {
     public static double CalculateSignalPower(RadarDetectionModelInputs inputs)
     {

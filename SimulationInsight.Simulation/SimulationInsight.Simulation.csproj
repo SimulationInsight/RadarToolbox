@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimulationInsight.Ais.Database\SimulationInsight.Ais.Database.csproj" />
+    <ProjectReference Include="..\SimulationInsight.Ais.Server\SimulationInsight.Ais.Server.csproj" />
     <ProjectReference Include="..\SimulationInsight.Core\SimulationInsight.Core.csproj" />
     <ProjectReference Include="..\SimulationInsight.DataRecorder\SimulationInsight.DataRecorder.csproj" />
     <ProjectReference Include="..\SimulationInsight.Radar\SimulationInsight.Radar.csproj" />
     <ProjectReference Include="..\SimulationInsight.ScenarioGenerator\SimulationInsight.ScenarioGenerator.csproj" />
+    <ProjectReference Include="..\SimulationInsight.SimdisInterface\SimulationInsight.SimdisInterface.csproj" />
   </ItemGroup>
 
 </Project>

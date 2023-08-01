@@ -1,11 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SimulationInsight.Ais.Database;
+using SimulationInsight.Ais.Server;
 using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.MathLibrary;
 using SimulationInsight.Radar;
 using SimulationInsight.Radar.TargetReportGenerator;
 using SimulationInsight.ScenarioGenerator;
+using SimulationInsight.SimdisInterface;
 using SimulationInsight.Tracker;
 using Wolverine;
 
@@ -58,6 +61,11 @@ public class Program
             opts.Services.AddSingleton(typeof(ITrackManagerSettings), typeof(TrackManagerSettings));
             opts.Services.AddSingleton(typeof(IDataRecorderSettings), typeof(DataRecorderSettings));
             opts.Services.AddSingleton(typeof(IDataRecorder), typeof(DataRecorder.DataRecorder));
+            opts.Services.AddSingleton(typeof(IAisDataService), typeof(AisDataService));
+            opts.Services.AddSingleton(typeof(IAisServer), typeof(AisServer));
+            opts.Services.AddSingleton(typeof(IAisServerSettings), typeof(AisServerSettings));
+            opts.Services.AddSingleton(typeof(IAisDataList), typeof(AisDataList));
+            opts.Services.AddSingleton(typeof(ISimdisDataExporter), typeof(SimdisDataExporter));
             opts.Discovery.IncludeAssembly(typeof(IDataRecorder).Assembly);
             opts.Discovery.IncludeAssembly(typeof(IRadar).Assembly);
             opts.Discovery.IncludeAssembly(typeof(ITrackManager).Assembly);

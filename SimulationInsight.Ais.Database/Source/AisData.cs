@@ -57,12 +57,12 @@ public record AisData
         get; set;
     }
 
-    public string IMO
+    public string? IMO
     {
         get; set;
     }
 
-    public string Callsign
+    public string? Callsign
     {
         get; set;
     }
@@ -72,67 +72,67 @@ public record AisData
         get; set;
     }
 
-    public string ShipType
+    public string? ShipType
     {
         get; set;
     }
 
-    public string CargoType
+    public string? CargoType
     {
         get; set;
     }
 
-    public string Width
+    public string? Width
     {
         get; set;
     }
 
-    public string Length
+    public string? Length
     {
         get; set;
     }
 
-    public string TypeOfPositionFixingDevice
+    public string? TypeOfPositionFixingDevice
     {
         get; set;
     }
 
-    public string Draught
+    public string? Draught
     {
         get; set;
     }
 
-    public string Destination
+    public string? Destination
     {
         get; set;
     }
 
-    public string ETA
+    public string? ETA
     {
         get; set;
     }
 
-    public string DataSourceType
+    public string? DataSourceType
     {
         get; set;
     }
 
-    public string SizeA
+    public string? SizeA
     {
         get; set;
     }
 
-    public string SizeB
+    public string? SizeB
     {
         get; set;
     }
 
-    public string SizeC
+    public string? SizeC
     {
         get; set;
     }
 
-    public string SizeD
+    public string? SizeD
     {
         get; set;
     }

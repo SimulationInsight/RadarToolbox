@@ -1,4 +1,5 @@
-﻿using SimulationInsight.Core;
+﻿using SimulationInsight.Ais.Server;
+using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.Radar;
 using SimulationInsight.ScenarioGenerator;
@@ -15,6 +16,12 @@ public interface ISimulation : IExecutableModel
     IScenarioSettings ScenarioSettings
     {
         get; set;
+    }
+
+    IAisServer AisServer
+    {
+        get;
+        set;
     }
 
     IDataRecorderSettings DataRecorderSettings

@@ -1,7 +1,9 @@
-﻿using SimulationInsight.Core;
+﻿using SimulationInsight.Ais.Server;
+using SimulationInsight.Core;
 using SimulationInsight.DataRecorder;
 using SimulationInsight.Radar;
 using SimulationInsight.ScenarioGenerator;
+using SimulationInsight.SimdisInterface;
 
 namespace SimulationInsight.Simulation;
 
@@ -14,6 +16,12 @@ public class Simulation : ISimulation
     }
 
     public IScenarioSettings ScenarioSettings
+    {
+        get;
+        set;
+    }
+
+    public IAisServer AisServer
     {
         get;
         set;
@@ -49,16 +57,24 @@ public class Simulation : ISimulation
         set;
     }
 
-    public Simulation(ISimulationSettings simulationSettings, IScenarioSettings scenarioSettings, DataRecorderSettings dataRecorderSettings, IScenario scenario, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder)
+    public ISimdisDataExporter SimdisDataExporter
+    {
+        get;
+        set;
+    }
+
+    public Simulation(ISimulationSettings simulationSettings, IScenarioSettings scenarioSettings, IAisServer aisServer, IDataRecorderSettings dataRecorderSettings, IScenario scenario, ISystemClock systemClock, IRadar radar, IDataRecorder dataRecorder, ISimdisDataExporter simdisDataExporter)
     {
         SimulationSettings = simulationSettings;
         ScenarioSettings = scenarioSettings;
+        AisServer = aisServer;
         DataRecorderSettings = dataRecorderSettings;
 
         Scenario = scenario;
         SystemClock = systemClock;
         Radar = radar;
         DataRecorder = dataRecorder;
+        SimdisDataExporter = simdisDataExporter;
     }
 
     public void Run()
@@ -72,7 +88,7 @@ public class Simulation : ISimulation
 
         InitialiseSimulation(time);
 
-        RunSimulation(time);
+        //RunSimulation(time);
 
         FinaliseSimulation(time);
 
@@ -92,6 +108,8 @@ public class Simulation : ISimulation
     public void InitialiseSimulation(double time)
     {
         Logger.Information("   Initialising Simulation...");
+
+        AisServer.GetAisData();
 
         Initialise(time);
 
@@ -130,7 +148,8 @@ public class Simulation : ISimulation
     {
         Logger.Information("   Writing Output Data...");
 
-        DataRecorder.WriteData();
+        WriteDataRecorderData();
+        WriteSimdisData();
 
         Logger.Information("   Finished.");
         Logger.Information("");
@@ -153,5 +172,17 @@ public class Simulation : ISimulation
     {
         SystemClock.Finalise(time);
         Radar.Finalise(time);
+    }
+
+    public void WriteDataRecorderData()
+    {
+        DataRecorder.WriteData();
+    }
+
+    public void WriteSimdisData()
+    {
+        var fileName = DataRecorder.GetFullFileName("Simdis", ".asi");
+
+        SimdisDataExporter.WriteAsiData(fileName);
     }
 }
