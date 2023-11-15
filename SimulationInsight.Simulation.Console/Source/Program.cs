@@ -53,6 +53,7 @@ public class Program
             opts.Services.AddSingleton(typeof(IRadar), typeof(Radar.Radar));
             opts.Services.AddSingleton(typeof(IRadarProfile), typeof(RadarProfile));
             opts.Services.AddSingleton(typeof(IScanner), typeof(Scanner));
+            opts.Services.AddSingleton(typeof(IPulseGenerator), typeof(PulseGenerator));
             opts.Services.AddSingleton(typeof(ITargetReportGenerator), typeof(TargetReportGenerator));
             opts.Services.AddSingleton(typeof(ITargetReportList), typeof(TargetReportList));
             opts.Services.AddSingleton(typeof(ITrackManager), typeof(TrackManager));

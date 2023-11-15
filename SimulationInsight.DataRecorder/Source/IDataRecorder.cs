@@ -47,6 +47,11 @@ public interface IDataRecorder
         get; set;
     }
 
+    List<TransmitPulseDataMessage> TransmitPulseDataMessages
+    {
+        get; set;
+    }
+
     public IAisDataList AisDataList
     {
         get;

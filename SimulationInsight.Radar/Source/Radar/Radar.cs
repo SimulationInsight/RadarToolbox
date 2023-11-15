@@ -31,6 +31,12 @@ public class Radar : IRadar
         set;
     }
 
+    public IPulseGenerator PulseGenerator
+    {
+        get;
+        set;
+    }
+
     public ITargetReportGenerator TargetReportGenerator
     {
         get;
@@ -49,11 +55,12 @@ public class Radar : IRadar
         set;
     }
 
-    public Radar(IMessageBus bus, IRadarProfile radarProfile, IScanner scanner, ITargetReportGenerator targetReportGenerator, ITrackManager trackManager)
+    public Radar(IMessageBus bus, IRadarProfile radarProfile, IScanner scanner, IPulseGenerator pulseGenerator, ITargetReportGenerator targetReportGenerator, ITrackManager trackManager)
     {
         Bus = bus;
         RadarProfile = radarProfile;
         Scanner = scanner;
+        PulseGenerator = pulseGenerator;
         TargetReportGenerator = targetReportGenerator;
         TrackManager = trackManager;
     }
@@ -65,6 +72,7 @@ public class Radar : IRadar
         SendRadarProfileDemandMessage();
 
         Scanner.Initialise(time);
+        PulseGenerator.Initialise(time);
         TargetReportGenerator.Initialise(time);
         TrackManager.Initialise(time);
     }
@@ -74,6 +82,7 @@ public class Radar : IRadar
         Time = time;
 
         Scanner.Update(time);
+        PulseGenerator.Update(time);
         TargetReportGenerator.Update(time);
         TrackManager.Update(time);
     }
@@ -83,6 +92,7 @@ public class Radar : IRadar
         Time = time;
 
         Scanner.Finalise(time);
+        PulseGenerator.Finalise(time);
         TargetReportGenerator.Finalise(time);
         TrackManager.Finalise(time);
     }

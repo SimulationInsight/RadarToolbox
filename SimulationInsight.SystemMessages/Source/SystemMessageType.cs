@@ -12,5 +12,6 @@ public enum SystemMessageType
     VideoData,
     TargetReports,
     SmoothedTrack,
-    PredictedTrack
+    PredictedTrack,
+    TransmitPulseData
 }

@@ -49,6 +49,11 @@ public class DataRecorder : IDataRecorder
         set;
     }
 
+    public List<TransmitPulseDataMessage> TransmitPulseDataMessages
+    {
+        get; set;
+    }
+
     public IAisDataList AisDataList
     {
         get;
@@ -72,7 +77,8 @@ public class DataRecorder : IDataRecorder
         RadarProfileStatusMessages = new List<RadarProfileStatusMessage>();
         ScanControlDataMessages = new List<ScanControlDataMessage>();
         ScanDataMessages = new List<ScanDataMessage>();
-        AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>(); 
+        AzimuthChangePulseDataMessages = new List<AzimuthChangePulseDataMessage>();
+        TransmitPulseDataMessages = new List<TransmitPulseDataMessage>();
     }
 
     public void WriteData()
@@ -87,6 +93,7 @@ public class DataRecorder : IDataRecorder
         WriteScanControlDataMessages();
         WriteScanDataMessages();
         WriteAzimuthChangePulseDataMessages();
+        WriteTransmitPulseDataMessages();
 
         WriteAisData();
 
@@ -176,6 +183,13 @@ public class DataRecorder : IDataRecorder
         var fileName = GetFullFileName("AzimuthChangePulseData", ".csv");
 
         AzimuthChangePulseDataMessages.WriteToCsvFile(fileName);
+    }
+
+    public void WriteTransmitPulseDataMessages()
+    {
+        var fileName = GetFullFileName("TransmitPulseData", ".csv");
+
+        TransmitPulseDataMessages.WriteToCsvFile(fileName);
     }
 
     public void WriteAisData()
