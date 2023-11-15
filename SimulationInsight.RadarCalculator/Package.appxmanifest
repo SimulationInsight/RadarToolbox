@@ -13,13 +13,13 @@
   <Identity
     Name="SimulationInsight.RadarCalculator"
     Publisher="CN=4ACAEDE4-9BAF-496B-BF8C-68B365A1F273"
-    Version="1.2.17.0" />
+    Version="1.2.27.0" />
     
   <mp:PhoneIdentity PhoneProductId="64ec1005-8939-4321-8e2e-e83c00ac6ded" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
     
   <Properties>
     <DisplayName>Radar Calculator</DisplayName>
-    <PublisherDisplayName>Simulation Insight</PublisherDisplayName>
+    <PublisherDisplayName>Simulation Insight Limited</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

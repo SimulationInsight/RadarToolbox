@@ -88,7 +88,7 @@ public class Simulation : ISimulation
 
         InitialiseSimulation(time);
 
-        //RunSimulation(time);
+        RunSimulation(time);
 
         FinaliseSimulation(time);
 

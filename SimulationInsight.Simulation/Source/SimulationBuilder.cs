@@ -11,7 +11,7 @@ public class SimulationBuilder
     {
         var startDateTime = new DateTime(2023, 07, 27, 10, 00, 00);
         var startDateOffset = 5.0; 
-        var endTime = 6000.0;
+        var endTime = 1000.0;
         var timeStep = 0.1;
 
         simulation.SimulationSettings.SimulationName = "Example_1";
